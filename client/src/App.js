@@ -8,6 +8,7 @@ import Mission from "./pages/Mission";
 import MeetTeam from "./pages/MeetTeam";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import "./App.css";
 
 function App() {
   return (
