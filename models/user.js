@@ -42,10 +42,19 @@ UserSchema.methods.checkPassword = function(enteredPassword, cb) {
 };
 
 UserSchema.pre("save", async function(next) {
-    if (this.isModified("password")) {
-        this.password = await bcrypt.hash(this.password, 8);
-    }
-    next();
+    const user = this;
+    
+    // If the password hasn't been created/modified, move on
+    if (!user.isModified('password')) return next();
+
+    // If it has, hash the password
+    bcrypt.hash(user.password, 8, function(err, hash) {
+        if (err) return next(err);
+
+        // override the cleartext password with the hashed one
+        user.password = hash;
+        next();
+    });
 });
 
 const User = mongoose.model('User', UserSchema);
