@@ -41,10 +41,9 @@ UserSchema.methods.checkPassword = function(enteredPassword, cb) {
     });
 };
 
-UserSchema.pre("save", async function(next) => {
-    const user = this;
-    if (user.isModified("password")) {
-        user.password = await bcrypt.hash(user.password, 8);
+UserSchema.pre("save", async function(next) {
+    if (this.isModified("password")) {
+        this.password = await bcrypt.hash(this.password, 8);
     }
     next();
 });
