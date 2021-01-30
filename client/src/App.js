@@ -1,21 +1,32 @@
-import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import User from "./pages/User";
+import Home from "./pages/Home";
+import Posts from "./pages/Posts";
+import PostDetail from "./pages/PostDetail";
+import Mission from "./pages/Mission";
+import MeetTeam from "./pages/MeetTeam";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+function App() {
+  return (
+    <Router>
+        <Switch>
+      <div>
+        <Navbar />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/home" component={Home} />
+          <Route exact path="/posts" component={Posts} />
+          <Route exact path="/user" component={User} />
+          <Route exact path="/postdetail" component={PostDetail} />
+          <Route exact path="/mission" component={Mission} />
+          <Route exact path="/meetteam" component={MeetTeam} />
+        <Footer />
       </div>
-    );
-  }
+        </Switch>
+    </Router>
+  );
 }
 
 export default App;
