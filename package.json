@@ -1,7 +1,7 @@
 {
-  "name": "mern",
+  "name": "care-package-server",
   "version": "1.0.0",
-  "description": "Mern Demo",
+  "description": "Care Package Server",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -21,10 +21,9 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "express": "^4.17.1",
     "bcryptjs": "^2.4.3",
     "bootstrap": "^4.6.0",
-    "express": "^4.16.3",
     "if-env": "^1.0.4",
-    "react-router-dom": "^5.2.0"
   }
 }
