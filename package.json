@@ -1,7 +1,7 @@
 {
   "name": "mern",
   "version": "1.0.0",
-  "description": "",
+  "description": "Mern Demo",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -24,6 +24,6 @@
     "express": "^4.17.1",
     "bcryptjs": "^2.4.3",
     "bootstrap": "^4.6.0",
-    "if-env": "^1.0.4",
+    "if-env": "^1.0.4"
   }
 }
