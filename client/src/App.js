@@ -12,7 +12,6 @@ import TermsOfUse from "./pages/TermsOfUse";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
 import Navigation from "./components/Navigation";
-import Button from "./components/Button";
 import Footer from "./components/Footer";
 
 
@@ -33,7 +32,6 @@ function App() {
             <Route exact path="/privacy-policy" component={PrivacyPolicy} />
             <Route path="*" component={NotFound} />
         </Switch>
-        <Button />
         <Footer />
     </Router>
   );
