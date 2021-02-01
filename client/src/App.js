@@ -33,7 +33,6 @@ function App() {
             <Route exact path="/privacy-policy" component={PrivacyPolicy} />
             <Route path="*" component={NotFound} />
         </Switch>
-        <Buttons />
         <Footer />
     </Router>
   );
