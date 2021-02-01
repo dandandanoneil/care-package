@@ -7,7 +7,6 @@ import PostDetail from "./pages/PostDetail";
 import Mission from "./pages/Mission";
 import MeetTeam from "./pages/MeetTeam";
 import Navbar from "./components/Navbar";
-import Button from "./components/Button";
 import Footer from "./components/Footer";
 
 
@@ -27,7 +26,7 @@ function App() {
         <Footer />
       </div>
         </Switch>
-        <Button />
+        
     </Router>
     
   );

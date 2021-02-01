@@ -1,9 +1,11 @@
-import 'bootstrap/dist/css/bootstrap.min.css'
+// import '../components/Buttons/node_modules/bootstrap/dist/css/bootstrap.min.css'
 import React from "react";
 import Carousel from 'react-bootstrap/Carousel'
+import Buttons from "../components/Buttons";
+import Modals from "../components/Modal";
 
 const Home = () => {
-    return (
+    return (<div> 
         <Carousel>
           <Carousel.Item interval={3500}>
             <img id='header-img' 
@@ -39,7 +41,9 @@ const Home = () => {
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
-        
+          <Buttons />
+          <Modals />
+        </div>
     )
     
 }
