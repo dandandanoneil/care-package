@@ -12,7 +12,7 @@ import TermsOfUse from "./pages/TermsOfUse";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
 import Navigation from "./components/Navigation";
-import Button from "./components/Button";
+import Buttons from "./components/Buttons";
 import Footer from "./components/Footer";
 
 
@@ -33,7 +33,7 @@ function App() {
             <Route exact path="/privacy-policy" component={PrivacyPolicy} />
             <Route path="*" component={NotFound} />
         </Switch>
-        <Button />
+        <Buttons />
         <Footer />
     </Router>
   );
