@@ -5,7 +5,7 @@ import { Nav, Navbar, NavDropdown, Form, Button } from "react-bootstrap";
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 function Navigation() {
   return (
-    <Navbar bg="light" expand="md" sticky="top">
+    <Navbar style={{ background: "#aac9e0" }} expand="md" sticky="top">
       {/* Page name/logo, links to home page */}
       <Navbar.Brand href="/">
         Care Package
