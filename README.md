@@ -3,9 +3,12 @@ This app uses React to allow the user to make a post to a mutual aid marketplace
 
 [Care Package Github Repo](https://github.com/dandandanoneil/care-package)
 
+
 [Care Package Deployed](https://care-package.herokuapp.com/)
 
-<!--
+
+<!-- [Care Package Deployed](Dan Add Link)
+
 ![Demo](public/assets/img/home.png)
 
 ![Demo](./public/assets/img/posts.png) 
@@ -17,7 +20,6 @@ This app uses React to allow the user to make a post to a mutual aid marketplace
 ![Demo](public/assets/img/meetteam.png)
 
 ![Demo](./public/assets/img/mission.png) 
--->
 
 
 #### Table of Contents
