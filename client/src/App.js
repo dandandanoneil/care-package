@@ -6,7 +6,7 @@ import Posts from "./pages/Posts";
 import PostDetail from "./pages/PostDetail";
 import Mission from "./pages/Mission";
 import MeetTeam from "./pages/MeetTeam";
-import Navbar from "./components/Navbar";
+import Navigation from "./components/Navigation";
 import Button from "./components/Button";
 import Footer from "./components/Footer";
 
@@ -16,7 +16,7 @@ function App() {
     <Router>
         <Switch>
       <div>
-        <Navbar />
+        <Navigation />
           <Route exact path="/" component={Home} />
           <Route exact path="/home" component={Home} />
           <Route exact path="/posts" component={Posts} />
