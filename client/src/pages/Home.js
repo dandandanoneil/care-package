@@ -40,9 +40,7 @@ const Home = () => {
           </Carousel.Item>
         </Carousel>
         
-    )
-    
+    );
 }
 
-
-export default Home
+export default Home;
