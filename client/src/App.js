@@ -12,7 +12,6 @@ import TermsOfUse from "./pages/TermsOfUse";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
 import Navigation from "./components/Navigation";
-import Buttons from "./components/Buttons";
 import Footer from "./components/Footer";
 
 
