@@ -14,22 +14,21 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <Router>
-        <Switch>
-      <div>
         <Navigation />
-          <Route exact path="/" component={Home} />
-          <Route exact path="/home" component={Home} />
-          <Route exact path="/posts" component={Posts} />
-          <Route exact path="/user" component={User} />
-          <Route exact path="/postdetail" component={PostDetail} />
-          <Route exact path="/mission" component={Mission} />
-          <Route exact path="/meetteam" component={MeetTeam} />
-        <Footer />
-      </div>
+        <Switch>
+          <div>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/home" component={Home} />
+              <Route exact path="/posts" component={Posts} />
+              <Route exact path="/user" component={User} />
+              <Route exact path="/postdetail" component={PostDetail} />
+              <Route exact path="/mission" component={Mission} />
+              <Route exact path="/meetteam" component={MeetTeam} />
+          </div>
         </Switch>
         <Button />
+        <Footer />
     </Router>
-    
   );
 }
 
