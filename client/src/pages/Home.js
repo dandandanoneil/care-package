@@ -5,7 +5,8 @@ import Buttons from "../components/Buttons";
 import Modals from "../components/Modal";
 
 const Home = () => {
-    return (<div> 
+    return (
+    <div> 
         <Carousel>
           <Carousel.Item interval={3500}>
             <img id='header-img' 
