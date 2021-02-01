@@ -45,8 +45,8 @@ const Home = () => {
           <Modals />
         </div>
     )
-    
+    );
+
 }
 
-
-export default Home
+export default Home;
