@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.min.css'
 import React from "react";
 import Carousel from 'react-bootstrap/Carousel'
 
@@ -38,7 +39,9 @@ const Home = () => {
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
+        
     )
+    
 }
 
 
