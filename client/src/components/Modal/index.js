@@ -10,8 +10,8 @@ function Modals() {
     const handleShow = () => setShow(true);
   
     return (
-      <>
-        <Button variant="primary" onClick={handleShow}>
+      <div className= "d-flex justify-content-center">
+        <Button variant="primary " onClick={handleShow} >
           Launch demo modal
         </Button>
   
@@ -29,7 +29,7 @@ function Modals() {
             </Button>
           </Modal.Footer>
         </Modal>
-      </>
+      </div>
     );
   }
   
