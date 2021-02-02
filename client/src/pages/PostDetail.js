@@ -1,16 +1,13 @@
-// import React, { useEffect, useState } from "react";
-// import API from "../../utils/API";
+import React from "react";
+import PageTitle from "../components/PageTitle"
+import Wrapper from "../components/Wrapper";
 
+function PostDetail() {
+    return (
+        <Wrapper>
+            <PageTitle>Post Detail</PageTitle>
+        </Wrapper>
+    );
+  }
 
-// function PostDetail() {
-
- 
- 
-
-//     return (
-    
-//     );
-//   }
-
-
-// export default PostDetail;
+export default PostDetail;

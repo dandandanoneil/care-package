@@ -2,12 +2,12 @@ import React from "react";
 import PageTitle from "../components/PageTitle"
 import Wrapper from "../components/Wrapper";
 
-function User() {
+function Signup() {
     return (
         <Wrapper>
-            <PageTitle>User Profile</PageTitle>
+            <PageTitle>Create An Account</PageTitle>
         </Wrapper>
     );
   }
 
-export default User;
+export default Signup;
