@@ -1,9 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import User from "./pages/User";
 import Home from "./pages/Home";
 import Posts from "./pages/Posts";
+import User from "./pages/User";
+import Signup from "./pages/Signup";
 import PostDetail from "./pages/PostDetail";
 import Mission from "./pages/Mission";
 import MeetTeam from "./pages/MeetTeam";
@@ -24,6 +25,7 @@ function App() {
             <Route exact path="/home" component={Home} />
             <Route exact path="/posts" component={Posts} />
             <Route exact path="/user" component={User} />
+            <Route exact path="/signup" component={Signup} />
             <Route exact path="/postdetail" component={PostDetail} />
             <Route exact path="/mission" component={Mission} />
             <Route exact path="/meet-our-team" component={MeetTeam} />
