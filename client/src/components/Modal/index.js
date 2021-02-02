@@ -12,7 +12,7 @@ function Modals() {
     return (
       <div className= "d-flex justify-content-center">
         <Button variant="primary " onClick={handleShow} >
-          Launch demo modal
+          Sign Up
         </Button>
   
         <Modal show={show} onHide={handleClose}>
