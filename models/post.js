@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const PostSchema = new Schema({
-    _id: Schema.Types.ObjectId,
     // POST DATA & ASSOCIATIONS
     created_at: { type: Date, default: Date.now },
     boosted_at: { type: Date, default: Date.now },
@@ -42,7 +41,7 @@ const PostSchema = new Schema({
         type: String
     },
     searchTags: {
-        type: Aray,
+        type: Array,
         default: []
     },
     neighborhood: String,

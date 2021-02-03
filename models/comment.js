@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const CommentSchema = new Schema({
-    _id: Schema.Types.ObjectId,
     post: {
         type: Schema.Types.ObjectId,
         ref: 'Post'
@@ -10,7 +9,7 @@ const CommentSchema = new Schema({
     comment: {
         type: String,
         required: true
-    }
+    },
     created_at: { type: Date, default: Date.now },
     created_by: {
         type: Schema.Types.ObjectId,

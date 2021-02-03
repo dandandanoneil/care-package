@@ -4,7 +4,6 @@ require('mongoose-type-email');
 const bcrypt = require("bcryptjs");
 
 const UserSchema = new Schema({
-    _id: Schema.Types.ObjectId,
     email: {
         type: Schema.Types.Email,
         trim: true,
@@ -47,13 +46,9 @@ UserSchema.pre("save", async function(next) {
     if (!user.isModified('password')) return next();
 
     // If it has, hash the password
-    bcrypt.hash(user.password, 8, function(err, hash) {
-        if (err) return next(err);
-
-        // override the cleartext password with the hashed one
-        user.password = hash;
-        next();
-    });
+    const hash = bcrypt.hashSync(user.password, 8);
+    user.password = hash;
+    next();
 });
 
 const User = mongoose.model('User', UserSchema);
