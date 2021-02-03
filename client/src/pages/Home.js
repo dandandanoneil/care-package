@@ -2,8 +2,9 @@
 import React from "react";
 import Carousel from 'react-bootstrap/Carousel'
 import Buttons from "../components/Buttons";
-import Modals from "../components/Modal";
+// import Modals from "../components/Modal";
 import Search from "../components/Search"
+
 
 const Home = () => {
     return (
@@ -46,6 +47,7 @@ const Home = () => {
           <Buttons />
          <br></br>
           <Search />
+         
         </div>
     );
 }
