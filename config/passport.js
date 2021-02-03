@@ -1,7 +1,7 @@
 var passport = require("passport");
 var LocalStrategy = require("passport-local").Strategy;
 
-var User = require("../models/User");
+var db = require("../models");
 
 // Tell passport we want to use a Local Strategy
 passport.use(new LocalStrategy(
@@ -9,7 +9,7 @@ passport.use(new LocalStrategy(
   { usernameField: "email" },
   function(email, password, done) {
     // When a user tries to sign in this code runs
-    User.findOne({
+    db.User.findOne({
       where: { email: email }
     }).then(function(dbUser) {
       // If the user doesn't exist

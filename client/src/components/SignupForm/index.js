@@ -17,7 +17,11 @@ class SignupForm extends React.Component {
     onSubmit = (event) => {
         event.preventDefault();
 
-        if (!this.state.email || this.state.password || !this.state.name) {
+        if (!this.state.email || !this.state.password || !this.state.name) {
+            this.setState({
+                error: "You must enter an email, password, and display name."
+                showError: true
+            });
             return;
         }
 
@@ -26,19 +30,18 @@ class SignupForm extends React.Component {
             password: this.state.password,
             name: this.state.name
         })
-        .then( window.location.reload(true) )
+        .then( (res) => console.log(res.data) )
         .catch(err => {
             this.setState({ 
-                error: err,
+                error: err.name,
                 showError: true
             })
-
         });
     }
 
     onChange = (event) => {
         const target = event.target;
-        switch (target) {
+        switch (target.name) {
             case "email":
                 this.setState({ email: target.value });
                 break;
@@ -55,10 +58,11 @@ class SignupForm extends React.Component {
   
     render() {
         return (
-            <Form>
+            <Form onSubmit={this.onSubmit}>
                 <Form.Label>Email</Form.Label>
                 <Form.Control 
                     type="email" 
+                    name="email"
                     placeholder="Enter your email" 
                     onChange={this.onChange}
                 />
@@ -66,18 +70,20 @@ class SignupForm extends React.Component {
                 <Form.Label>Password</Form.Label>
                 <Form.Control 
                     type="password" 
+                    name="password"
                     placeholder="Choose a password" 
                     onChange={this.onChange}
                 />
 
                 <Form.Label>Display Name</Form.Label>
                 <Form.Control 
-                    type="name" 
+                    type="text" 
+                    name="name"
                     placeholder="Enter your name" 
                     onChange={this.onChange}
                 />
 
-                <Button variant="success" type="submit" onSubmit={this.onSubmit}>
+                <Button variant="success" type="submit">
                     Create Account
                 </Button>
 
