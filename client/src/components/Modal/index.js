@@ -20,7 +20,7 @@ function Modals() {
           <Modal.Header closeButton>
             <Modal.Title>Modal heading</Modal.Title>
           </Modal.Header>
-          <Modal.Body><Signup /> </Modal.Body>
+          <Modal.Body> <Signup /> </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>
               Close
