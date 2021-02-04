@@ -18,7 +18,7 @@ function Modals() {
   
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
+            <Modal.Title>Sign up and start sharing!</Modal.Title>
           </Modal.Header>
           <Modal.Body> <Signup /> </Modal.Body>
           <Modal.Footer>
