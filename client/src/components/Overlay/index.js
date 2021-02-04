@@ -85,7 +85,7 @@ const Overlay = () => {
     </Card.Footer>
   </Card>
   <Card>
-    <Card.Img variant="top" src="https://www.americansurplus.com/_resources/images/product/novaWallMountFan.png" />
+    <Card.Img variant="top" src="https://i.ebayimg.com/images/g/S0sAAOSwwgddC65r/s-l640.jpg" />
     <Card.Body>
       <Card.Title>Floor metal fan</Card.Title>
       <Card.Text>
