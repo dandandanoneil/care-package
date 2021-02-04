@@ -4,7 +4,7 @@ import Carousel from 'react-bootstrap/Carousel'
 import Buttons from "../components/Buttons";
 import Modal from "../components/Modal";
 import Search from "../components/Search"
-import Overlay from "../components/Overlay"
+import Cards from "../components/Cards"
 
 const Home = () => {
     return (
@@ -58,7 +58,7 @@ const Home = () => {
           <Buttons />
          <br></br>
           <Search />
-          <Overlay />
+          <Cards />
          
         </div>
     );
