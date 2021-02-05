@@ -19,7 +19,7 @@ class SignupForm extends React.Component {
 
         if (!this.state.email || !this.state.password || !this.state.name) {
             this.setState({
-                error: "You must enter an email, password, and display name."
+                error: "You must enter an email, password, and display name.",
                 showError: true
             });
             return;
