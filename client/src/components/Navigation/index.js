@@ -44,7 +44,7 @@ class Navigation extends React.Component {
     return (
       <Navbar style={{ background: "#aac9e0" }} expand="md" sticky="top">
         {/* Page name/logo, links to home page */}
-        <Navbar.Brand href="/">
+        <Navbar.Brand style={{color: "#5a5a5a"}} href="/">
           Care Package
         </Navbar.Brand>
 

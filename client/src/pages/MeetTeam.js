@@ -25,7 +25,7 @@ function MeetTeam() {
                     <Image src="https://avatars.githubusercontent.com/u/68611714?s=400&u=55a05137ba0556c73b2def2d0c9c1461f7913598&v=4" fluid roundedCircle alt="Skyler Dakota Lawton" />
                     <h3 className="mt-3">Skyler Dakota Lawton</h3>
                     <a href="https://github.com/skylerdakota">GitHub Profile</a>
-                    <p>Pellentesque sit amet nisl sed mauris luctus tristique. Mauris pretium tristique malesuada. Aliquam enim dolor, fermentum et auctor id, tempus sed sapien. Duis condimentum accumsan velit, a ultricies felis vestibulum nec. Maecenas suscipit est a tincidunt sodales. Sed sit amet ante eu nisi tempus dapibus. Duis ultrices augue quis molestie consectetur.</p>
+                    <p>Philadelphia-based aspiring full stack web developer in the Penn LPS Coding Bootcamp. Passionate about using tech for social change.</p>
                 </div>
             </div>
         </Wrapper>
