@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
+import Signup from '../SignupForm'
 
 
 function Modals() {
@@ -17,17 +18,9 @@ function Modals() {
   
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
+            <Modal.Title>Sign up and start sharing!</Modal.Title>
           </Modal.Header>
-          <Modal.Body>some text</Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
-            </Button>
-            <Button variant="primary" onClick={handleClose}>
-              Save Changes
-            </Button>
-          </Modal.Footer>
+          <Modal.Body> <Signup /> </Modal.Body>
         </Modal>
         
       </div>

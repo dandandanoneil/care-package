@@ -2,14 +2,25 @@
 import React from "react";
 import Carousel from 'react-bootstrap/Carousel'
 import Buttons from "../components/Buttons";
-// import Modals from "../components/Modal";
+import Modal from "../components/Modal";
 import Search from "../components/Search"
-
+import Cards from "../components/Cards"
 
 const Home = () => {
     return (
         <div> 
             <Carousel>
+            <Carousel.Item interval={3500}>
+                    <img id='header-img' 
+                      className="d-block w-100"
+                      src="https://hb.imgix.net/c7a33020a39902ba99d24814c1323628f5404f32.png?auto=compress,format&s=699fdf7e381250735bbdda2e2475d4d1"
+                      alt="Signup"
+                    />
+                    <Carousel.Caption>
+                        <h3><span><Modal /></span></h3>
+                        <p><span>Join our community to start sharing!</span></p>
+                    </Carousel.Caption>
+                </Carousel.Item>
                 <Carousel.Item interval={3500}>
                     <img id='header-img' 
                       className="d-block w-100"
@@ -47,6 +58,7 @@ const Home = () => {
           <Buttons />
          <br></br>
           <Search />
+          <Cards />
          
         </div>
     );
