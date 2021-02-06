@@ -1,8 +1,8 @@
-// import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 // import API from "../../utils/API";
 
 
-// function Posts() {
+function Posts() {
 //   // Setting our component's initial state
 //   const [posts, setPosts] = useState([])
 //   const [formObject, setFormObject] = useState({
@@ -54,10 +54,11 @@
 //     }
 //   };
 
-//     return (
-    
-//     );
-//   }
+    return (
+        <>
+        </>
+    );
+  }
 
 
-// export default Posts;
+export default Posts;

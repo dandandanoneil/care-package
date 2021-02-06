@@ -6,11 +6,10 @@ import "./search.css";
 
 const Search = () => {
     return (
-        <div className= "d-flex justify-content-center">
+        <div id="search-filter" className= "d-flex justify-content-center">
             <input placeholder="Search for an item"></input> &nbsp;&nbsp;
             <Button style={{ color: "white"}} variant="custom">Search</Button>&nbsp;
           <Filter />
-      
         </div>
     )
 }
