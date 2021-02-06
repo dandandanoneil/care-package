@@ -17,7 +17,7 @@ const  Filter = () => {
       </Button>
       <Modal show={show} onHide={handleClose} >
         <Modal.Header closeButton>
-          <Modal.Title >Filter</Modal.Title>
+          <Modal.Title className= "d-flex justify-content-center">Filter</Modal.Title>
         </Modal.Header>
         <Modal.Body>
            <div>
@@ -29,6 +29,7 @@ const  Filter = () => {
          <h6 style={{display: 'inline', fontWeight: 'bold' }} className= "mr-5">Type: </h6> 
    <Form.Check inline label="Goods" style={{display: 'inline' }} />
    <Form.Check inline label="Services" style={{display: 'inline'}} />
+   <Form.Check inline label="$$$" style={{display: 'inline'}} />
 
    <br></br>  <br></br>
 
@@ -84,11 +85,12 @@ const  Filter = () => {
  <Form.Check inline label="Has Image" />
    <Form.Check inline label="Available Now" />
    <Form.Check inline label="Still Available" />
+   <Form.Check inline label="Urgent Need" />
  
  </Form>
  </div>  
-        </Modal.Body>
-        <Modal.Footer>
+        </Modal.Body >
+        <Modal.Footer className= "d-flex justify-content-center">
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
