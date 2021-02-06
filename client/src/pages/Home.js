@@ -61,7 +61,7 @@ const Home = () => {
           <Buttons />
          <br></br>
          <Banner />
-          <Search />
+         
           <Cards />
          
         </div>
