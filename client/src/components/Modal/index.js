@@ -13,13 +13,19 @@ function Modals() {
   
     return (
       <div className= "d-flex justify-content-center">
-        <Button style={{ color: "white"}} variant="custom" onClick={handleShow} >
+        <Button style={{ color: "white",fontWeight: 'bold'}} variant="custom" onClick={handleShow} >
           Sign Up
         </Button>
   
         <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Sign up and start sharing!</Modal.Title>
+          <Modal.Header style={{
+               backgroundImage: 'linear-gradient(to right, #4c68a5, #021247)', 
+             color:'white',
+             textAlign: "center",
+              margin: 'auto'
+              }}>
+            <Modal.Title className= "d-flex justify-content-center">
+               Sign up and start sharing</Modal.Title>
           </Modal.Header>
           <Modal.Body> <Signup /> </Modal.Body>
         </Modal>
