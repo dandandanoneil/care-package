@@ -3,55 +3,7 @@ import {Form,Row,Col} from 'react-bootstrap'
 import Dropdown from 'react-bootstrap/Dropdown'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
-
-// const Filter = () => {
-//     return (
-//       <Modal.Dialog>
-//   <Modal.Body>
-//   <div>
-//       <Form>
-//         <h5>Type</h5>
-//   <Form.Check inline label="Goods" />
-//   <Form.Check inline label="Services" />
-// </Form>
-
-// <Dropdown>
-//   <Dropdown.Toggle variant="dark" id="dropdown-basic">
-//    Category
-//   </Dropdown.Toggle>
-      
-//   <Dropdown.Menu>
-//   <Form>
-//   <Form.Check inline label="Furniture" />
-//   <Form.Check inline label="Kitchen" />
-//   <Form.Check inline label="Electronics" />
-//   <Form.Check inline label="Essentials" />
-//   <Form.Check inline label="Clothes" />
-// </Form>
-//   </Dropdown.Menu>
-// </Dropdown>
-
-// <Form>
-// <Form.Check inline label="Has Image" />
-//   <Form.Check inline label="Available Now" />
-//   <Form.Check inline label="Still Available" />
- 
-// </Form>
-
-
-// <Button>Apply</Button>
-      
-// </div>  
-//   </Modal.Body>
-
-
-// </Modal.Dialog>
-
-      
-//     )
-// }
-
-// export default Filter
+import "./filter.css";
 
 const  Filter = () => {
   const [show, setShow] = useState(false);
@@ -60,58 +12,87 @@ const  Filter = () => {
   const handleShow = () => setShow(true);
 
   return (
-    <>
-      <Button variant="primary" onClick={handleShow}>
+
+    <div className= "d-flex justify-content-center">
+      <Button style={{ color: "white"}} variant="custom" onClick={handleShow}>
         Filter
       </Button>
-
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} >
         <Modal.Header closeButton>
-          <Modal.Title>Filter Search results</Modal.Title>
+          <Modal.Title className= "d-flex justify-content-center">Filter</Modal.Title>
         </Modal.Header>
         <Modal.Body>
            <div>
        <Form>
-         <h5>Type</h5>
-   <Form.Check inline label="Goods" />
-   <Form.Check inline label="Services" />
+       <h5 className= "d-flex justify-content-center" >   <Form.Check inline label="Offers" />
+   <Form.Check inline label="Requests" /></h5>
+
+   <br></br>
+         <h6 style={{display: 'inline', fontWeight: 'bold' }} className= "mr-5">Type: </h6> 
+   <Form.Check inline label="Goods" style={{display: 'inline' }} />
+   <Form.Check inline label="Services" style={{display: 'inline'}} />
+   <Form.Check inline label="$$$" style={{display: 'inline'}} />
 
    <br></br>  <br></br>
 
-   <h5>Close to</h5>
-   <input placeholder='Zipcode' />
+   <h6 style={{display: 'inline', fontWeight: 'bold'}} className= "mr-4" >Close to:</h6> 
+   <input style={{display: 'inline'}} placeholder='Zipcode' />
    
  </Form>
  
  <br></br>
-
- <Dropdown>
+  
+  <div className= "d-flex justify-content-center"> 
+ <Dropdown style={{display: 'inline'}}>
    <Dropdown.Toggle variant="dark" id="dropdown-basic">
-    Category
+    Goods Category
    </Dropdown.Toggle>
-      
+   
+    
    <Dropdown.Menu>
    <Form>
-   <Form.Check inline label="Furniture" />
+   <Form.Check inline label="" />
    <Form.Check inline label="Kitchen" />
    <Form.Check inline label="Electronics" />
    <Form.Check inline label="Essentials" />
    <Form.Check inline label="Clothes" />
  </Form>
    </Dropdown.Menu>
+ </Dropdown> &nbsp;&nbsp;
+
+ <Dropdown style={{display: 'inline'}}>
+   <Dropdown.Toggle variant="dark" id="dropdown-basic">
+    Services Category
+   </Dropdown.Toggle>
+   
+      
+   <Dropdown.Menu>
+   <Form>
+   <Form.Check inline label="Legal" />
+   <Form.Check inline label="Taxes" />
+   <Form.Check inline label="Consulting" />
+   <Form.Check inline label="Mental Health" />
+   <Form.Check inline label="Financial guidance" />
+ </Form>
+   </Dropdown.Menu>
  </Dropdown>
+
+ <br></br> <br></br>
+
+ 
+ </div>
  <br></br>
  <Form>
-   <h5>Preferences</h5>
+   <h6 style={{display: 'inline', fontWeight: 'bold'}} className= "mr-1">Preferences:</h6>
  <Form.Check inline label="Has Image" />
    <Form.Check inline label="Available Now" />
    <Form.Check inline label="Still Available" />
+   <Form.Check inline label="Urgent Need" />
  
  </Form>
-      
  </div>  
-        </Modal.Body>
-        <Modal.Footer>
+        </Modal.Body >
+        <Modal.Footer className= "d-flex justify-content-center">
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
@@ -120,7 +101,7 @@ const  Filter = () => {
           </Button>
         </Modal.Footer>
       </Modal>
-    </>
+    </div>
   );
 }
 

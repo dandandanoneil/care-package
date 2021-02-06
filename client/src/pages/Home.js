@@ -1,10 +1,13 @@
 // import '../components/Buttons/node_modules/bootstrap/dist/css/bootstrap.min.css'
 import React from "react";
-import Carousel from 'react-bootstrap/Carousel'
+import Carousel from 'react-bootstrap/Carousel';
 import Buttons from "../components/Buttons";
 import Modal from "../components/Modal";
-import Search from "../components/Search"
-import Cards from "../components/Cards"
+import Search from "../components/Search";
+import Cards from "../components/Cards";
+import Banner from "../components/Banner";
+import ModalMission from "../components/ModalMission";
+import ModalAgreement from "../components/ModalAgreement";
 
 const Home = () => {
     return (
@@ -28,7 +31,7 @@ const Home = () => {
                       alt="First slide"
                     />
                     <Carousel.Caption>
-                        <h3><span>Our mission</span></h3>
+                        <h3><span><ModalMission /></span></h3>
                         <p><span>“Since you get more joy out of giving joy to others, you should put a good deal of thought into the happiness that you are able to give.”</span></p>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -39,7 +42,7 @@ const Home = () => {
                       alt="Third slide"
                     />
                     <Carousel.Caption>
-                        <h3><span>About Us</span></h3>
+                        <h3><span><ModalAgreement /> </span></h3>
                         <p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -57,6 +60,7 @@ const Home = () => {
           </Carousel>
           <Buttons />
          <br></br>
+         <Banner />
           <Search />
           <Cards />
          

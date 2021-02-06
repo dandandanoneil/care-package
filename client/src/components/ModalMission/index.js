@@ -1,8 +1,7 @@
 import React, {useState} from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
-import Signup from '../SignupForm'
-import "./style.css";
+import Mission from '../../pages/Mission'
 
 
 function Modals() {
@@ -13,15 +12,12 @@ function Modals() {
   
     return (
       <div className= "d-flex justify-content-center">
-        <Button style={{ color: "white"}} variant="custom" onClick={handleShow} >
-          Sign Up
+        <Button variant="primary " onClick={handleShow} >
+          Our Mission
         </Button>
   
         <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Sign up and start sharing!</Modal.Title>
-          </Modal.Header>
-          <Modal.Body> <Signup /> </Modal.Body>
+          <Modal.Body> <Mission /> </Modal.Body>
         </Modal>
         
       </div>

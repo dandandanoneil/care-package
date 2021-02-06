@@ -6,12 +6,12 @@ function Footer() {
     <div className="footer">
       <div className="row text-center justify-content-md-center">
         <div className="col-md-3">
-          <h4>Care Package</h4>
+          <h4 style={{color: "white"}} >Care Package</h4>
           <h6><a href="/meet-our-team"
-          style={{color: "black"}}
+          style={{color: "white"}}
           >Meet our Team</a></h6>
           <h6><a href="/community-agreements"
-          style={{color: "black"}}
+          style={{color: "white"}}
           >Community Agreements</a></h6>
         </div>
 
@@ -26,12 +26,12 @@ function Footer() {
         </div>
 
         <div className="col-md-3">
-          <h4 style={{color: "#5a5a5a"}} >Legal</h4>
+          <h4 style={{color: "white"}} >Legal</h4>
           <h6><a href="/terms-of-use"
-          style={{color: "grey"}}
+          style={{color: "white"}}
           >Terms of Use</a></h6>
           <h6><a href="/privacy-policy"
-          style={{color: "grey"}}
+          style={{color: "white"}}
           >Privacy Policy</a></h6>
         </div>
       </div>
