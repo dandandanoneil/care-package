@@ -1,40 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext }from "react";
+import UserContext from "../utils/UserContext";
 import { Button } from "react-bootstrap";
 import PageTitle from "../components/PageTitle"
 import Wrapper from "../components/Wrapper";
-import API from "../utils/API";
 import axios from "axios";
 
-function User() {
-    const [user, setUser] = useState({})
-
-    useEffect(() => {
-        loadUser()
-    }, [])
-
-    function loadUser() {
-        console.log("loadUser");
-        API.getUser()
-        .then(res => {
-            console.log(res.data);
-            setUser({
-                name: res.data.name,
-                email: res.data.email, 
-                posts: res.data.posts,
-                comments: res.data.comments
-            });
-          }
-    
-          )
-          .catch(err => console.log(err));
-    }
+function User(props) {
+    const { user } = useContext(UserContext);
     
     function onClick() {
-        setUser({});
         axios.get("/api/user/logout")
         .then( (res) => res.logout() )
         .catch(err => console.log(err) );
-      }    
+
+        {props.stateLogOut()}
+    }
     
     return (
         <Wrapper>
