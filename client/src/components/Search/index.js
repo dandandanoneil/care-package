@@ -5,7 +5,7 @@ import Filter from '../Filter'
 
 const Search = () => {
     return (
-        <div className= "d-flex justify-content-center">
+        <div id="search-filter" className= "d-flex justify-content-center">
             <input placeholder="Search for a item"></input> &nbsp;&nbsp;
             <Button variant="secondary">Search</Button>&nbsp;
           <Filter />

@@ -31,12 +31,5 @@ module.exports = {
       .create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
-  },
-  getUser: function(req, res) {
-    // This function does not yet work - it is currently returning an array of all registered users, rather than an object representing the current user
-    db.User
-      .find(req.body)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
   }
 };

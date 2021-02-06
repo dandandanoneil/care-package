@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import UserContext from "./utils/UserContext";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from "./pages/Home";
 import Posts from "./pages/Posts";
@@ -17,9 +18,29 @@ import Footer from "./components/Footer";
 
 
 function App() {
+  const [userState, setUserState] = useState({
+    currentUser: {},
+    loggedIn: false
+  });
+
+  function stateLogIn(user) {
+    setUserState({
+      currentUser: user,
+      loggedIn: true
+    });
+  }
+
+  function stateLogOut() {
+    setUserState({
+      currentUser: {},
+      loggedIn: false
+    });
+  }
+
   return (
     <Router>
-        <Navigation />
+      <UserContext.Provider value={userState}>
+        <Navigation stateLogIn={stateLogIn} stateLogOut={stateLogOut} />
         <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/home" component={Home} />
@@ -35,6 +56,7 @@ function App() {
             <Route path="*" component={NotFound} />
         </Switch>
         <Footer />
+      </UserContext.Provider>
     </Router>
   );
 }

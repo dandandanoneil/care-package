@@ -22,19 +22,14 @@ router
 router
 .route("/login")
 .post(
-  passport.authenticate("local"), (req, res) => {
-    console.log("logged in:", req.user);
-    res.json(req.user);
-  }
-);  
+  passport.authenticate("local"), (req, res) =>  res.json(req.user));
 
 // Matches with "/api/user/logout"  
 router
   .route("/logout")
-  .get((req, res) => {
-    console.log("logout");
+  .post((req, res) => {
     req.logout();
-    res.redirect("/");
-  });  
-  
-  module.exports = router;
+    res.json({});
+  });
+
+module.exports = router;
