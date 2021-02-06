@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import TermsOfUse from '../../pages/TermsOfUse'
-
+import "./style.css";
 
 function Modals() {
     const [show, setShow] = useState(false);
@@ -12,8 +12,8 @@ function Modals() {
   
     return (
       <div className= "d-flex justify-content-center">
-        <Button variant="primary " onClick={handleShow} >
-          Terms of Use
+        <Button style={{ color: "white"}} variant="custom" onClick={handleShow} >
+          Our Community Agreement
         </Button>
   
         <Modal show={show} onHide={handleClose}>
