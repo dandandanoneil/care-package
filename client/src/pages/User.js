@@ -4,9 +4,10 @@ import { Button } from "react-bootstrap";
 import PageTitle from "../components/PageTitle"
 import Wrapper from "../components/Wrapper";
 import axios from "axios";
+import "./user.css";
 
 function User(props) {
-    const { user } = useContext(UserContext);
+    const { currentUser } = useContext(UserContext);
     
     function onClick() {
         axios.get("/api/user/logout")
@@ -21,10 +22,10 @@ function User(props) {
             <PageTitle>User Profile</PageTitle>
             <div className="row justify-content-md-center">
                 <div className="col-lg-8">
-                    <p>Name: {user.name}</p>
-                    <p>Email: {user.email}</p>
+                    <p style={{color: "#941010"}} >Name: {currentUser.name}</p>
+                    <p style={{color: "#941010"}} >Email: {currentUser.email}</p>
                     <br />
-                    <Button variant="danger" onClick={onClick}>Log Out</Button>
+                    <Button variant="custom" onClick={onClick}>Log Out</Button>
                 </div>
             </div>
         </Wrapper>
