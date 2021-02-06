@@ -3,6 +3,7 @@ import UserContext from "../utils/UserContext";
 import { Button } from "react-bootstrap";
 import PageTitle from "../components/PageTitle"
 import Wrapper from "../components/Wrapper";
+import MessageCard from "../components/MessageCard";
 import axios from "axios";
 import "./user.css";
 
@@ -21,11 +22,14 @@ function User(props) {
         <Wrapper>
             <PageTitle>User Profile</PageTitle>
             <div className="row justify-content-md-center">
+            <div className="col-lg-4">
+                    <MessageCard />
+                </div>
                 <div className="col-lg-8">
-                    <p style={{color: "#941010"}} >Name: {currentUser.name}</p>
-                    <p style={{color: "#941010"}} >Email: {currentUser.email}</p>
+                    <p style={{color: "#5a5a5a"}} >Name: {currentUser.name}</p>
+                    <p style={{color: "#5a5a5a"}} >Email: {currentUser.email}</p>
                     <br />
-                    <Button variant="custom" onClick={onClick}>Log Out</Button>
+                    <Button style={{color: "white"}} variant="custom" onClick={onClick}>Log Out</Button>
                 </div>
             </div>
         </Wrapper>

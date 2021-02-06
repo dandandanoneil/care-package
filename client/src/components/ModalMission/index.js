@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import Mission from '../../pages/Mission'
-
+import "./style.css";
 
 function Modals() {
     const [show, setShow] = useState(false);
@@ -12,8 +12,8 @@ function Modals() {
   
     return (
       <div className= "d-flex justify-content-center">
-        <Button variant="primary " onClick={handleShow} >
-          Our Mission
+        <Button style={{ color: "white"}} variant="custom" onClick={handleShow} >
+          Our Mission of Giving
         </Button>
   
         <Modal show={show} onHide={handleClose}>
