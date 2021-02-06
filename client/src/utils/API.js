@@ -32,9 +32,5 @@ export default {
   // Saves a post to the database
   saveComment: function(commentData) {
     return axios.post("/api/comments", commentData);
-  },
-  // Gets the current user
-  getUser: function() {
-    return axios.get("/api/user");
   }
 };

@@ -19,8 +19,8 @@ import Footer from "./components/Footer";
 
 function App() {
   const [userState, setUserState] = useState({
-    currentUser: {},
-    loggedIn: false
+    currentUser: JSON.parse(window.localStorage.getItem("currentUser")),
+    loggedIn: JSON.parse(window.localStorage.getItem("loggedIn"))
   });
 
   function stateLogIn(user) {
@@ -36,6 +36,11 @@ function App() {
       loggedIn: false
     });
   }
+
+  useEffect(() => {
+    window.localStorage.setItem("user", JSON.stringify(userState.currentUser));
+    window.localStorage.setItem("status", JSON.stringify(userState.loggedIn));
+  }, [userState.currentUser, userState.loggedIn]);
 
   return (
     <Router>

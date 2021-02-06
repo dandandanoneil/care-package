@@ -2,10 +2,6 @@ const router = require("express").Router();
 const userController = require("../../controllers/userController");
 const passport = require("../../config/passport");
 
-// Matches with "/api/user"
-router.route("/")
-  .get(userController.getUser);
-
 // Matches with "/api/user/:id"
 router
   .route("/:id")

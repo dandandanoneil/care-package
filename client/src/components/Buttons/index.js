@@ -1,31 +1,23 @@
-import 'bootstrap/dist/css/bootstrap.min.css'
+import "bootstrap/dist/css/bootstrap.min.css"
 import React from "react";
-import Button from 'react-bootstrap/Button'
+import giveButton from "./give-button.png";
+import askButton from "./ask-button.png";
 import "./style.css";
 
 const Buttons = () => {
     return (
-        <div className= 'mt-3 d-flex justify-content-center home-button'>
-            
-  <div className="mb-2 mx-3"> 
-    <Button variant="custom" size="lg" style={{ color: "white"
-        //  backgroundImage: `url("https://ps.w.org/woocommerce-gift-wrapper/assets/icon-256x256.png?rev=1301673")`,backgroundRepeat: 'no-repeat',width:'250px',height:'190px',color:'white'
-      }}>
-      Give
-    </Button>{' '}
-    </div>
-
-    <div className="mb-2 mx-3">
-    <Button variant="custom" size="lg" style={{ color: "white"
-        //  backgroundImage: `url("https://ps.w.org/woocommerce-gift-wrapper/assets/icon-256x256.png?rev=1301673")`,backgroundRepeat: 'no-repeat',width:'250px',height:'190px',color:'white'
-      }}>
-      Receive
-    </Button>
-  </div>
-
-
-        </div>
-    )
+      <div className="p-5 text-center">
+        <a className="mr-5" href="/create-post">
+          <img src={giveButton} alt="Give Something" />
+        </a>
+        <a className="ml-5" href="/create-post">
+          <img src={askButton} alt="Ask for Something" />
+        </a>
+      </div>
+  )
 }
+
+
+
 
 export default Buttons

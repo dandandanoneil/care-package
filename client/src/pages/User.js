@@ -10,7 +10,7 @@ function User(props) {
     const { currentUser } = useContext(UserContext);
     
     function onClick() {
-        axios.get("/api/user/logout")
+        axios.post("/api/user/logout", {})
         .then( (res) => res.logout() )
         .catch(err => console.log(err) );
 
