@@ -3,6 +3,7 @@ import {Form,Row,Col} from 'react-bootstrap'
 import Dropdown from 'react-bootstrap/Dropdown'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
+import "./filter.css";
 
 const  Filter = () => {
   const [show, setShow] = useState(false);
@@ -11,8 +12,9 @@ const  Filter = () => {
   const handleShow = () => setShow(true);
 
   return (
+
     <div className= "d-flex justify-content-center">
-      <Button variant="primary" onClick={handleShow}>
+      <Button style={{ color: "white"}} variant="custom" onClick={handleShow}>
         Filter
       </Button>
       <Modal show={show} onHide={handleClose} >

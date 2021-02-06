@@ -2,6 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Nav, Navbar, NavDropdown, Form, Button } from "react-bootstrap";
 import axios from "axios";
+import "./style.css";
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 class Navigation extends React.Component {
@@ -42,9 +43,9 @@ class Navigation extends React.Component {
   
   render() {
     return (
-      <Navbar style={{ background: "#aac9e0" }} expand="md" sticky="top">
+      <Navbar expand="md" sticky="top">
         {/* Page name/logo, links to home page */}
-        <Navbar.Brand style={{color: "#5a5a5a"}} href="/">
+        <Navbar.Brand style={{color: "white"}} href="/">
           Care Package
         </Navbar.Brand>
 
@@ -76,14 +77,14 @@ class Navigation extends React.Component {
                     onChange={this.onChange}
                   />
                 </Form.Group>
-                <Button className="btn-sm" variant="primary" type="submit">
+                <Button className="btn-sm" variant="primary" type="submit" style={{color: "white"}}>
                   Log In
                 </Button>
               </Form>
             </NavDropdown>
 
             {/* Navigation Links */}
-            <Nav.Link href="/#">Ask/Offer</Nav.Link>
+            <Nav.Link href="/#" style={{color: "white"}} >Ask/Offer</Nav.Link>
 
             <NavDropdown title="Community Exchange" id="community-exchange-dropdown">
               <NavDropdown.Item href="#">Goods</NavDropdown.Item>
@@ -92,7 +93,7 @@ class Navigation extends React.Component {
               <NavDropdown.Item href="#">Offer/Ask for Something</NavDropdown.Item>
             </NavDropdown>
 
-            <NavDropdown title="Resource Distribution" id="resource-distribution-dropdown">
+            <NavDropdown style={{color: "white"}} title="Resource Distribution" id="resource-distribution-dropdown">
               <NavDropdown.Item href="#">$ requests</NavDropdown.Item>
               <NavDropdown.Item href="#">Ask for $</NavDropdown.Item>
               <NavDropdown.Divider />
@@ -100,7 +101,7 @@ class Navigation extends React.Component {
               <NavDropdown.Item href="#">Community Events</NavDropdown.Item>
             </NavDropdown>
 
-            <Nav.Link href="/user">Profile</Nav.Link>
+            <Nav.Link href="/user" style={{color: "white"}} >Profile</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
