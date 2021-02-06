@@ -13,12 +13,16 @@ const  Filter = () => {
 
   return (
 
-    <div className= "d-flex justify-content-center">
-      <Button style={{ color: "white"}} variant="custom" onClick={handleShow}>
+    <div >
+      <Button style={{ 
+      color: "white",
+     backgroundImage: 'linear-gradient(to right, #d0c311, #d0c311)',
+     fontWeight: 'bold'
+      }} variant="custom" onClick={handleShow}>
         Filter
       </Button>
       <Modal show={show} onHide={handleClose} >
-        <Modal.Header closeButton>
+        <Modal.Header style= {{textAlign: "center", margin: 'auto'}}>
           <Modal.Title className= "d-flex justify-content-center">Filter</Modal.Title>
         </Modal.Header>
         <Modal.Body>

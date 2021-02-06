@@ -1,29 +1,23 @@
 import React from 'react'
 import {Jumbotron, Container} from 'react-bootstrap'
-import Button from 'react-bootstrap/Button'
+import Search from '../Search'
+
+
 
 const Banner = () => {
     return (
-        <div>
-            <Jumbotron>
-  <h1>About Us</h1>
-  <p>
-    lorem ipsum dolor sit lorem ipsum dolor lorem ipsum lorem ipsum lorem ipsum  lorem ipsum dolor sit lorem ipsum dolor lorem ipsum lorem ipsum lorem ipsum dolor lorem ipsum dolor sit lorem ipsum dolor lorem ipsum lorem ipsum lorem ipsum dolor dolor
-  </p>
-  <p>
-    <Button variant="primary">Learn more</Button>
-  </p>
+        <div className= "mb-5"style={{color:'white'}}>
+            <Jumbotron style={{
+               backgroundImage: 'linear-gradient(to right, #4c68a5, #021247)', 
+             color:'white',
+             textAlign: "center",
+              margin: 'auto'
+              }} >
+            <h1 className= "d-flex justify-content-center" style={{color: 'white'}}>Our Marketplace</h1>
+<Search />
+
 </Jumbotron>
 
-<Jumbotron fluid>
-  <Container>
-    <h1>About Us</h1>
-    <p>
-      This is a modified jumbotron that occupies the entire horizontal space of
-      its parent.
-    </p>
-  </Container>
-</Jumbotron>
         </div>
     )
 }
