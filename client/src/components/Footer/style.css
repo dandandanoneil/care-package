@@ -8,8 +8,9 @@ html {
   bottom: 0;
   width: 100%;
   min-height: 120px;
-  background-color: #aac9e0;
+  /* background-color: #aac9e0; */
   text-align: center;
   padding: 20px;
   font-family: 'Open Sans', sans-serif;
+  background-image: linear-gradient(to right, #4c68a5, #021247);
 }

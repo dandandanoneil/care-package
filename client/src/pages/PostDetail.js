@@ -12,7 +12,7 @@ function PostDetail() {
             <br />
             <div className="row d-flex justify-content-between">
                 <div className="col-lg-4 text-left">
-                    <p style={{color: "#0f640d"}}>zipcode</p>
+                    <p style={{color: "#0f640d"}}>neighborhood</p>
                     <p style={{color: "#0f640d"}}>category</p>
                     <p style={{color: "#0f640d"}}>tags</p>
                 </div>

@@ -3,6 +3,7 @@ import {Form,Row,Col} from 'react-bootstrap'
 import Dropdown from 'react-bootstrap/Dropdown'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
+import "./filter.css";
 
 // const Filter = () => {
 //     return (
@@ -61,7 +62,7 @@ const  Filter = () => {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button style={{ color: "white"}} variant="custom" onClick={handleShow}>
         Filter
       </Button>
 
