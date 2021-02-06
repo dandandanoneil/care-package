@@ -83,9 +83,9 @@ function Navigation(props) {
     );
 
     return (
-      <Navbar expand="md" sticky="top">
+      <Navbar expand="md" sticky="top" bg="dark" variant="dark">
         {/* Page name/logo, links to home page */}
-        <Navbar.Brand style={{color: "white"}} href="/">
+        <Navbar.Brand bg="light" href="/">
           Care Package
         </Navbar.Brand>
 
