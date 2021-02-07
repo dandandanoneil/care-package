@@ -1,11 +1,11 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Modal from 'react-bootstrap/Modal'
-import CommunityAgreements from '../../pages/CommunityAgreements'
+import SignupForm from '../SignupForm'
 import "./style.css";
 
-import buttonImage from "./community-agreements.png";
+import buttonImage from "./sign-up.png";
 
-function ModalAgreement() {
+function ModalSignUp() {
     const [show, setShow] = useState(false);
   
     const handleClose = () => setShow(false);
@@ -14,15 +14,15 @@ function ModalAgreement() {
     return (
       <div className= "d-flex justify-content-center">
         <a onClick={handleShow} >
-          <img src={buttonImage} alt="Community Agreements" />
+          <img src={buttonImage} alt="Sign Up" />
         </a>
   
         <Modal show={show} onHide={handleClose}>
-          <Modal.Body> <CommunityAgreements /> </Modal.Body>
+          <Modal.Body> <SignupForm /> </Modal.Body>
         </Modal>
       </div>
     );
   }
   
- export default ModalAgreement;
+ export default ModalSignUp;
 
