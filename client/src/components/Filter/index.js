@@ -16,7 +16,7 @@ const  Filter = () => {
     <div >
       <Button style={{ 
       color: "white",
-     backgroundImage: 'linear-gradient(to right, #d0c311, #d0c311)',
+     backgroundColor: '#d05513',
      fontWeight: 'bold'
       }} variant="custom" onClick={handleShow}>
         Filter
@@ -47,15 +47,14 @@ const  Filter = () => {
  <br></br>
   
   <div className= "d-flex justify-content-center"> 
- <Dropdown style={{display: 'inline'}}>
-   <Dropdown.Toggle variant="dark" id="dropdown-basic">
+ <Dropdown style={{display: 'inline', }}>
+   <Dropdown.Toggle variant="dark" id="dropdown-basic" style={{color: 'white',fontWeight: 'bold', backgroundColor:'#233871 '}}>
     Goods Category
    </Dropdown.Toggle>
    
     
    <Dropdown.Menu>
    <Form>
-   <Form.Check inline label="" />
    <Form.Check inline label="Kitchen" />
    <Form.Check inline label="Electronics" />
    <Form.Check inline label="Essentials" />
@@ -65,7 +64,7 @@ const  Filter = () => {
  </Dropdown> &nbsp;&nbsp;
 
  <Dropdown style={{display: 'inline'}}>
-   <Dropdown.Toggle variant="dark" id="dropdown-basic">
+   <Dropdown.Toggle id="dropdown-basic" style={{color: 'white',fontWeight: 'bold', backgroundColor:'#233871 '}}>
     Services Category
    </Dropdown.Toggle>
    
@@ -73,7 +72,6 @@ const  Filter = () => {
    <Dropdown.Menu>
    <Form>
    <Form.Check inline label="Legal" />
-   <Form.Check inline label="Taxes" />
    <Form.Check inline label="Consulting" />
    <Form.Check inline label="Mental Health" />
    <Form.Check inline label="Financial guidance" />
@@ -97,10 +95,7 @@ const  Filter = () => {
  </div>  
         </Modal.Body >
         <Modal.Footer className= "d-flex justify-content-center">
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
+          <Button onClick={handleClose} style={{color: 'white',fontWeight: 'bold', backgroundColor:'#8fd013'}}>
             Save Changes
           </Button>
         </Modal.Footer>

@@ -15,7 +15,7 @@ import userStoriesBtn from "./buttons/user-stories.png";
 
 function HeroCarousel() {
   return (
-    <Carousel>
+    <Carousel className="mt-4">
         <Carousel.Item interval={3500} style={{ backgroundImage: `url(${societyHillPhoto})`, backgroundSize: "100%", minHeight: "400px", width: "100%" }}>
             <Carousel.Caption>
                 <ModalSignUp />

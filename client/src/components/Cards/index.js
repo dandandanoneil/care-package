@@ -6,7 +6,7 @@ const Cards = () => {
     return (
 
         <div>
-          {/* <div className= "d-flex justify-content-center mt-4" style={{
+          <div className= "d-flex justify-content-center mt-4" style={{
                backgroundImage: 'linear-gradient(to right, #4c68a5, #021247)', 
              color:'white',
              textAlign: "center",
@@ -14,7 +14,7 @@ const Cards = () => {
               }}>
             <h1 >Our Marketplace</h1> <br></br>
             </div>
-            <br></br> */}
+            <br></br>
 <CardDeck className= "mb-5"> 
   <Card>
     <Card.Img variant="top" src="https://godolly.com/wp-content/uploads/2019/04/9B90AF87-8EFF-4C73-BAB0-0B093BAA101D.jpeg" />
