@@ -17,8 +17,8 @@ router
 // Matches with "/api/user/login"  
 router
 .route("/login")
-.post(
-  passport.authenticate("local"), (req, res) =>  res.json(req.user));
+.post(passport.authenticate("local"),
+  (req, res) =>  res.json(req.user));
 
 // Matches with "/api/user/logout"  
 router
