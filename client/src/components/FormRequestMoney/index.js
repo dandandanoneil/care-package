@@ -7,18 +7,18 @@ import Button from 'react-bootstrap/Button';
 
 function FormRequestMoney() {
   return (
-    <Card id="request-monetary-card" className="m-1">
+    <Card id="request-$$$-card" className="m-1">
         <Card.Header>$$$ Request</Card.Header>
-        <Form id="request-monetary" className="p-3">
-            <Form.Group as={Row} controlId="title">
-                <Form.Label column sm="2" className="text-right">Monetary Request Title:</Form.Label>
+        <Form id="request-$$$" className="p-3">
+            <Form.Group as={Row}>
+                <Form.Label column sm="2" className="text-right">Request Title:</Form.Label>
                 <Col sm="10"><Form.Control type="text" /></Col>
             </Form.Group>
-            <Form.Group as={Row} controlId="category">
+            <Form.Group as={Row}>
                 <Form.Label column sm="2" className="text-right">Category:</Form.Label>
                 <Col sm="10">
                     <Form.Control as="select">
-                        <option selected disabled>Select a category</option>
+                        <option defaultValue disabled>Select a category</option>
                         <option>Housing</option>
                         <option>Educational</option>
                         <option>Medical</option>
@@ -30,20 +30,20 @@ function FormRequestMoney() {
                     </Form.Control>
                 </Col>
             </Form.Group>
-            <Form.Group as={Row} controlId="description">
+            <Form.Group as={Row}>
                 <Col sm="2" className="text-right"><Form.Label>Description:</Form.Label></Col>
                 <Col sm="10"><Form.Control as="textarea" rows={3} /></Col>
             </Form.Group>
-            <Form.Group as={Row} controlId="image">
+            <Form.Group as={Row}>
             <Form.Label column sm="2" className="text-right">Image:</Form.Label>
                 <Col sm="7"><Form.File id="image-upload" label="Upload an image" custom /></Col>
                 <Form.Text as={Col}><em>(optional)</em></Form.Text>
             </Form.Group>
-            <Form.Group as={Row} controlId="location">
+            <Form.Group as={Row}>
                 <Form.Label column sm="2" className="text-right">Location:</Form.Label>
                 <Col sm="7">
                     <Form.Control as="select">
-                        <option selected>Select a location</option>
+                        <option defaultValue>Select a location</option>
                         <option>Bridesburg-Kensington-Port Richmond</option>
                         <option>Bucks County</option>
                         <option>Center City</option>
@@ -64,27 +64,27 @@ function FormRequestMoney() {
                 </Col>
                 <Form.Text as={Col}><em>(optional)</em></Form.Text>
             </Form.Group>
-            <Form.Group as={Row} controlId="search-tags">
+            <Form.Group as={Row}>
                 <Form.Label column sm="2" className="text-right">Search Tags:</Form.Label>
                 <Col sm="7"><Form.Control type="text" placeholder="Enter relevant tags, seperated by spaces" /></Col>
                 <Form.Text as={Col}><em>(optional)</em></Form.Text>
             </Form.Group>
-            <Form.Group as={Row} controlId="needed-by">
+            <Form.Group as={Row}>
                 <Form.Label column sm="2" className="text-right">Needed By:</Form.Label>
                 <Col sm="7"><Form.Control type="date" /></Col>
                 <Form.Text as={Col}><em>(optional)</em></Form.Text>
             </Form.Group>
-            <Form.Group as={Row} controlId="cashapp-handle">
+            <Form.Group as={Row}>
                 <Form.Label column sm="2" className="text-right">CashApp:</Form.Label>
                 <Col sm="7"><Form.Control type="text" placeholder="@YourVenmoHandle" /></Col>
                 <Form.Text as={Col}><em>(optional)</em></Form.Text>
             </Form.Group>
-            <Form.Group as={Row} controlId="venmo-handle">
+            <Form.Group as={Row}>
                 <Form.Label column sm="2" className="text-right">Venmo:</Form.Label>
                 <Col sm="7"><Form.Control type="text" placeholder="$YourCashtag" /></Col>
                 <Form.Text as={Col}><em>(optional)</em></Form.Text>
             </Form.Group>
-            <Form.Group as={Row} controlId="paypal-email">
+            <Form.Group as={Row}>
                 <Form.Label column sm="2" className="text-right">PayPal:</Form.Label>
                 <Col sm="7"><Form.Control type="text" placeholder="YourEmail@example.com" /></Col>
                 <Form.Text as={Col}><em>(optional)</em></Form.Text>

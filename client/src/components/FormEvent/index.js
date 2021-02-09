@@ -10,15 +10,15 @@ function FormEvent() {
     <Card id="event-card" className="m-1">
         <Card.Header>Event</Card.Header>
         <Form id="event" className="p-3">
-            <Form.Group as={Row} controlId="title">
+            <Form.Group as={Row}>
                 <Form.Label column sm="2" className="text-right">Event Title:</Form.Label>
                 <Col sm="10"><Form.Control type="text" /></Col>
             </Form.Group>
-            <Form.Group as={Row} controlId="category">
+            <Form.Group as={Row}>
                 <Form.Label column sm="2" className="text-right">Category:</Form.Label>
                 <Col sm="10">
                     <Form.Control as="select">
-                        <option selected disabled>Select a category</option>
+                        <option defaultValue disabled>Select a category</option>
                         <option>Food Drive</option>
                         <option>Clothing Drive</option>
                         <option>Volunteer</option>
@@ -28,32 +28,32 @@ function FormEvent() {
                     </Form.Control>
                 </Col>
             </Form.Group>
-            <Form.Group as={Row} controlId="description">
+            <Form.Group as={Row}>
                 <Col sm="2" className="text-right"><Form.Label>Description:</Form.Label></Col>
                 <Col sm="10"><Form.Control as="textarea" rows={3} /></Col>
             </Form.Group>
-            <Form.Group as={Row} controlId="date">
+            <Form.Group as={Row}>
                 <Form.Label column sm="2" className="text-right">Start Date:</Form.Label>
                 <Col sm="4"><Form.Control id="start-date" type="date" /></Col>
                 <Form.Label column sm="2" className="text-right">End Date:</Form.Label>
                 <Col sm="4"><Form.Control id="end-date" type="date" /></Col>
             </Form.Group>
-            <Form.Group as={Row} controlId="time">
+            <Form.Group as={Row}>
                 <Form.Label column sm="2" className="text-right">Start Time:</Form.Label>
                 <Col sm="4"><Form.Control id="start-time" type="time" /></Col>
                 <Form.Label column sm="2" className="text-right">End Time:</Form.Label>
                 <Col sm="4"><Form.Control id="end-time" type="time" /></Col>
             </Form.Group>
-            <Form.Group as={Row} controlId="image">
+            <Form.Group as={Row}>
                 <Form.Label column sm="2" className="text-right">Image:</Form.Label>
                 <Col sm="7"><Form.File id="image-upload" label="Upload an image" custom /></Col>
                 <Form.Text as={Col}><em>(optional)</em></Form.Text>
             </Form.Group>
-            <Form.Group as={Row} controlId="location">
+            <Form.Group as={Row}>
                 <Form.Label column sm="2" className="text-right">Location:</Form.Label>
                 <Col sm="7">
                     <Form.Control as="select">
-                        <option selected disabled>Select a location</option>
+                        <option defaultValue disabled>Select a location</option>
                         <option>Bridesburg-Kensington-Port Richmond</option>
                         <option>Bucks County</option>
                         <option>Center City</option>
@@ -74,22 +74,22 @@ function FormEvent() {
                 </Col>
                 <Form.Text as={Col}><em>(optional)</em></Form.Text>
             </Form.Group>
-            <Form.Group as={Row} controlId="search-tags">
+            <Form.Group as={Row}>
                 <Form.Label column sm="2" className="text-right">Search Tags:</Form.Label>
                 <Col sm="7"><Form.Control type="text" placeholder="Enter relevant tags, seperated by spaces" /></Col>
                 <Form.Text as={Col}><em>(optional)</em></Form.Text>
             </Form.Group>
-            <Form.Group as={Row} controlId="event-host-org">
+            <Form.Group as={Row}>
                 <Form.Label column sm="2" className="text-right">Host Org:</Form.Label>
                 <Col sm="7"><Form.Control type="text" placeholder="Is this event being hosted by a community organization?" /></Col>
                 <Form.Text as={Col}><em>(optional)</em></Form.Text>
             </Form.Group>
-            <Form.Group as={Row} controlId="event-space-capacity">
+            <Form.Group as={Row}>
                 <Form.Label column sm="2" className="text-right">Event Space Capacity:</Form.Label>
                 <Col sm="7"><Form.Control type="text" placeholder="Enter relevant tags, seperated by spaces" /></Col>
                 <Form.Text as={Col}><em>(optional)</em></Form.Text>
             </Form.Group>
-            <Form.Group as={Row} controlId="event-space-rules">
+            <Form.Group as={Row}>
                 <Form.Label column sm="2" className="text-right">Event Space Rules:</Form.Label>
                 <Col sm="7"><Form.Control type="text" placeholder="Enter relevant tags, seperated by spaces" /></Col>
                 <Form.Text as={Col}><em>(optional)</em></Form.Text>
