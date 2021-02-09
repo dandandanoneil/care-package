@@ -14,7 +14,7 @@ const PostSchema = new Schema({
         ref: 'Comment'
     }],
     // REQUIRED
-    offerOrRequest: {
+    offerRequestEvent: {
         type: String,
         required: true
     },
@@ -37,14 +37,9 @@ const PostSchema = new Schema({
         minlength: [1, 'Description cannot be blank']
     },
     // OPTIONAL
-    imageURL: {
-        type: String
-    },
-    searchTags: {
-        type: Array,
-        default: []
-    },
-    neighborhood: String,
+    imageURL: String,
+    searchTags: String,
+    location: String,
     timeSensitive: { type: Boolean, default: false },
     // REQUEST
     neededBy: Date,
@@ -79,11 +74,6 @@ const PostSchema = new Schema({
     payPalEmail: String
 });
 
-// function that validate the startDate and endDate
-function checkDates(endDate) {
-    return this.eventDate.startDate <= endDate;
-}
-  
 const Post = mongoose.model('Post', PostSchema);
 
 module.exports = Post;
