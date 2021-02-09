@@ -12,7 +12,7 @@ function FormOfferService() {
     const { currentUser } = useContext(UserContext);
 
     const [postContent, setPostContent] = useState({
-        created_by: null,
+        created_by: currentUser._id,
         offerRequestEvent: "offer",
         type: "service",
         title: "",
@@ -46,11 +46,6 @@ function FormOfferService() {
 
     const handleSubmit = event => {
         event.preventDefault();
-        setPostContent({
-            ...postContent,
-            created_by: currentUser
-        });
-        console.log(postContent);
         API.savePost(postContent);
     };
 

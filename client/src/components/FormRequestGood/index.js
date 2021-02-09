@@ -12,7 +12,7 @@ function FormRequestGood() {
     const { currentUser } = useContext(UserContext);
 
     const [postContent, setPostContent] = useState({
-        created_by: null,
+        created_by: currentUser._id,
         offerRequestEvent: "request",
         type: "good",
         title: "",
@@ -46,10 +46,6 @@ function FormRequestGood() {
 
     const handleSubmit = event => {
         event.preventDefault();
-        setPostContent({
-            ...postContent,
-            created_by: currentUser
-        });
         console.log(postContent);
         API.savePost(postContent);
     };
