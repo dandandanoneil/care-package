@@ -83,7 +83,7 @@ class SignupForm extends React.Component {
                     onChange={this.onChange}
                 />
 
-                <Button variant="success" type="submit">
+                <Button variant="success" type="submit" className="mt-2 mb-2">
                     Create Account
                 </Button>
 

@@ -19,8 +19,8 @@ import Footer from "./components/Footer";
 
 function App() {
   const [userState, setUserState] = useState({
-    currentUser: JSON.parse(window.localStorage.getItem("currentUser")),
-    loggedIn: JSON.parse(window.localStorage.getItem("loggedIn"))
+    currentUser: JSON.parse(window.localStorage.getItem("user")),
+    loggedIn: JSON.parse(window.localStorage.getItem("status"))
   });
 
   function stateLogIn(user) {
