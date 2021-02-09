@@ -18,11 +18,11 @@ function Footer() {
         <div className="col-md-3">
           <h4 style={{color: "white"}} >Resources</h4>
           <h6><a href="https://www.thecitypulse.com/post/community-refrigerators"
-            target="_blank"
+            target="blank"
           style={{color: "white"}}
           >Mutual Aid Fridge Map</a></h6>
           <h6><a href="https://phillywerise.com/mutual-aid-resources/"
-          target="_blank"
+          target="blank"
           style={{color: "white"}}
           >Philadelphia Reparations</a></h6>
         </div>

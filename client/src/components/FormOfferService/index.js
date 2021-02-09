@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import API from '../../utils/API';
+import UserContext from "../../utils/UserContext";
+
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
@@ -6,18 +9,63 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
 function FormOfferService() {
+    const { currentUser } = useContext(UserContext);
+
+    const [postContent, setPostContent] = useState({
+        created_by: null,
+        offerRequestEvent: "offer",
+        type: "service",
+        title: "",
+        category: "",
+        description: "",
+        imageURL: "",
+        location: "",
+        searchTags: "",
+        offeredUntil: null,
+        offerCapacity: "",
+        onlineOrRemote: false,
+        timeSensitive: false,
+        limitedCapacity: false
+    });    
+
+    const handleInputChange = event => {
+        const { name, value } = event.target;
+        setPostContent({
+            ...postContent,
+            [name]: value
+        });
+    }
+
+    const handleCheckboxChange = event => {
+        const { name, checked } = event.target;
+        setPostContent({
+            ...postContent,
+            [name]: checked
+        });
+    }
+
+    const handleSubmit = event => {
+        event.preventDefault();
+        setPostContent({
+            ...postContent,
+            created_by: currentUser
+        });
+        console.log(postContent);
+        API.savePost(postContent);
+    };
+
   return (
-    <Card id="offer-service-card" className="m-1">
+    <Card className="m-1">
         <Card.Header>Offer Services</Card.Header>
-        <Form id="offer-service" className="p-3">
+        <Form className="p-3">
             <Form.Group as={Row}>
                 <Form.Label column sm="2" className="text-right">Service Title:</Form.Label>
-                <Col sm="10"><Form.Control type="text" /></Col>
+                <Col sm="10"><Form.Control type="text" name="title" onChange={handleInputChange} /></Col>
             </Form.Group>
             <Form.Group as={Row}>
                 <Form.Label column sm="2" className="text-right">Category:</Form.Label>
                 <Col sm="10">
-                    <Form.Control as="select">
+                    <Form.Control as="select" name="category" onChange={handleInputChange}>
                         <option defaultValue disabled>Select a category</option>
                         <option>Legal</option>
                         <option>Physical Labor</option>
@@ -35,17 +83,17 @@ function FormOfferService() {
             </Form.Group>
             <Form.Group as={Row}>
                 <Col sm="2" className="text-right"><Form.Label>Description:</Form.Label></Col>
-                <Col sm="10"><Form.Control as="textarea" rows={3} /></Col>
+                <Col sm="10"><Form.Control as="textarea" rows={3} name="description" onChange={handleInputChange} /></Col>
             </Form.Group>
             <Form.Group as={Row}>
             <Form.Label column sm="2" className="text-right">Image:</Form.Label>
-                <Col sm="7"><Form.File id="image-upload" label="Upload an image" custom /></Col>
+                <Col sm="7"><Form.File label="Upload an image" custom name="imageURL" onChange={handleInputChange} /></Col>
                 <Form.Text as={Col}><em>(optional)</em></Form.Text>
             </Form.Group>
             <Form.Group as={Row}>
                 <Form.Label column sm="2" className="text-right">Location:</Form.Label>
                 <Col sm="7">
-                    <Form.Control as="select">
+                    <Form.Control as="select" name="location" onChange={handleInputChange}>
                         <option defaultValue>Select a location</option>
                         <option>Bridesburg-Kensington-Port Richmond</option>
                         <option>Bucks County</option>
@@ -69,26 +117,26 @@ function FormOfferService() {
             </Form.Group>
             <Form.Group as={Row}>
                 <Form.Label column sm="2" className="text-right">Search Tags:</Form.Label>
-                <Col sm="7"><Form.Control type="text" placeholder="Enter relevant tags, seperated by spaces" /></Col>
+                <Col sm="7"><Form.Control type="text" placeholder="Enter relevant tags, seperated by spaces" name="searchTags" onChange={handleInputChange} /></Col>
                 <Form.Text as={Col}><em>(optional)</em></Form.Text>
             </Form.Group>
             <Form.Group as={Row}>
                 <Form.Label column sm="2" className="text-right">Offered Until:</Form.Label>
-                <Col sm="7"><Form.Control type="date" /></Col>
+                <Col sm="7"><Form.Control type="date" name="offeredUntil" onChange={handleInputChange} /></Col>
                 <Form.Text as={Col}><em>(optional)</em></Form.Text>
             </Form.Group>
             <Form.Group as={Row}>
                 <Form.Label column sm="2" className="text-right">Capacity:</Form.Label>
-                <Col sm="7"><Form.Control type="text" /></Col>
+                <Col sm="7"><Form.Control type="text" name="offerCapacity" onChange={handleInputChange} /></Col>
                 <Form.Text as={Col}><em>(optional)</em></Form.Text>
             </Form.Group>
             <Row className="text-center">
-                <Col><Form.Check type="checkbox" label="Online/Remote" id="online-remote"/></Col>
-                <Col><Form.Check type="checkbox" label="Time Sensitive" id="time-sensitive"/></Col>
-                <Col><Form.Check type="checkbox" label="Limited Capacity" id="limited-capacity"/></Col>
+                <Col><Form.Check type="checkbox" label="Online/Remote" name="onlineOrRemote" onChange={handleCheckboxChange}/></Col>
+                <Col><Form.Check type="checkbox" label="Time Sensitive" name="timeSensitive" onChange={handleCheckboxChange}/></Col>
+                <Col><Form.Check type="checkbox" label="Limited Capacity" name="limitedCapacity" onChange={handleCheckboxChange}/></Col>
             </Row>
             <Row className="justify-content-center mt-4">
-                <Button variant="primary" type="submit">
+                <Button variant="primary" type="submit" onClick={handleSubmit}>
                     Post Offer
                 </Button>
             </Row>
