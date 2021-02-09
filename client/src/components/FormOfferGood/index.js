@@ -10,15 +10,15 @@ function FormOfferGood() {
     <Card id="offer-good-card" className="m-1">
         <Card.Header>Offer Goods</Card.Header>
         <Form id="offer-good" className="p-3">
-            <Form.Group as={Row} controlId="title">
+            <Form.Group as={Row}>
                 <Form.Label column sm="2" className="text-right">Item Title:</Form.Label>
                 <Col sm="10"><Form.Control type="text" /></Col>
             </Form.Group>
-            <Form.Group as={Row} controlId="category">
+            <Form.Group as={Row}>
                 <Form.Label column sm="2" className="text-right">Category:</Form.Label>
                 <Col sm="10">
                     <Form.Control as="select">
-                        <option selected disabled>Select a category</option>
+                        <option defaultValue disabled>Select a category</option>
                         <option>Kitchen</option>
                         <option>Tools</option>
                         <option>Garden</option>
@@ -35,20 +35,20 @@ function FormOfferGood() {
                     </Form.Control>
                 </Col>
             </Form.Group>
-            <Form.Group as={Row} controlId="description">
+            <Form.Group as={Row}>
                 <Col sm="2" className="text-right"><Form.Label>Description:</Form.Label></Col>
                 <Col sm="10"><Form.Control as="textarea" rows={3} /></Col>
             </Form.Group>
-            <Form.Group as={Row} controlId="image">
+            <Form.Group as={Row}>
                 <Form.Label column sm="2" className="text-right">Image:</Form.Label>
                 <Col sm="7"><Form.File id="image-upload" label="Upload an image" custom /></Col>
                 <Form.Text as={Col}><em>(optional)</em></Form.Text>
             </Form.Group>
-            <Form.Group as={Row} controlId="location">
+            <Form.Group as={Row}>
                 <Form.Label column sm="2" className="text-right">Location:</Form.Label>
                 <Col sm="7">
                     <Form.Control as="select">
-                        <option selected disabled>Select a location</option>
+                        <option defaultValue disabled>Select a location</option>
                         <option>Bridesburg-Kensington-Port Richmond</option>
                         <option>Bucks County</option>
                         <option>Center City</option>
@@ -69,12 +69,12 @@ function FormOfferGood() {
                 </Col>
                 <Form.Text as={Col}><em>(optional)</em></Form.Text>
             </Form.Group>
-            <Form.Group as={Row} controlId="search-tags">
+            <Form.Group as={Row}>
                 <Form.Label column sm="2" className="text-right">Search Tags:</Form.Label>
                 <Col sm="7"><Form.Control type="text" placeholder="Enter relevant tags, seperated by spaces" /></Col>
                 <Form.Text as={Col}><em>(optional)</em></Form.Text>
             </Form.Group>
-            <Form.Group as={Row} controlId="pick-up-by">
+            <Form.Group as={Row}>
                 <Form.Label column sm="2" className="text-right">Pick Up By:</Form.Label>
                 <Col sm="7"><Form.Control type="date" /></Col>
                 <Form.Text as={Col}><em>(optional)</em></Form.Text>

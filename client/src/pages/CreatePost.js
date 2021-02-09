@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
+
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+
 import PageTitle from '../components/PageTitle'
 import Wrapper from '../components/Wrapper';
 import FormOfferGood from '../components/FormOfferGood';
@@ -12,14 +14,29 @@ import FormRequestService from '../components/FormRequestService';
 import FormRequestMoney from '../components/FormRequestMoney';
 import FormEvent from '../components/FormEvent';
 
+
 function CreatePost() {
+    // Label = "offer", "request", "event", or ""
+    const [postLabel, setPostLabel] = useState();
+    // Type = "good", "service", "$$$", ""
+    const [postType, setPostType] = useState();
+
+    const handleChange = (event) => {
+        const { name, id } = event.target;
+        if (name === "post-label") {
+            setPostLabel(id);
+            setPostType("");
+        }
+        if (name === "post-type") setPostType(id);
+    };
+    
     const offerTypeCard = (
         <Card id="offer-type-card" className="m-1">
             <Card.Header>Offer Type</Card.Header>
             <Form id="offer-type" className="text-center">
                 <Form.Text><em>Are you offering a good or a service?</em></Form.Text>
-                <Form.Check inline label="Good" type="radio" id="offer-good" />
-                <Form.Check inline label="Service" type="radio" id="offer-service" />
+                <Form.Check inline name="post-type" label="Good" type="radio" id="good" onChange={handleChange} />
+                <Form.Check inline name="post-type" label="Service" type="radio" id="service" onChange={handleChange} />
             </Form>
         </Card>
     );
@@ -29,9 +46,9 @@ function CreatePost() {
             <Card.Header>Request Type</Card.Header>
             <Form id="request-type" className="text-center">
                 <Form.Text><em>Are you requesting a good, a service, or monetary assistance?</em></Form.Text>
-                <Form.Check inline label="Good" type="radio" id="request-good" />
-                <Form.Check inline label="Service" type="radio" id="request-service" />
-                <Form.Check inline label="Monetary" type="radio" id="request-monetary" />
+                <Form.Check inline name="post-type" label="Good" type="radio" id="good" onChange={handleChange} />
+                <Form.Check inline name="post-type" label="Service" type="radio" id="service" onChange={handleChange} />
+                <Form.Check inline name="post-type" label="$$$" type="radio" id="$$$" onChange={handleChange} />
             </Form>
         </Card>
     );
@@ -47,27 +64,31 @@ function CreatePost() {
                         <Card.Header>Offer, Request, or Event</Card.Header>
                         <Form className="text-center">
                             <Form.Text><em>Are you posting an offer, a request, or a event?</em></Form.Text>
-                            <Form.Check inline label="Offer" type="radio" id="offer" />
-                            <Form.Check inline label="Request" type="radio" id="request" />
-                            <Form.Check inline label="Event" type="radio" id="event" />
+                            <Form.Check inline name="post-label" label="Offer" type="radio" id="offer" onChange={handleChange} />
+                            <Form.Check inline name="post-label" label="Request" type="radio" id="request" onChange={handleChange} />
+                            <Form.Check inline name="post-label" label="Event" type="radio" id="event" onChange={handleChange} />
                         </Form>
                     </Card>
                     {/* If it's an offer or request, gather more info: */}
-                    <div className="text-center">↓↓ This logic is missing - one or neither of these two forms will render, depending on choices above ↓↓</div>
-                    {offerTypeCard}
-                    {requestTypeCard}
+                    { postLabel === "offer" ? offerTypeCard : null }
+                    { postLabel === "request" ? requestTypeCard : null }
                 </Col>
             </Row>
             <Row className="justify-content-center">
                 {/* Row 2: Serve them the appropriate "create post" form. */}
                 <Col xl="7" lg="9" md="11">
-                    <div className="text-center">↓↓ This logic is missing - only one of these six forms will render, depending on choices above ↓↓</div>
-                    <FormOfferGood />
-                    <FormOfferService />
-                    <FormRequestGood />
-                    <FormRequestService />
-                    <FormRequestMoney />
-                    <FormEvent />
+                    { (postLabel === "offer" && postType === "good") ?
+                        <FormOfferGood /> : null }
+                    { (postLabel === "offer" && postType === "service") ?
+                        <FormOfferService /> : null }
+                    { (postLabel === "request" && postType === "good") ?
+                        <FormRequestGood /> : null }
+                    { (postLabel === "request" && postType === "service") ?
+                        <FormRequestService /> : null }
+                    { (postLabel === "request" && postType === "$$$") ?
+                        <FormRequestMoney /> : null }
+                    { (postLabel === "event") ?
+                        <FormEvent /> : null }
                 </Col>
             </Row>
             <br/><br/>
