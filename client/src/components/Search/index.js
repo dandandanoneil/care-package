@@ -17,6 +17,7 @@ const items = [
 const Search = (props) => {
 
     return (
+
         <div>
             <div id="search-filter" className="d-flex justify-content-center">
                 <input

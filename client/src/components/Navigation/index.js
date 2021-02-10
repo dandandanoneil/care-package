@@ -85,7 +85,7 @@ function Navigation(props) {
       <Navbar expand="md" sticky="top" bg="dark" variant="dark">
         {/* Page name/logo, links to home page */}
         <Navbar.Brand bg="light" href="/">
-          Care Package
+          <h2 style={{color: "#d0c311"}}>Care Package</h2>
         </Navbar.Brand>
 
         {/* Toggler */}
@@ -99,7 +99,7 @@ function Navigation(props) {
             {loggedIn ? logoutLink : loginDropdown }
 
             {/* Navigation Links */}
-            <Nav.Link style={{color: "white"}} href="/create-post">Ask/Offer</Nav.Link>
+            <Nav.Link href="/create-post">Ask/Offer</Nav.Link>
 
             <NavDropdown title="Community Exchange" id="community-exchange-dropdown">
               <NavDropdown.Item href="#search-filter">Goods</NavDropdown.Item>
