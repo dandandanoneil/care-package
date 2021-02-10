@@ -1,6 +1,7 @@
 import React from "react";
 import Wrapper from "../components/Wrapper";
 import PageTitle from "../components/PageTitle"
+import { Card } from "react-bootstrap";
 
 function CommunityAgreements() {
     return (
@@ -8,22 +9,29 @@ function CommunityAgreements() {
             <div className="row justify-content-md-center">
                 <div className="col-lg-8">
                     <PageTitle>Community Agreements</PageTitle>
-                    <ol className="">
-                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                        <li>Quisque non mi hendrerit, porta risus eget, posuere mauris.</li>
-                        <li>Duis dictum nibh sed aliquet pretium.</li>
-                        <li>Cras porttitor libero et feugiat ultrices.</li>
-                        <li>Proin maximus leo vitae dui iaculis scelerisque.</li>
-                        <li>Vestibulum ultricies risus a diam fringilla sodales.</li>
-                        <li>Sed molestie ipsum vel ligula fringilla egestas.</li>
-                        <li>Maecenas nec dolor a sem pretium maximus.</li>
-                        <li>Nunc luctus purus sit amet nisi dignissim, ut placerat lorem ultricies.</li>
-                        <li>Praesent ut metus vitae felis suscipit fringilla.</li>
-                        <li>Sed dictum est ac dapibus faucibus.</li>
-                        <li>Etiam et enim ullamcorper odio vulputate suscipit vitae eget nisi.</li>
-                    </ol>
+                    <Card style={{ border: "double", borderColor: "#ca885b", display: 'flex', justifyContent: 'center'}}>
+                        <Card.Body>
+                            <Card.Text>
+                            <ol className="">
+                                <li style={{ color: "#d05d11", margin: "5px", fontWeight: "bold"}}>Always operate from a place kindness</li>
+                                <li style={{ color: "#d05d11", margin: "5px", fontWeight: "bold"}}>All community members who follow our agreements are welcome, this is an inclusive space</li>
+                                <li style={{ color: "#d05d11", margin: "5px", fontWeight: "bold"}}>All offers are given freely, as gifts, with no expectation of return</li>
+                                <li style={{ color: "#d05d11", margin: "5px", fontWeight: "bold"}}>Respect one another in every interaction, we are a community</li>
+                                <li style={{ color: "#d05d11", margin: "5px", fontWeight: "bold"}}>Everyone's narrative is valuable, and their own to name</li>
+                                <li style={{ color: "#d05d11", margin: "5px", fontWeight: "bold"}}>We are not a charity, we are run by local communities that choose to participate</li>
+                                <li style={{ color: "#d05d11", margin: "5px", fontWeight: "bold"}}>Harassment of any kind will result in removal from the group</li>
+                                <li style={{ color: "#d05d11", margin: "5px", fontWeight: "bold"}}>All offers and asks must be legal</li>
+                                <li style={{ color: "#d05d11", margin: "5px", fontWeight: "bold"}}>You must be 18+ to participate in the group</li>
+                                <li style={{ color: "#d05d11", margin: "5px", fontWeight: "bold"}}>We believe there is abundance in our communities that can and should be redistributed</li>
+                                <li style={{ color: "#d05d11", margin: "5px", fontWeight: "bold"}}>A gift-economy strengthens the fabric of a local community in exponential ways</li>
+                                <li style={{ color: "#d05d11", margin: "5px", fontWeight: "bold"}}>We believe in the strength of communities that have neighbors that look out for neighbors</li>
+                            </ol>
+                            </Card.Text>
+                        </Card.Body>
+                        </Card>
                 </div>
             </div>
+            <br />
         </Wrapper>
     );
   }
