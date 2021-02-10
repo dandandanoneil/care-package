@@ -16,6 +16,7 @@ function Footer() {
         </div>
 
         <div className="col-md-3">
+
           <h4 style={{color: "#d0c311"}} >Resources</h4>
           <h6><a href="/https://www.thecitypulse.com/post/community-refrigerators"
             target="_blank"

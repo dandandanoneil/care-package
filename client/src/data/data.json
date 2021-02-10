@@ -1,0 +1,41 @@
+[
+{
+    "id": 1,
+    "title": "Chair",
+    "type": "goods"
+  
+  },
+
+  {
+    "id": 2,
+    "title": "consulting",
+    "type": "services"
+  
+  },
+  {
+    "id": 1,
+    "title": "Chair",
+    "type": "goods"
+  
+  },
+
+  {
+    "id": 2,
+    "title": "consulting",
+    "type": "services"
+  
+  },
+  {
+    "id": 1,
+    "title": "Chair",
+    "type": "goods"
+  
+  },
+
+  {
+    "id": 2,
+    "title": "consulting",
+    "type": "services"
+  
+  }
+]

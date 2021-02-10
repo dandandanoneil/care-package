@@ -7,7 +7,11 @@ function Signup() {
     return (
         <Wrapper>
             <PageTitle>Create An Account</PageTitle>
-            <SignupForm />
+            <div className="row justify-content-md-center">
+                <div className="col-xl-4 col-lg-5 col-md-7 col-sm-10">
+                    <SignupForm />
+                </div>
+            </div>
         </Wrapper>
     );
 }

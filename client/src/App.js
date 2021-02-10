@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import UserContext from "./utils/UserContext";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from "./pages/Home";
-import Posts from "./pages/Posts";
+import CreatePost from "./pages/CreatePost";
 import User from "./pages/User";
 import Signup from "./pages/Signup";
 import PostDetail from "./pages/PostDetail";
@@ -19,8 +19,8 @@ import Footer from "./components/Footer";
 
 function App() {
   const [userState, setUserState] = useState({
-    currentUser: JSON.parse(window.localStorage.getItem("currentUser")),
-    loggedIn: JSON.parse(window.localStorage.getItem("loggedIn"))
+    currentUser: JSON.parse(window.localStorage.getItem("user")),
+    loggedIn: JSON.parse(window.localStorage.getItem("status"))
   });
 
   function stateLogIn(user) {
@@ -49,7 +49,7 @@ function App() {
         <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/home" component={Home} />
-            <Route exact path="/posts" component={Posts} />
+            <Route exact path="/create-post" component={CreatePost} />
             <Route exact path="/user" component={User} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/postdetail" component={PostDetail} />

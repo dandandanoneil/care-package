@@ -46,8 +46,7 @@ function Navigation(props) {
     const loginDropdown = (
       <>
         <NavDropdown title="Login" id="nav-dropdown" drop="down">
-          <NavDropdown.Divider />
-          <Form className="p-12 m-3" onSubmit={onSubmit}>
+          <Form className="p-3" style={{ width: "300px"}} onSubmit={onSubmit}>
             <Form.Group>
               <Form.Control 
                 type="email" 

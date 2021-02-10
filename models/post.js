@@ -14,7 +14,7 @@ const PostSchema = new Schema({
         ref: 'Comment'
     }],
     // REQUIRED
-    offerOrAsk: {
+    offerRequestEvent: {
         type: String,
         required: true
     },
@@ -37,55 +37,43 @@ const PostSchema = new Schema({
         minlength: [1, 'Description cannot be blank']
     },
     // OPTIONAL
-    imageURL: {
-        type: String
-    },
-    searchTags: {
-        type: Array,
-        default: []
-    },
-    neighborhood: String,
+    imageURL: String,
+    searchTags: String,
+    location: String,
     timeSensitive: { type: Boolean, default: false },
-    // ASK
+    // REQUEST
     neededBy: Date,
-    askOnBehalfOf: String,
+    requestOnBehalfOf: String,
     // SERVICE
     onlineOrRemote: { type: Boolean, default: false },
     // OFFER > GOODS
+    pickUpBy: Date,
     pickUpOnly: { type: Boolean, default: false },
     atCurbNow: { type: Boolean, default: false },
-    // ASK > GOODS
+    // REQUEST > GOODS
     dropOffNeeded: { type: Boolean, default: false },
     lackConsistentCommunication: { type: Boolean, default: false },
     // OFFER > SERVICE
     offeredUntil: Date,
     offerCapacity: String,
     limitedCapacity: { type: Boolean, default: false },
-    // ASK > SERVICE
-    personsASKingService: String,
-    groupASK: { type: Boolean, default: false },
+    // REQUEST > SERVICE
+    personsRequestingService: String,
+    groupRequest: { type: Boolean, default: false },
     // EVENT DATA
-    eventDate: {
-        startDate: Date,
-        endDate: { 
-            type: Date,
-            validate: [checkDates, 'Start date must be before end date']
-        }
-    },
+    startDate: Date,
+    endDate: Date,
+    startTime: String,
+    endTime: String,
     eventSpaceCapacity: Number,
     eventSpaceRules: String,
     eventHostOrg: String,
-    // MONETARY ASK
+    // MONETARY REQUEST
     cashAppHandle: String,
-    venmoHand: String,
+    venmoHandle: String,
     payPalEmail: String
 });
 
-// function that validate the startDate and endDate
-function checkDates(endDate) {
-    return this.eventDate.startDate <= endDate;
-}
-  
 const Post = mongoose.model('Post', PostSchema);
 
 module.exports = Post;

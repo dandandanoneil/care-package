@@ -6,13 +6,23 @@ import "./style.css";
 
 const Buttons = () => {
     return (
-      <div className="p-5 text-center">
-        <a className="mr-5" href="/create-post">
-          <img src={giveButton} alt="Give Something" />
-        </a>
-        <a className="ml-5" href="/create-post">
-          <img src={askButton} alt="Ask for Something" />
-        </a>
+      <div className="row">
+        <div className="col text-center">
+          <a href="/create-post">
+            <img 
+              src={giveButton} 
+              alt="Give Something" 
+              className="m-5"
+              fluid />
+          </a>
+          <a href="/create-post">
+            <img 
+              src={askButton} 
+              alt="Ask for Something" 
+              className="m-5"
+              fluid />
+          </a>
+        </div>
       </div>
   )
 }
