@@ -13,7 +13,7 @@ const Banner = () => {
              textAlign: "center",
               margin: 'auto'
               }} >
-            <h1 className= "d-flex justify-content-center" style={{color: 'white'}}>Our Marketplace</h1>
+            <h1 className= "d-flex justify-content-center" style={{color: '#d0c311'}}>Our Marketplace</h1>
 <Search />
 
 </Jumbotron>
