@@ -1,8 +1,13 @@
 import React, { useContext, useState } from "react";
 import UserContext from "../../utils/UserContext";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Nav, Navbar, NavDropdown, Form, Button } from "react-bootstrap";
 import axios from "axios";
+
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+
 import "./style.css";
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item

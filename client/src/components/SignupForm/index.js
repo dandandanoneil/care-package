@@ -1,5 +1,7 @@
 import React from "react";
-import { Form, Button, Alert } from "react-bootstrap";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import Alert from "react-bootstrap/Alert";
 import axios from "axios";
 
 class SignupForm extends React.Component {

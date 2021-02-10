@@ -47,7 +47,10 @@ function FormRequestMoney() {
 
     const handleSubmit = event => {
         event.preventDefault();
-        API.savePost(postContent);
+        if (postContent.category === "Select a category:") {
+            setPostContent({ ...postContent, category: "Other"});
+        }
+        API.createPost(postContent);
     };
 
   return (
@@ -62,7 +65,7 @@ function FormRequestMoney() {
                 <Form.Label column sm="2" className="text-right">Category:</Form.Label>
                 <Col sm="10">
                     <Form.Control as="select" name="category" onChange={handleInputChange}>
-                        <option defaultValue disabled>Select a category</option>
+                        <option defaultValue>Select a category</option>
                         <option>Housing</option>
                         <option>Educational</option>
                         <option>Medical</option>
@@ -79,8 +82,8 @@ function FormRequestMoney() {
                 <Col sm="10"><Form.Control as="textarea" rows={3} name="description" onChange={handleInputChange} /></Col>
             </Form.Group>
             <Form.Group as={Row}>
-            <Form.Label column sm="2" className="text-right">Image:</Form.Label>
-                <Col sm="7"><Form.File label="Upload an image" custom name="imageURL" onChange={handleInputChange} /></Col>
+                <Form.Label column sm="2" className="text-right">Image:</Form.Label>
+                <Col sm="7"><Form.Control type="text" placeholder="Paste an image URL from the internet here" name="imageURL" onChange={handleInputChange} /></Col>
                 <Form.Text as={Col}><em>(optional)</em></Form.Text>
             </Form.Group>
             <Form.Group as={Row}>

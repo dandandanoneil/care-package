@@ -1,6 +1,6 @@
 import React, { useContext }from "react";
 import UserContext from "../utils/UserContext";
-import { Button } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
 import PageTitle from "../components/PageTitle"
 import Wrapper from "../components/Wrapper";
 import MessageCard from "../components/MessageCard";

@@ -1,5 +1,5 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import React from "react";
+
 import PageTitle from "../components/PageTitle"
 import Wrapper from "../components/Wrapper";
 import Image from 'react-bootstrap/Image';
