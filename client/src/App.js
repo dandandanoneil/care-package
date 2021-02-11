@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import UserContext from "./utils/UserContext";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from "./pages/Home";
 import CreatePost from "./pages/CreatePost";
 import User from "./pages/User";
@@ -52,7 +51,7 @@ function App() {
             <Route exact path="/create-post" component={CreatePost} />
             <Route exact path="/user" component={User} />
             <Route exact path="/signup" component={Signup} />
-            <Route exact path="/postdetail" component={PostDetail} />
+            <Route path="/post" component={PostDetail} />
             <Route exact path="/mission" component={Mission} />
             <Route exact path="/meet-our-team" component={MeetTeam} />
             <Route exact path="/community-agreements" component={CommunityAgreements} />

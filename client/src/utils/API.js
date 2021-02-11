@@ -14,23 +14,23 @@ export default {
     return axios.delete("/api/posts/" + id);
   },
   // Saves a post to the database
-  savePost: function(postData) {
-    return axios.post("/api/posts", postData);
+  createPost: function(postData) {
+    return axios.post("/api/posts/", postData);
   },
-  // Gets all comments
-  getComments: function() {
-    return axios.get("/api/comments");
+  // Gets all comments associated with a post id
+  getComments: function(postId) {
+    return axios.get("/api/comments/" + postId);
   },
-  // Gets the post with the given id
+  // Gets the comment with the given id
   getComment: function(id) {
     return axios.get("/api/comments/" + id);
   },
-  // Deletes the post with the given id
+  // Deletes the comment with the given id
   deleteComment: function(id) {
     return axios.delete("/api/comments/" + id);
   },
   // Saves a post to the database
-  saveComment: function(commentData) {
+  createComment: function(commentData) {
     return axios.post("/api/comments", commentData);
   }
 };
