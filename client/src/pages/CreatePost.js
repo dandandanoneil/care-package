@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import UserContext from "../utils/UserContext";
 
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
@@ -20,6 +21,7 @@ function CreatePost() {
     const [postLabel, setPostLabel] = useState();
     // Type = "good", "service", "$$$", ""
     const [postType, setPostType] = useState();
+  const { loggedIn } = useContext(UserContext);
 
     const handleChange = (event) => {
         const { name, id } = event.target;
@@ -56,42 +58,56 @@ function CreatePost() {
     return (
         <Wrapper>
             <PageTitle>Create A Post</PageTitle>
-            {/* Row 1: Figure out which form to serve them */}
-            <Row className="justify-content-center">
-                <Col xl="7" lg="9" md="11">
-                    {/* What kind of post: Offer, request or event? */}
-                    <Card className="m-1">
-                        <Card.Header>Offer, Request, or Event</Card.Header>
-                        <Form className="text-center">
-                            <Form.Text><em>Are you posting an offer, a request, or a event?</em></Form.Text>
-                            <Form.Check inline name="post-label" label="Offer" type="radio" id="offer" onChange={handleChange} />
-                            <Form.Check inline name="post-label" label="Request" type="radio" id="request" onChange={handleChange} />
-                            <Form.Check inline name="post-label" label="Event" type="radio" id="event" onChange={handleChange} />
-                        </Form>
-                    </Card>
-                    {/* If it's an offer or request, gather more info: */}
-                    { postLabel === "offer" ? offerTypeCard : null }
-                    { postLabel === "request" ? requestTypeCard : null }
-                </Col>
-            </Row>
-            <Row className="justify-content-center">
-                {/* Row 2: Serve them the appropriate "create post" form. */}
-                <Col xl="7" lg="9" md="11">
-                    { (postLabel === "offer" && postType === "good") ?
-                        <FormOfferGood /> : null }
-                    { (postLabel === "offer" && postType === "service") ?
-                        <FormOfferService /> : null }
-                    { (postLabel === "request" && postType === "good") ?
-                        <FormRequestGood /> : null }
-                    { (postLabel === "request" && postType === "service") ?
-                        <FormRequestService /> : null }
-                    { (postLabel === "request" && postType === "$$$") ?
-                        <FormRequestMoney /> : null }
-                    { (postLabel === "event") ?
-                        <FormEvent /> : null }
-                </Col>
-            </Row>
-            <br/><br/>
+            {loggedIn ? (
+            <>
+                {/* Row 1: Figure out which form to serve them */}
+                <Row className="justify-content-center">
+                    <Col xl="7" lg="9" md="11">
+                        {/* What kind of post: Offer, request or event? */}
+                        <Card className="m-1">
+                            <Card.Header>Offer, Request, or Event</Card.Header>
+                            <Form className="text-center">
+                                <Form.Text><em>Are you posting an offer, a request, or a event?</em></Form.Text>
+                                <Form.Check inline name="post-label" label="Offer" type="radio" id="offer" onChange={handleChange} />
+                                <Form.Check inline name="post-label" label="Request" type="radio" id="request" onChange={handleChange} />
+                                <Form.Check inline name="post-label" label="Event" type="radio" id="event" onChange={handleChange} />
+                            </Form>
+                        </Card>
+                        {/* If it's an offer or request, gather more info: */}
+                        { postLabel === "offer" ? offerTypeCard : null }
+                        { postLabel === "request" ? requestTypeCard : null }
+                    </Col>
+                </Row>
+                <Row className="justify-content-center">
+                    {/* Row 2: Serve them the appropriate "create post" form. */}
+                    <Col xl="7" lg="9" md="11">
+                        { (postLabel === "offer" && postType === "good") ?
+                            <FormOfferGood /> : null }
+                        { (postLabel === "offer" && postType === "service") ?
+                            <FormOfferService /> : null }
+                        { (postLabel === "request" && postType === "good") ?
+                            <FormRequestGood /> : null }
+                        { (postLabel === "request" && postType === "service") ?
+                            <FormRequestService /> : null }
+                        { (postLabel === "request" && postType === "$$$") ?
+                            <FormRequestMoney /> : null }
+                        { (postLabel === "event") ?
+                            <FormEvent /> : null }
+                    </Col>
+                </Row>
+                <br/><br/>
+            </>
+            ) : (
+            <>
+                <Row className="justify-content-center">
+                    <Col xl="7" lg="9" md="11">
+                        <Card className="text-center">
+                            <Card.Header>Log in to create a post!</Card.Header>
+                        </Card>
+                    </Col>
+                </Row>
+            </>
+            )}
         </Wrapper>
     );
 }
