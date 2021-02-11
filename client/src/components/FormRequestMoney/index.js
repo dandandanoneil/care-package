@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { useHistory } from 'react-router-dom';
 import API from '../../utils/API';
 import UserContext from "../../utils/UserContext";
 
@@ -10,6 +11,7 @@ import Button from 'react-bootstrap/Button';
 
 function FormRequestMoney() {
     const { currentUser } = useContext(UserContext);
+    const history = useHistory();
 
     const [postContent, setPostContent] = useState({
         created_by: currentUser._id,
@@ -50,7 +52,8 @@ function FormRequestMoney() {
         if (postContent.category === "Select a category:") {
             setPostContent({ ...postContent, category: "Other"});
         }
-        API.createPost(postContent);
+        API.createPost(postContent)
+        .then(res => history.push(`/post/${res.data._id}`));
     };
 
   return (

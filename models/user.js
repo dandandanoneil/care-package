@@ -29,7 +29,13 @@ const UserSchema = new Schema({
     comments: [{
         type: Schema.Types.ObjectId,
         ref: 'Comment'
-    }]
+    }],
+    memberSince: { type: Date, default: Date.now },
+    bio: String, 
+    facebookLink: String,
+    instagramLink: String,
+    twitterLink: String,
+    linkedInLink: String
 });
 
 UserSchema.methods.validPassword = function(enteredPassword) {
