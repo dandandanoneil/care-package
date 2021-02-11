@@ -39,7 +39,7 @@ function PostDetail() {
 
     return (
         <Wrapper>
-            <Card className="mt-3">
+            <Card className="mt-3 mb-3">
                 <Card.Header>
                     <PageTitle>
                         <em>
