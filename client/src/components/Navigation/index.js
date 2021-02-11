@@ -14,7 +14,7 @@ import "./style.css";
 function Navigation(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { loggedIn } = useContext(UserContext);
+  const { currentUser, loggedIn } = useContext(UserContext);
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -83,7 +83,7 @@ function Navigation(props) {
     );
 
     const profileLink = (
-      <Nav.Link style={{color: "white"}} href="/user">My Profile</Nav.Link>
+      <Nav.Link href={`/user/${currentUser._id}`}>{currentUser.name}</Nav.Link>
     );
 
     return (
@@ -107,18 +107,18 @@ function Navigation(props) {
             <Nav.Link href="/create-post">Ask/Offer</Nav.Link>
 
             <NavDropdown title="Community Exchange" id="community-exchange-dropdown">
-              <NavDropdown.Item href="#search-filter">Goods</NavDropdown.Item>
-              <NavDropdown.Item href="#search-filter">Services</NavDropdown.Item>
+              <NavDropdown.Item href="/#search-filter">Goods</NavDropdown.Item>
+              <NavDropdown.Item href="/#search-filter">Services</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="/create-post">Offer/Ask for Something</NavDropdown.Item>
             </NavDropdown>
 
             <NavDropdown style={{color: "white"}} title="Resource Distribution" id="resource-distribution-dropdown">
-              <NavDropdown.Item href="#">$ requests</NavDropdown.Item>
-              <NavDropdown.Item href="#">Ask for $</NavDropdown.Item>
+              <NavDropdown.Item href="/#">$ requests</NavDropdown.Item>
+              <NavDropdown.Item href="/#">Ask for $</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#">Mutual Aid Fridges</NavDropdown.Item>
-              <NavDropdown.Item href="#">Community Events</NavDropdown.Item>
+              <NavDropdown.Item href="/#">Mutual Aid Fridges</NavDropdown.Item>
+              <NavDropdown.Item href="/#">Community Events</NavDropdown.Item>
             </NavDropdown>
 
             {/* Profile link */}

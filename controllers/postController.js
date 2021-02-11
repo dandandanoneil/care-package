@@ -11,7 +11,13 @@ module.exports = {
   },
   findById: function(req, res) {
     db.Post
-      .findById(req.params.id)
+      .find({ _id: req.params.id })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  findByUserId: function(req, res) {
+    db.Post
+      .find({ created_by: req.params.id })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

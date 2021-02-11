@@ -7,7 +7,9 @@ const UserContext = React.createContext({
     email: "",
     password: "",
     posts: [],
-    comments: []
+    comments: [],
+    memberSince: "",
+    bio: ""
   },
   loggedIn: false
 });

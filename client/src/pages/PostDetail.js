@@ -26,7 +26,7 @@ function PostDetail() {
 
         API.getPost(pathArray[2])
         .then(res => {
-            setPost(res.data);
+            setPost(res.data[0]);
             console.log(res.data);
         })
         .catch(err => console.log(err));
@@ -63,13 +63,17 @@ function PostDetail() {
                                 {post.type === "service" ? "→ Service " : null}
                                 {post.category ? `→ ${post.category}` : null}
                             </Alert>
-                            <Alert className="mb-2" style={{ color: "#FFFFFF", backgroundColor: "#d0b313" }}>{post.location}</Alert>
+                            {post.location ?
+                                <Alert className="mb-2" style={{ color: "#FFFFFF", backgroundColor: "#d0b313" }}>{post.location}</Alert>
+                            : null }
                             {post.searchTags ?
-                            <Alert className="mb-2" style={{ color: "#FFFFFF", backgroundColor: "#d0b313" }}>{post.searchTags}</Alert>
+                                <Alert className="mb-2" style={{ color: "#FFFFFF", backgroundColor: "#d0b313" }}>{post.searchTags}</Alert>
                             : null }
                         </Col>
                         <Col sm="8">
-                            <Image src={post.imageURL} alt={post.title} fluid />
+                            {post.imageURL ?
+                                <Image src={post.imageURL} alt={post.title} fluid />
+                            : null }
                             <Row> 
                                 {/* Info about the posting user */}
                                 <Col md="6" className="mb-3">

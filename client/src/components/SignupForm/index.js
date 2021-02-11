@@ -1,8 +1,9 @@
 import React from "react";
+import API from "../../utils/API";
+
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Alert from "react-bootstrap/Alert";
-import axios from "axios";
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -27,12 +28,12 @@ class SignupForm extends React.Component {
             return;
         }
 
-        axios.post("/api/user/signup", {
+        API.createUser({
             email: this.state.email,
             password: this.state.password,
             name: this.state.name
         })
-        .then( (res) => console.log(res.data) )
+        .then( res => this.props.history.push(`/user/${res.data._id}`) )
         .catch(err => {
             this.setState({ 
                 error: err.name,
