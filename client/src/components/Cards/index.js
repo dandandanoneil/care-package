@@ -11,7 +11,7 @@ const Cards = (props) => {
         <Card.Img variant="top" src={props.item.image} />
         <Card.Body>
           <Card.Text>
-            {props.item.text}
+            {props.item.description}
           </Card.Text>
         </Card.Body>
         <Card.Footer style={{ textAlign: "center", color: "white", backgroundColor: "#d05d11", fontWeight: "bold"}}>
