@@ -10,7 +10,7 @@ import Mission from "./pages/Mission";
 import MeetTeam from "./pages/MeetTeam";
 import CommunityAgreements from "./pages/CommunityAgreements.js";
 import TermsOfUse from "./pages/TermsOfUse";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
+import HowItWorks from "./pages/HowItWorks";
 import NotFound from "./pages/NotFound";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
@@ -56,7 +56,7 @@ function App() {
             <Route exact path="/meet-our-team" component={MeetTeam} />
             <Route exact path="/community-agreements" component={CommunityAgreements} />
             <Route exact path="/terms-of-use" component={TermsOfUse} />
-            <Route exact path="/privacy-policy" component={PrivacyPolicy} />
+            <Route exact path="/how-it-works" component={HowItWorks } />
             <Route path="*" component={NotFound} />
         </Switch>
         <Footer />

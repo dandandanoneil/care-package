@@ -14,7 +14,7 @@ function ModalSignUp() {
     return (
       <div className= "d-flex justify-content-center">
         <a onClick={handleShow} >
-          <img src={buttonImage} alt="Sign Up" />
+          <img className= "img-button" src={buttonImage} alt="Sign Up" />
         </a>
   
         <Modal show={show} onHide={handleClose}>
