@@ -12,14 +12,14 @@ const Buttons = () => {
             <img 
               src={giveButton} 
               alt="Give Something" 
-              className="m-5"
+              className="m-5 img-button"
               fluid />
           </a>
           <a href="/create-post">
             <img 
               src={askButton} 
               alt="Ask for Something" 
-              className="m-5"
+              className="m-5 img-button"
               fluid />
           </a>
         </div>

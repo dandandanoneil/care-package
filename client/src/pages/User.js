@@ -29,8 +29,6 @@ function User(props) {
                         <MessageCard />
                     </div> */}
                     <br />
-                    <div className="col-lg-8">
-                        <div className="row justify-content-md-left">
                             <Card border="primary" style={{ width: '40rem' }}>
                                 <Card.Header style={{ color: "white", backgroundColor: "#4c68a5" }} as="h5">My Profile</Card.Header>
                                 <Card.Body style={{ color: "white", backgroundColor: "#8498c4" }}>
@@ -41,12 +39,8 @@ function User(props) {
                                     <Button style={{ color: "white" }} variant="custom" onClick={onClick}>Log Out</Button>
                                 </Card.Body>
                             </Card>
-                        </div>
                         <br />
-                        <div className="row justify-content-md-left">
                             <ActivePostsCard />
-                        </div>
-                    </div>
                 </div>
                 <br /> 
             </Container>

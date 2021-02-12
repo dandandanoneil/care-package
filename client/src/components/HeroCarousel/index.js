@@ -13,6 +13,8 @@ import communityAgreementsBtn from "./buttons/community-agreements.png";
 import ourMissionBtn from "./buttons/our-mission.png";
 import userStoriesBtn from "./buttons/user-stories.png";
 
+import "./HeroCarousel.css";
+
 function HeroCarousel() {
   return (
     <Carousel>
@@ -21,8 +23,8 @@ function HeroCarousel() {
                 <ModalSignUp />
                 <br/><br/>
                 <div 
-                    className="p-3" 
-                    style={{ backgroundColor: "rgba(50, 50, 50, 0.5)" }}
+                    className="p-3 rcorners" 
+                    style={{ backgroundColor: "#d05d11" }}
                 >
                     <strong>Join our community to start sharing, receiving, and connecting to the people in your community!</strong>
                 </div>
@@ -33,13 +35,13 @@ function HeroCarousel() {
             <Carousel.Caption>
                 <div className= "d-flex justify-content-center">
                     <a href="/mission" >
-                        <img src={ourMissionBtn} alt="Our Mission" />
+                        <img className= "img-button" src={ourMissionBtn} alt="Our Mission" />
                     </a>
                 </div>
                 <br/><br/>
                 <div 
-                    className="p-3" 
-                    style={{ backgroundColor: "rgba(50, 50, 50, 0.5)" }}
+                    className="p-3 rcorners" 
+                    style={{ backgroundColor: "#d05d11"}}
                 >
                     <strong>We've built a de-monetized community marketplace to encourage giving gifts where there's abundance and asking for help when there's need.</strong>
                 </div>
@@ -50,13 +52,13 @@ function HeroCarousel() {
             <Carousel.Caption>
                 <div className= "d-flex justify-content-center">
                     <a href="/community-agreements" >
-                        <img src={communityAgreementsBtn} alt="Community Agreements" />
+                        <img className= "img-button" src={communityAgreementsBtn} alt="Community Agreements" />
                     </a>
                 </div>
                 <br/><br/>
                 <div 
-                    className="p-3" 
-                    style={{ backgroundColor: "rgba(50, 50, 50, 0.5)" }}
+                    className="p-3 rcorners" 
+                    style={{ backgroundColor: "#d05d11"}}
                 >
                     <strong>We're proud of the platform we've built, and are excited for people to make it their own - but it only works if we're all playing by the same rules.</strong>
                 </div>
@@ -67,13 +69,13 @@ function HeroCarousel() {
             <Carousel.Caption>
                 <div className= "d-flex justify-content-center">
                     <a href="/user-stories" >
-                        <img src={userStoriesBtn} alt="User Stories" />
+                        <img className= "img-button" src={userStoriesBtn} alt="User Stories" />
                     </a>
                 </div>
                 <br/><br/>
                 <div 
-                    className="p-3" 
-                    style={{ backgroundColor: "rgba(50, 50, 50, 0.5)" }}
+                    className="p-3 rcorners" 
+                    style={{ backgroundColor: "#d05d11"}}
                 >
                     <strong>But don't take our word for it - read more about the Care Package platform from the folks in your community who are already using it to connect to each other.</strong>
                 </div>

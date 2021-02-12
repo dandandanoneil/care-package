@@ -22,17 +22,19 @@ const Search = (props) => {
             <div id="search-filter" className="d-flex justify-content-center">
                 <input
                     type="text"
-                    placeholder="Search for an item"
+                    placeholder="Search"
                     value={props.searchTerm}
                     onChange={props.change}
-
+                    style={{width: "20rem"}}
                 ></input> &nbsp;&nbsp;
 
-            <Button style={{
+            {/* <Button style={{
                     color: "white",
-                    backgroundImage: 'linear-gradient(to right, #d0c311, #d0c311)',
+                    backgroundColor: "#d05d11",
                     fontWeight: 'bold'
-                }} variant="custom">Search</Button>&nbsp;
+                }} variant="custom">Search</Button>&nbsp; */}
+               </div>
+                <div>
           <Filter />
 
             </div>

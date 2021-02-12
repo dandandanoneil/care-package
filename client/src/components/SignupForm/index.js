@@ -83,7 +83,7 @@ class SignupForm extends React.Component {
                     onChange={this.onChange}
                 />
 
-                <Button variant="success" type="submit" className="mt-2 mb-2">
+                <Button style={{ color: "white", backgroundColor: "#4c68a5" }} type="submit" className="mt-2 mb-2">
                     Create Account
                 </Button>
 

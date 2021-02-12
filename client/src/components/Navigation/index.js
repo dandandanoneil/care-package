@@ -3,6 +3,7 @@ import UserContext from "../../utils/UserContext";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Nav, Navbar, NavDropdown, Form, Button } from "react-bootstrap";
 import axios from "axios";
+import iconImage from "./icon192.ico";
 import "./style.css";
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
@@ -63,7 +64,7 @@ function Navigation(props) {
                 onChange={onChange}
               />
             </Form.Group>
-            <Button className="btn-sm" variant="primary" type="submit">
+            <Button style={{ color: "white", backgroundColor: "#4c68a5" }} className="btn-sm" type="submit">
               Log In
             </Button>
           </Form>
@@ -85,7 +86,14 @@ function Navigation(props) {
       <Navbar expand="md" sticky="top" bg="dark" variant="dark">
         {/* Page name/logo, links to home page */}
         <Navbar.Brand bg="light" href="/">
-          <h2 style={{color: "#d0c311"}}>Care Package</h2>
+          <img src={iconImage}
+          width="75"
+          height="75"
+          className="d-inline-block align-top" 
+          style={{marginRight: "15px", marginLeft: "20px"}}
+          />
+          <h1 style={{color: "#d0c311", marginTop: "15px", textShadow: "2px 2px 4px #000000"}}>Care Package</h1>
+          <p style={{color: "#ebe8c1", marginTop: "25px", marginLeft: "30px"}}>Joining neighbors in mutual aid</p>
         </Navbar.Brand>
 
         {/* Toggler */}
@@ -99,22 +107,25 @@ function Navigation(props) {
             {loggedIn ? logoutLink : loginDropdown }
 
             {/* Navigation Links */}
-            <Nav.Link href="/create-post">Ask/Offer</Nav.Link>
+            <Nav.Link href="/create-post">Create a Post</Nav.Link>
 
-            <NavDropdown title="Community Exchange" id="community-exchange-dropdown">
+            <Nav.Link href="/">See Posts</Nav.Link>
+
+            {/* <NavDropdown title="Community Exchange" id="community-exchange-dropdown">
               <NavDropdown.Item href="#search-filter">Goods</NavDropdown.Item>
               <NavDropdown.Item href="#search-filter">Services</NavDropdown.Item>
               <NavDropdown.Divider />
+              <NavDropdown.Item href="#">Requests</NavDropdown.Item>
               <NavDropdown.Item href="/create-post">Offer/Ask for Something</NavDropdown.Item>
-            </NavDropdown>
+            </NavDropdown> */}
 
-            <NavDropdown style={{color: "white"}} title="Resource Distribution" id="resource-distribution-dropdown">
+            {/* <NavDropdown style={{color: "white"}} title="Resource Distribution" id="resource-distribution-dropdown">
               <NavDropdown.Item href="#">$ requests</NavDropdown.Item>
               <NavDropdown.Item href="#">Ask for $</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#">Mutual Aid Fridges</NavDropdown.Item>
               <NavDropdown.Item href="#">Community Events</NavDropdown.Item>
-            </NavDropdown>
+            </NavDropdown> */}
 
             {/* Profile link */}
             {loggedIn ? profileLink : <></> }

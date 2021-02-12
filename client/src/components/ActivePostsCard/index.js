@@ -5,6 +5,8 @@ import { Card, Button } from "react-bootstrap";
 
 function ActivePostsCard() {
     return (
+        <div>
+            <br />
             <Card className="flex" border="danger" style={{ width: '40rem' }}>
             <Card.Header style={{ color: "white", backgroundColor: "#d05d11"}} as="h5">My Ask/Offer</Card.Header>
             <Card.Body style={{ color: "white", backgroundColor: "#ca885b"}}>
@@ -15,6 +17,7 @@ function ActivePostsCard() {
                 <Button style={{ color: "white", backgroundColor: "#d05d11" }} variant="custom">See Post</Button>
             </Card.Body>
             </Card>
+            </div>
   );
 }
 
