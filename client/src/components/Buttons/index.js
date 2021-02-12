@@ -1,5 +1,5 @@
-import "bootstrap/dist/css/bootstrap.min.css"
 import React from "react";
+import Image from "react-bootstrap/Image";
 import giveButton from "./give-button.png";
 import askButton from "./ask-button.png";
 import "./style.css";
@@ -9,14 +9,14 @@ const Buttons = () => {
       <div className="row">
         <div className="col text-center">
           <a href="/create-post">
-            <img 
+            <Image 
               src={giveButton} 
               alt="Give Something" 
               className="m-5 img-button"
               fluid />
           </a>
           <a href="/create-post">
-            <img 
+            <Image 
               src={askButton} 
               alt="Ask for Something" 
               className="m-5 img-button"

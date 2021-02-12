@@ -1,16 +1,19 @@
 import React, { useContext, useState } from "react";
 import UserContext from "../../utils/UserContext";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Nav, Navbar, NavDropdown, Form, Button } from "react-bootstrap";
 import axios from "axios";
 import iconImage from "./icon192.ico";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 import "./style.css";
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 function Navigation(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { loggedIn } = useContext(UserContext);
+  const { currentUser, loggedIn } = useContext(UserContext);
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -18,31 +21,30 @@ function Navigation(props) {
     if (!email || !password) return;
 
     axios.post("/api/user/login", { email, password })
-    .then( (res) => props.stateLogIn(res.data) )
-    .catch(err => console.log(err) );
+      .then((res) => props.stateLogIn(res.data))
+      .catch(err => console.log(err));
   }
 
   const onLogOut = () => {
     axios.post("/api/user/logout", {})
-    .then( (res) => props.stateLogOut() )
-    .catch(err => console.log(err) );
+      .then((res) => props.stateLogOut())
+      .catch(err => console.log(err));
   }
 
   const onChange = (event) => {
-      const target = event.target;
-      switch (target.name) {
-          case "email":
-              setEmail(target.value);
-              break;
-          case "password":
-              setPassword(target.value);
-              break;
-          default:
-              break;
-      }
+    const target = event.target;
+    switch (target.name) {
+      case "email":
+        setEmail(target.value);
+        break;
+      case "password":
+        setPassword(target.value);
+        break;
+      default:
+        break;
+    }
   }
   
-
     // This is the login form & signup link that will appear in the Navbar if the user isn't authenticated
     const loginDropdown = (
       <>

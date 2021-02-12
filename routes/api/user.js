@@ -2,6 +2,10 @@ const router = require("express").Router();
 const userController = require("../../controllers/userController");
 const passport = require("../../config/passport");
 
+// Matches with "/api/user"
+router.route("/")
+  .post(userController.signup);
+
 // Matches with "/api/user/:id"
 router
   .route("/:id")

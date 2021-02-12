@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { useHistory } from 'react-router-dom';
 import API from '../../utils/API';
 import UserContext from "../../utils/UserContext";
 
@@ -10,6 +11,7 @@ import Button from 'react-bootstrap/Button';
 
 function FormOfferGood() {
     const { currentUser } = useContext(UserContext);
+    const history = useHistory();
 
     const [postContent, setPostContent] = useState({
         created_by: currentUser._id,
@@ -47,7 +49,8 @@ function FormOfferGood() {
 
     const handleSubmit = event => {
         event.preventDefault();
-        API.savePost(postContent);
+        API.createPost(postContent)
+        .then(res => history.push(`/post/${res.data._id}`));
     };
 
   return (
@@ -85,7 +88,7 @@ function FormOfferGood() {
             </Form.Group>
             <Form.Group as={Row}>
                 <Form.Label column sm="2" className="text-right">Image:</Form.Label>
-                <Col sm="7"><Form.File label="Upload an image" custom /></Col>
+                <Col sm="7"><Form.Control type="text" placeholder="Paste an image URL from the internet here" name="imageURL" onChange={handleInputChange} /></Col>
                 <Form.Text as={Col}><em>(optional)</em></Form.Text>
             </Form.Group>
             <Form.Group as={Row}>
