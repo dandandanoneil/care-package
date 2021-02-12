@@ -88,11 +88,13 @@ function Navigation(props) {
       <Navbar expand="md" sticky="top" bg="dark" variant="dark">
         {/* Page name/logo, links to home page */}
         <Navbar.Brand bg="light" href="/">
-          <img src={iconImage}
-          width="75"
-          height="75"
-          className="d-inline-block align-top" 
-          style={{marginRight: "15px", marginLeft: "20px"}}
+          <img
+            src={iconImage}
+            alt="Care Package Logo"
+            width="75"
+            height="75"
+            className="d-inline-block align-top" 
+            style={{marginRight: "15px", marginLeft: "20px"}}
           />
           <h1 style={{color: "#d0c311", marginTop: "15px", textShadow: "2px 2px 4px #000000"}}>Care Package</h1>
           <p style={{color: "#ebe8c1", marginTop: "25px", marginLeft: "30px"}}>Joining neighbors in mutual aid</p>

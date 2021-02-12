@@ -13,9 +13,9 @@ function ModalSignUp() {
   
     return (
       <div className= "d-flex justify-content-center">
-        <a onClick={handleShow} >
+        <button onClick={handleShow} style={{ background: "none",  border: "none" }}>
           <img className= "img-button" src={buttonImage} alt="Sign Up" />
-        </a>
+        </button>
   
         <Modal show={show} onHide={handleClose}>
           <Modal.Body> <SignupForm /> </Modal.Body>

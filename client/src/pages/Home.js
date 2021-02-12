@@ -66,6 +66,7 @@ const Home = () => {
             if (item["title"].toLowerCase().includes(searchTerm.trim())) return true;
             if (item["description"].toLowerCase().includes(searchTerm.trim())) return true;
             if (item["category"].toLowerCase().includes(searchTerm.trim())) return true;
+            return false;
         });
         setSearchResults(results);
     }, [searchTerm]);
