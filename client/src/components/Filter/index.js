@@ -14,10 +14,13 @@ const Filter = () => {
   return (
 
     <div >
-      <Button style={{
-        color: "white",
-        backgroundImage: 'linear-gradient(to right, #d0c311, #d0c311)',
-        fontWeight: 'bold'
+      <Button style={{ 
+      color: "white",
+      backgroundColor: "#d0c311",
+     fontWeight: 'bold',
+     width: "12rem",
+     marginTop: "8px"
+
       }} variant="custom" onClick={handleShow}>
         Filter
       </Button>

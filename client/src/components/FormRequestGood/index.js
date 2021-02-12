@@ -56,8 +56,8 @@ function FormRequestGood() {
     };
 
   return (
-    <Card className="m-1">
-        <Card.Header>Request Goods</Card.Header>
+    <Card border="primary" className="m-1">
+        <Card.Header style={{ color: "white", backgroundColor: "#4c68a5", fontWeight: "bold"}}>Request Goods</Card.Header>
         <Form className="p-3">
             <Form.Group as={Row}>
                 <Form.Label column sm="2" className="text-right">Item Title:</Form.Label>

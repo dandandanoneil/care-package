@@ -9,9 +9,13 @@
 }
 
 .navbar-nav{
-  color: "white"
+  color: #ebe8c1
 }
 
-#resource-distribution-dropdown{
-  color: "white"
+.navbar-brand {
+  display: flex;
+  align-items: left;
 }
+/* .navbar-brand>img {
+  padding: 7px 14px;
+} */
