@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
-import { Form, Row, Col } from 'react-bootstrap'
-import Dropdown from 'react-bootstrap/Dropdown'
-import Button from 'react-bootstrap/Button'
-import Modal from 'react-bootstrap/Modal'
+import React, { useState } from 'react';
+import Form from 'react-bootstrap/Form';
+import Dropdown from 'react-bootstrap/Dropdown';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 import "./filter.css";
 
 const Filter = (props) => {

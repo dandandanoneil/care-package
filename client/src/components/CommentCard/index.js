@@ -80,7 +80,7 @@ function CommentCard(props) {
                         <strong>
                           <a href={`/user/${comment.created_by._id}`}>{comment.created_by.name}</a>
                         </strong> on {formatDate(comment.created_at)}:
-                      {currentUser._id == comment.created_by._id ?
+                      {currentUser._id === comment.created_by._id ?
                         <DeleteBtn onClick={() => deleteComment(comment._id)}>x</DeleteBtn>
                         : null
                       }
