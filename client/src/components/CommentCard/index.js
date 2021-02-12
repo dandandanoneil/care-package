@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useState, useContext } from "react";
 import API from "../../utils/API";
 import { useLocation } from "react-router-dom";
 import UserContext from "../../utils/UserContext";
@@ -10,12 +10,10 @@ import ListGroupItem from "react-bootstrap/ListGroupItem";
 import Button from "react-bootstrap/Button";
 
 import DeleteBtn from "../../components/DeleteBtn";
-// import { List, ListItem } from "../../components/List";
-// import { TextArea, FormBtn } from "../../components/Form";
 
 function CommentCard(props) {
   // Setting our component's initial state
-  const [comments, setComments] = useState([]);
+  const [comments, setComments] = useState(props.comments);
   const [formObject, setFormObject] = useState({
     post: "",
     comment: "",
@@ -24,11 +22,6 @@ function CommentCard(props) {
   
   const postId = useLocation().pathname.split('/')[2];
   const { currentUser, loggedIn } = useContext(UserContext);
-
-  // Load all comments and store them with setcomments
-  useEffect(() => {
-    loadComments()
-  }, [])
 
   // Loads all comments and sets them to comments
   function loadComments() {
@@ -84,10 +77,10 @@ function CommentCard(props) {
                 return (
                   <ListGroupItem key={comment._id}>
                     <div>
-                      <em>
-                        <strong>{comment.created_by}</strong> on {formatDate(comment.created_at)}:
-                      </em>
-                      {currentUser._id == comment.created_by ?
+                        <strong>
+                          <a href={`/user/${comment.created_by._id}`}>{comment.created_by.name}</a>
+                        </strong> on {formatDate(comment.created_at)}:
+                      {currentUser._id == comment.created_by._id ?
                         <DeleteBtn onClick={() => deleteComment(comment._id)}>x</DeleteBtn>
                         : null
                       }

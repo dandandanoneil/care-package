@@ -13,9 +13,4 @@ router
   .put(postController.update)
   .delete(postController.remove);
 
-// Matches with "/api/posts/user/:id"
-router
-  .route("/user/:id")
-  .get(postController.findByUserId)
-
 module.exports = router;

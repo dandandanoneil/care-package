@@ -81,7 +81,7 @@ function Navigation(props) {
     );
 
     const profileLink = (
-      <Nav.Link style={{color: "white"}} href="/user">My Profile</Nav.Link>
+      <Nav.Link href={`/user/${currentUser._id}`}>{currentUser.name}</Nav.Link>
     );
 
     return (

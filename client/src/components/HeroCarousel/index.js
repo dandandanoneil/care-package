@@ -4,10 +4,10 @@ import ModalSignUp from "../ModalSignUp";
 // import ModalMission from "../ModalMission";
 // import ModalAgreement from "../ModalAgreement";
 
-import societyHillPhoto from "./images/society-hill.jpg";
+import clarkParkPhoto from "./images/clark-park.jpg";
 import northPhiladelphiaPhoto from "./images/north-philadelphia.jpg";
-import delanceyStreetPhoto from "./images/delancey-street.jpg";
-import westPhillyPhoto from "./images/west-philly.jpg";
+import schuykillBanksPhoto from "./images/schuykill-banks-park.jpg";
+import westPhillyPhoto from "./images/west-philadelphia.jpg";
 
 import communityAgreementsBtn from "./buttons/community-agreements.png";
 import ourMissionBtn from "./buttons/our-mission.png";
@@ -18,7 +18,7 @@ import "./HeroCarousel.css";
 function HeroCarousel() {
   return (
     <Carousel>
-        <Carousel.Item interval={3500} style={{ backgroundImage: `url(${societyHillPhoto})`, backgroundSize: "100%", minHeight: "400px", width: "100%" }}>
+        <Carousel.Item interval={3500} style={{ backgroundImage: `url(${clarkParkPhoto})`, backgroundSize: "100%", minHeight: "400px", width: "100%" }}>
             <Carousel.Caption>
                 <ModalSignUp />
                 <br/><br/>
@@ -48,7 +48,7 @@ function HeroCarousel() {
             </Carousel.Caption>
         </Carousel.Item>
 
-        <Carousel.Item interval={3500} style={{ backgroundImage: `url(${delanceyStreetPhoto})`, backgroundSize: "100%", minHeight: "400px", width: "100%" }}>
+        <Carousel.Item interval={3500} style={{ backgroundImage: `url(${schuykillBanksPhoto})`, backgroundSize: "100%", minHeight: "400px", width: "100%" }}>
             <Carousel.Caption>
                 <div className= "d-flex justify-content-center">
                     <a href="/community-agreements" >
