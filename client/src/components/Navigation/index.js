@@ -82,9 +82,9 @@ function Navigation(props) {
     <Nav.Link onClick={onLogOut}>Logout</Nav.Link>
   );
 
-  // const profileLink = (
-  //   <Nav.Link href={`/user/${currentUser._id}`}>{currentUser.name}</Nav.Link>
-  // );
+  const profileLink = (
+    <Nav.Link href={`/user/${currentUser._id}`}>{currentUser.name}</Nav.Link>
+  );
 
   return (
     <Navbar expand="md" sticky="top" bg="dark" variant="dark">
@@ -122,7 +122,7 @@ function Navigation(props) {
           </NavDropdown>
 
           {/* Profile link */}
-          {/* {loggedIn ? profileLink : <></>} */}
+          {loggedIn ? profileLink : <></>}
         </Nav>
       </Navbar.Collapse>
     </Navbar>

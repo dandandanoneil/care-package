@@ -9,6 +9,7 @@ import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Image from "react-bootstrap/Image";
 
 import PageTitle from "../components/PageTitle"
 import Wrapper from "../components/Wrapper";
@@ -43,18 +44,14 @@ function User() {
 
     useEffect(() => {
         loadUser();
-        loadPosts();
     }, [])
 
     function loadUser() {
         API.getUser(userId)
-        .then(res => setUser(res.data))
-        .catch(err => console.log(err));
-    }
-
-    function loadPosts() {
-        API.getUserPosts(userId)
-        .then(res => setPosts(res.data))
+        .then(res => {
+            setUser(res.data);
+            setPosts(res.data.posts);
+        })
         .catch(err => console.log(err));
     }
 
@@ -96,18 +93,28 @@ function User() {
                 {user.bio ?
                 <p><strong>Bio:</strong> {user.bio}</p>
                 : null}
-                {user.facebookLink ?
-                <p><strong><a href={user.facebookLink} target="blank">Facebook</a></strong></p>
-                : null}
-                {user.instagramLink ?
-                <p><strong><a href={user.instagramLink}target="blank">Instagram</a></strong></p>
-                : null}
-                {user.twitterLink ?
-                <p><strong><a href={user.twitterLink} target="blank">Twitter</a></strong></p>
-                : null}
-                {user.linkedInLink ?
-                <p><strong><a href={user.linkedInLink} target="blank">LinkedIn</a></strong></p>
-                : null}
+                <Row>
+                    {user.facebookLink ?
+                        <Col xs="3" md="2">
+                            <a href={user.facebookLink} target="blank"><Image fluid src="https://cdn1.iconfinder.com/data/icons/social-media-2285/512/Colored_Facebook3_svg-128.png" alt="Facebook"/></a>
+                        </Col>
+                    : null}
+                    {user.instagramLink ?
+                        <Col xs="3" md="2">
+                            <a href={user.instagramLink}target="blank"><Image fluid src="https://cdn2.iconfinder.com/data/icons/social-media-applications/64/social_media_applications_3-instagram-128.png" alt="Instagram"/></a>
+                        </Col>
+                    : null}
+                    {user.twitterLink ?
+                        <Col xs="3" md="2">
+                            <a href={user.twitterLink} target="blank"><Image fluid src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Twitter3_colored_svg-128.png" alt="Twitter"/></a>
+                        </Col>
+                    : null}
+                    {user.linkedInLink ?
+                        <Col xs="3" md="2">
+                            <a href={user.linkedInLink} target="blank"><Image fluid src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Linkedin_unofficial_colored_svg-128.png" alt="LinkedIn"/></a>
+                        </Col>
+                    : null}
+                </Row>
                 {user._id === currentUser._id ?
                     <Button size="sm" variant="warning" style={{ float: "right", backgroundColor: "#d0c311", color: "#FFFFFF" }} onClick={handleEditSubmit}><strong>Edit Profile</strong></Button>
                 : null }

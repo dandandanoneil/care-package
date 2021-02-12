@@ -15,6 +15,7 @@ function FormRequestGood() {
 
     const [postContent, setPostContent] = useState({
         created_by: currentUser._id,
+        name: currentUser.name,
         offerRequestEvent: "request",
         type: "good",
         title: "",

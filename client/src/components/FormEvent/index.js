@@ -15,6 +15,7 @@ function FormEvent() {
 
     const [postContent, setPostContent] = useState({
         created_by: currentUser._id,
+        name: currentUser.name,
         offerRequestEvent: "event",
         type: "event",
         title: "",

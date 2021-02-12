@@ -8,13 +8,13 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Alert from 'react-bootstrap/Alert';
 
-import PageTitle from "../components/PageTitle"
+// import PageTitle from "../components/PageTitle"
 import Wrapper from "../components/Wrapper";
 import CommentCard from "../components/CommentCard";
 // import BackButton from "../components/BackButton";
 
 function PostDetail() {
-    const [post, setPost] = useState([])
+    const [post, setPost] = useState(undefined)
     const location = useLocation();
 
     useEffect(() => {
@@ -26,8 +26,7 @@ function PostDetail() {
 
         API.getPost(pathArray[2])
         .then(res => {
-            setPost(res.data[0]);
-            console.log(res.data);
+            setPost(res.data);
         })
         .catch(err => console.log(err));
     }
@@ -39,6 +38,7 @@ function PostDetail() {
 
     return (
         <Wrapper>
+            {post ? (
             <Card border="warning" className="mt-3 mb-3">
                 <Card.Header style={{ backgroundColor: "#d0b313", color: "#FFFFFF" }}>
                     <div className="text-center">
@@ -84,7 +84,7 @@ function PostDetail() {
                                     <div><strong>Posted On: </strong>{formatDate(post.created_at)}</div>
                                 </Col>
                                 <Col md="6" className="mb-3">
-                                    <div><strong>Posted By: </strong>{post.created_by}</div>
+                                    <div><strong>Posted By: </strong><a href={`/user/${post.created_by._id}`}>{post.created_by.name}</a></div>
                                 </Col>
                             </Row>
                             <Row>
@@ -207,11 +207,12 @@ function PostDetail() {
 
                     <Row className="justify-content-md-center">
                         <Col lg="8">
-                            <CommentCard />
+                            <CommentCard comments={post.comments} />
                         </Col>
                     </Row>
                 </Card.Body>
             </Card>
+            ) : (<div>Nothing here yet</div>)}
         </Wrapper>
     );
 }
