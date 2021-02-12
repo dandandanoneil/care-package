@@ -36,8 +36,8 @@ const Filter = (props) => {
               <br></br>
               <h6 style={{ display: 'inline', fontWeight: 'bold' }} className="mr-5">Type: </h6>
               <Form.Check inline label="Goods" style={{ display: 'inline' }} onChange={props.myFilter("goods")} />
-              <Form.Check inline label="Goods" style={{ display: 'inline' }} onChange={props.myFilter("services")} />
-              <Form.Check inline label="Goods" style={{ display: 'inline' }} onChange={props.myFilter("events")} />
+              <Form.Check inline label="Services" style={{ display: 'inline' }} onChange={props.myFilter("services")} />
+              <Form.Check inline label="Events" style={{ display: 'inline' }} onChange={props.myFilter("events")} />
 
               <br></br>  <br></br>
 

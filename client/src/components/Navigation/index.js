@@ -44,78 +44,78 @@ function Navigation(props) {
         break;
     }
   }
-  
-    // This is the login form & signup link that will appear in the Navbar if the user isn't authenticated
-    const loginDropdown = (
-      <>
-        <NavDropdown title="Login" id="nav-dropdown" drop="down">
-          <Form className="p-3" style={{ width: "300px"}} onSubmit={onSubmit}>
-            <Form.Group>
-              <Form.Control 
-                type="email" 
-                placeholder="Email"
-                name="email"
-                onChange={onChange}
-              />
-            </Form.Group>
-            <Form.Group>
-              <Form.Control 
-                type="password" 
-                placeholder="Password"
-                name="password"
-                onChange={onChange}
-              />
-            </Form.Group>
-            <Button style={{ color: "white", backgroundColor: "#4c68a5" }} className="btn-sm" type="submit">
-              Log In
+
+  // This is the login form & signup link that will appear in the Navbar if the user isn't authenticated
+  const loginDropdown = (
+    <>
+      <NavDropdown title="Login" id="nav-dropdown" drop="down">
+        <Form className="p-3" style={{ width: "300px" }} onSubmit={onSubmit}>
+          <Form.Group>
+            <Form.Control
+              type="email"
+              placeholder="Email"
+              name="email"
+              onChange={onChange}
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Control
+              type="password"
+              placeholder="Password"
+              name="password"
+              onChange={onChange}
+            />
+          </Form.Group>
+          <Button style={{ color: "white", backgroundColor: "#4c68a5" }} className="btn-sm" type="submit">
+            Log In
             </Button>
-          </Form>
-        </NavDropdown>
-        <Nav.Link href="/signup">Sign Up</Nav.Link>
-      </>
-    );
+        </Form>
+      </NavDropdown>
+      <Nav.Link href="/signup">Sign Up</Nav.Link>
+    </>
+  );
 
-    // This is the logout link that will appear in the Navbar if the user isn't authenticated
-    const logoutLink = (
-      <Nav.Link onClick={onLogOut}>Logout</Nav.Link>
-    );
+  // This is the logout link that will appear in the Navbar if the user isn't authenticated
+  const logoutLink = (
+    <Nav.Link onClick={onLogOut}>Logout</Nav.Link>
+  );
 
-    const profileLink = (
-      <Nav.Link href={`/user/${currentUser._id}`}>{currentUser.name}</Nav.Link>
-    );
+  // const profileLink = (
+  //   <Nav.Link href={`/user/${currentUser._id}`}>{currentUser.name}</Nav.Link>
+  // );
 
-    return (
-      <Navbar expand="md" sticky="top" bg="dark" variant="dark">
-        {/* Page name/logo, links to home page */}
-        <Navbar.Brand bg="light" href="/">
-          <img
-            src={iconImage}
-            alt="Care Package Logo"
-            width="75"
-            height="75"
-            className="d-inline-block align-top" 
-            style={{marginRight: "15px", marginLeft: "20px"}}
-          />
-          <h1 style={{color: "#d0c311", marginTop: "15px", textShadow: "2px 2px 4px #000000"}}>Care Package</h1>
-          <p style={{color: "#ebe8c1", marginTop: "25px", marginLeft: "30px"}}>Joining neighbors in mutual aid</p>
-        </Navbar.Brand>
+  return (
+    <Navbar expand="md" sticky="top" bg="dark" variant="dark">
+      {/* Page name/logo, links to home page */}
+      <Navbar.Brand bg="light" href="/">
+        <img
+          src={iconImage}
+          alt="Care Package Logo"
+          width="75"
+          height="75"
+          className="d-inline-block align-top"
+          style={{ marginRight: "15px", marginLeft: "20px" }}
+        />
+        <h1 style={{ color: "#d0c311", marginTop: "15px", textShadow: "2px 2px 4px #000000" }}>Care Package</h1>
+        <p style={{ color: "#ebe8c1", marginTop: "25px", marginLeft: "30px" }}>Joining neighbors in mutual aid</p>
+      </Navbar.Brand>
 
-        {/* Toggler */}
-        <Navbar.Toggle aria-controls="navbar-nav" />
+      {/* Toggler */}
+      <Navbar.Toggle aria-controls="navbar-nav" />
 
-        {/* Navbar content - displayed as hamburger on sizes <= medium, hamburger on sizes > medium */}
-        <Navbar.Collapse id="navbar-nav">
-          <Nav className="ml-auto">
-            
-            {/* Login dropdown form  OR logout link */}
-            {loggedIn ? logoutLink : loginDropdown }
+      {/* Navbar content - displayed as hamburger on sizes <= medium, hamburger on sizes > medium */}
+      <Navbar.Collapse id="navbar-nav">
+        <Nav className="ml-auto">
 
-            {/* Navigation Links */}
-            <Nav.Link href="/create-post">Create a Post</Nav.Link>
+          {/* Login dropdown form  OR logout link */}
+          {loggedIn ? logoutLink : loginDropdown}
 
-            <Nav.Link href="/">See Posts</Nav.Link>
+          {/* Navigation Links */}
+          <Nav.Link href="/create-post">Create a Post</Nav.Link>
 
-            {/* <NavDropdown title="Community Exchange" id="community-exchange-dropdown">
+          <Nav.Link href="/">See Posts</Nav.Link>
+
+          {/* <NavDropdown title="Community Exchange" id="community-exchange-dropdown">
               <NavDropdown.Item href="#search-filter">Goods</NavDropdown.Item>
               <NavDropdown.Item href="#search-filter">Services</NavDropdown.Item>
               <NavDropdown.Divider />
@@ -123,7 +123,7 @@ function Navigation(props) {
               <NavDropdown.Item href="/create-post">Offer/Ask for Something</NavDropdown.Item>
             </NavDropdown> */}
 
-            {/* <NavDropdown style={{color: "white"}} title="Resource Distribution" id="resource-distribution-dropdown">
+          {/* <NavDropdown style={{color: "white"}} title="Resource Distribution" id="resource-distribution-dropdown">
               <NavDropdown.Item href="#">$ requests</NavDropdown.Item>
               <NavDropdown.Item href="#">Ask for $</NavDropdown.Item>
               <NavDropdown.Divider />
@@ -131,12 +131,12 @@ function Navigation(props) {
               <NavDropdown.Item href="#">Community Events</NavDropdown.Item>
             </NavDropdown> */}
 
-            {/* Profile link */}
-            {loggedIn ? profileLink : <></> }
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-    );
+          {/* Profile link */}
+          {/* {loggedIn ? profileLink : <></>} */}
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
+  );
 }
 
 export default Navigation;
