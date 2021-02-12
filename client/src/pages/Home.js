@@ -4,62 +4,54 @@ import Buttons from "../components/Buttons";
 import Cards from "../components/Cards";
 import Banner from "../components/Banner";
 import { CardDeck, Form } from 'react-bootstrap'
-
 const items = [
     {
         image: "https://godolly.com/wp-content/uploads/2019/04/9B90AF87-8EFF-4C73-BAB0-0B093BAA101D.jpeg",
         title: "Leather Couch",
-        description: "Leather couch in mild conditions, very confortable with no visible discoloring",
+        text: "Leather couch in mild conditions, very confortable with no visible discoloring",
         type: "goods",
-        category: "furniture",
         update: "Last updated 3 mins ago"
     },
     {
         image: "https://www.sefiles.net/merchant/1929/images/site/SouthPhillypics003.jpg",
         title: "Kids bicycle",
-        description: "Metal fan no longer needed. It works great and is not very noisy",
+        text: "Metal fan no longer needed. It works great and is not very noisy",
         type: "goods",
-        category: "vehicle",
         update: "Last updated 3 mins ago"
     },
     {
         image: "https://lh3.googleusercontent.com/-YUYVs2pXjmc8fluITFhLDf5-cziydPyqsNSEqPEZNJtDIWN7qOTNr66DwQqNI3mijDvn5VPPxnb2N0NNA=s1600",
         title: "House Painting",
-        description: "Will help  painting houses! I have some spare colors and tools",
+        text: "Will help  painting houses! I have some spare colors and tools",
         type: "services",
-        category: "painting",
         update: "Last updated 3 mins ago"
     },
     {
         image: "https://i.ebayimg.com/images/g/S0sAAOSwwgddC65r/s-l640.jpg",
         title: "Floor metal fan",
-        description: "This is a wider card with supporting description below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.",
+        text: "This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.",
         type: "goods",
-        category: "electronics",
         update: "Last updated 3 mins ago"
     },
     {
         image: "https://hgtvhome.sndimg.com/content/dam/images/hgtv/stock/2018/1/15/iStock-516844708_colorful-garden-path.jpg.rend.hgtvcom.616.462.suffix/1516141969592.jpeg",
         title: "Landscaping",
-        description: "Free gardening help and flowers",
+        text: "Free gardening help and flowers",
         type: "services",
-        category: "gardening",
         update: "Last updated 3 mins ago"
     },
     {
         image: "https://www.delta.edu/_resources/images/universal-1920x1282/used-projector.jpg",
         title: "720p Projector",
-        description: "Functional projector with built in speakers",
+        text: "Functional projector with built in speakers",
         type: "goods",
-        category: "electronics",
         update: "Last updated 3 mins ago"
     },
     {
         image: "",
         title: "Giveaway on x place",
-        description: "There is an event this weekend on x y z",
+        text: "There is an event this weekend on x y z",
         type: "events",
-        category: "announcement",
         update: "Last updated 3 mins ago"
     },
 ];
@@ -69,18 +61,12 @@ const Home = () => {
     const handleChange = event => {
         setSearchTerm(event.target.value);
     };
-
     React.useEffect(() => {
-        const results = items.filter(item => {
-            if (item["title"].toLowerCase().includes(searchTerm.trim())) return true;
-            if (item["description"].toLowerCase().includes(searchTerm.trim())) return true;
-            if (item["category"].toLowerCase().includes(searchTerm.trim())) return true;
-
-        });
+        const results = items.filter(item =>
+            item["title"].toLowerCase().includes(searchTerm.trim())
+        );
         setSearchResults(results);
     }, [searchTerm]);
-
-
 
     const quickFilter = filterType => e => {
         if (e.target.checked) {
@@ -98,10 +84,8 @@ const Home = () => {
             <HeroCarousel />
             <Buttons />
             <br></br>
-            <Banner change={handleChange} searchTerm={searchTerm} />
-            <Form.Check className="d-flex justify-content-center" inline label="Goods" style={{ display: 'inline' }} onChange={quickFilter("goods")} />
-            <Form.Check className="d-flex justify-content-center" inline label="Services" style={{ display: 'inline' }} onChange={quickFilter("services")} />
-            <Form.Check className="d-flex justify-content-center" inline label="Events" style={{ display: 'inline' }} onChange={quickFilter("events")} />
+            <Banner change={handleChange} searchTerm={searchTerm}
+                myFilter={quickFilter} />
             <CardDeck className="mb-5">
                 {searchResults.map(item => (
                     <Cards item={item} />

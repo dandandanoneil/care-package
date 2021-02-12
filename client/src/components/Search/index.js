@@ -16,7 +16,7 @@ const Search = (props) => {
                     placeholder="Search"
                     value={props.searchTerm}
                     onChange={props.change}
-                    style={{width: "20rem"}}
+                    style={{ width: "20rem" }}
                 ></input> &nbsp;&nbsp;
 
             {/* <Button style={{
@@ -24,9 +24,9 @@ const Search = (props) => {
                     backgroundColor: "#d05d11",
                     fontWeight: 'bold'
                 }} variant="custom">Search</Button>&nbsp; */}
-               </div>
-                <div>
-          <Filter />
+            </div>
+            <div>
+                <Filter myFilter={props.myFilter} />
 
             </div>
 
