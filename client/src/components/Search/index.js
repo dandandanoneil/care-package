@@ -5,15 +5,6 @@ import Filter from '../Filter'
 import "./search.css";
 
 
-const items = [
-    "Chair",
-    "Couch",
-    "Lamp",
-    "Books",
-    "Taxes",
-    "Legal Assistance"
-];
-
 const Search = (props) => {
 
     return (

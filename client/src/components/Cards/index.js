@@ -9,7 +9,7 @@ const Cards = (props) => {
         <Card.Body>
           <Card.Title>{props.item.title}</Card.Title>
           <Card.Text>
-            {props.item.text}
+            {props.item.description}
           </Card.Text>
         </Card.Body>
         <Card.Footer>
