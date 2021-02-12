@@ -62,11 +62,14 @@ const Home = () => {
         setSearchTerm(event.target.value);
     };
     React.useEffect(() => {
-        const results = items.filter(item =>
-            item["title"].toLowerCase().includes(searchTerm.trim())
-        );
+        const results = items.filter(item => {
+            if (item["title"].toLowerCase().includes(searchTerm.trim())) return true;
+            if (item["description"].toLowerCase().includes(searchTerm.trim())) return true;
+            if (item["category"].toLowerCase().includes(searchTerm.trim())) return true;
+        });
         setSearchResults(results);
     }, [searchTerm]);
+
 
     const quickFilter = filterType => e => {
         if (e.target.checked) {
