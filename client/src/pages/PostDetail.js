@@ -39,35 +39,39 @@ function PostDetail() {
 
     return (
         <Wrapper>
-            <Card className="mt-3 mb-3">
-                <Card.Header>
-                    <PageTitle>
-                        <em>
-                            {post.offerRequestEvent === "offer" ? "offer→ " : null}
-                            {post.offerRequestEvent === "request" ? "request→ " : null}
-                            {post.offerRequestEvent === "event" ? "event→ " : null}
-                            {post.type === "good" ? "good→ " : null}
-                            {post.type === "service" ? "service→ " : null}
-                        </em>
-                        {post.title}
-                    </PageTitle>
+            <Card border="warning" className="mt-3 mb-3">
+                <Card.Header style={{ backgroundColor: "#d0b313", color: "#FFFFFF" }}>
+                    <div className="text-center">
+                        <h1>
+                            <em>
+                                {post.offerRequestEvent === "offer" ? "offer→ " : null}
+                                {post.offerRequestEvent === "request" ? "request→ " : null}
+                                {post.offerRequestEvent === "event" ? "event→ " : null}
+                                {post.type === "good" ? "good→ " : null}
+                                {post.type === "service" ? "service→ " : null}
+                            </em>
+                            {post.title}
+                        </h1>
+                    </div>
                 </Card.Header>
-                <Card.Body className="p-3">
+                <Card.Body className="p-3" style={{ backgroundColor: "#fafafa" }}>
                     <Row>
                         <Col sm="2">
-                            <Alert className="mb-2" style={{ color: "#FFFFFF", backgroundColor: "#d0b313" }}>
-                                {post.offerRequestEvent === "offer" ? "Offer " : null}
-                                {post.offerRequestEvent === "request" ? "Request " : null}
-                                {post.offerRequestEvent === "event" ? "Event " : null}
-                                {post.type === "good" ? "→ Good " : null}
-                                {post.type === "service" ? "→ Service " : null}
-                                {post.category ? `→ ${post.category}` : null}
+                            <Alert className="mb-2" style={{ color: "#FFFFFF", backgroundColor: "#4c68a5" }}>
+                                <strong>
+                                    {post.offerRequestEvent === "offer" ? "Offer " : null}
+                                    {post.offerRequestEvent === "request" ? "Request " : null}
+                                    {post.offerRequestEvent === "event" ? "Event " : null}
+                                    {post.type === "good" ? "→ Good " : null}
+                                    {post.type === "service" ? "→ Service " : null}
+                                    {post.category ? `→ ${post.category}` : null}
+                                </strong>
                             </Alert>
                             {post.location ?
-                                <Alert className="mb-2" style={{ color: "#FFFFFF", backgroundColor: "#d0b313" }}>{post.location}</Alert>
+                                <Alert className="mb-2" style={{ color: "#FFFFFF", backgroundColor: "#4c68a5" }}><strong>{post.location}</strong></Alert>
                             : null }
                             {post.searchTags ?
-                                <Alert className="mb-2" style={{ color: "#FFFFFF", backgroundColor: "#d0b313" }}>{post.searchTags}</Alert>
+                                <Alert className="mb-2" style={{ color: "#FFFFFF", backgroundColor: "#4c68a5" }}><strong>{post.searchTags}</strong></Alert>
                             : null }
                         </Col>
                         <Col sm="8">
@@ -175,28 +179,28 @@ function PostDetail() {
                         </Col>
                         <Col sm="2">
                             {post.timeSensitive ? 
-                            <Alert className="mb-2" style={{ color: "#FFFFFF", backgroundColor: "#d05d11" }}>Time Sensitive</Alert>
+                            <Alert className="mb-2" style={{ color: "#FFFFFF", backgroundColor: "#d05d11" }}><strong>Time Sensitive</strong></Alert>
                             : null }
                             {post.onlineOrRemote ? 
-                            <Alert className="mb-2" style={{ color: "#FFFFFF", backgroundColor: "#d05d11" }}>Online/Remote</Alert>
+                            <Alert className="mb-2" style={{ color: "#FFFFFF", backgroundColor: "#d05d11" }}><strong>Online/Remote</strong></Alert>
                             : null }
                             {post.pickUpOnly ? 
-                            <Alert className="mb-2" style={{ color: "#FFFFFF", backgroundColor: "#d05d11" }}>Pick Up Only</Alert>
+                            <Alert className="mb-2" style={{ color: "#FFFFFF", backgroundColor: "#d05d11" }}><strong>Pick Up Only</strong></Alert>
                             : null }
                             {post.dropOffNeeded ? 
-                            <Alert className="mb-2" style={{ color: "#FFFFFF", backgroundColor: "#d05d11" }}>Drop Off Needed</Alert>
+                            <Alert className="mb-2" style={{ color: "#FFFFFF", backgroundColor: "#d05d11" }}><strong>Drop Off Needed</strong></Alert>
                             : null }
                             {post.atCurbNow ? 
-                            <Alert className="mb-2" style={{ color: "#FFFFFF", backgroundColor: "#d05d11" }}>At Curb Now</Alert>
+                            <Alert className="mb-2" style={{ color: "#FFFFFF", backgroundColor: "#d05d11" }}><strong>At Curb Now</strong></Alert>
                             : null }
                             {post.lackConsistentCommunication ? 
-                            <Alert className="mb-2" style={{ color: "#FFFFFF", backgroundColor: "#d05d11" }}>Lack Access to Consistent Communication Methods</Alert>
+                            <Alert className="mb-2" style={{ color: "#FFFFFF", backgroundColor: "#d05d11" }}><strong>Lack Access to Consistent Communication Methods</strong></Alert>
                             : null }
                             {post.limitedCapacity ? 
-                            <Alert className="mb-2" style={{ color: "#FFFFFF", backgroundColor: "#d05d11" }}>Limited Capacity</Alert>
+                            <Alert className="mb-2" style={{ color: "#FFFFFF", backgroundColor: "#d05d11" }}><strong>Limited Capacity</strong></Alert>
                             : null }
                             {post.groupRequest ? 
-                            <Alert className="mb-2" style={{ color: "#FFFFFF", backgroundColor: "#d05d11" }}>Group Request</Alert>
+                            <Alert className="mb-2" style={{ color: "#FFFFFF", backgroundColor: "#d05d11" }}><strong>Group Request</strong></Alert>
                             : null }
                         </Col>
                     </Row>

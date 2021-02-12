@@ -87,8 +87,8 @@ function User() {
     }
 
     const profileCard= (
-        <Card className="m-3" border="primary">
-            <Card.Header style={{ color: "white", backgroundColor: "#4c68a5" }} as="h5">User Profile</Card.Header>
+        <Card className="m-3" border="warning">
+            <Card.Header style={{ color: "white", backgroundColor: "#d0c311" }} as="h5">User Profile</Card.Header>
             <Card.Body style={{ backgroundColor: "#fafafa" }}>
                 <p><strong>Name:</strong> {user.name}</p>
                 <p><strong>Email:</strong> {user.email}</p>
@@ -109,15 +109,15 @@ function User() {
                 <p><strong><a href={user.linkedInLink} target="blank">LinkedIn</a></strong></p>
                 : null}
                 {user._id === currentUser._id ?
-                    <Button size="sm" variant="danger" style={{ float: "right", backgroundColor: "#d05d11" }} onClick={handleEditSubmit}>Edit Profile</Button>
+                    <Button size="sm" variant="warning" style={{ float: "right", backgroundColor: "#d0c311", color: "#FFFFFF" }} onClick={handleEditSubmit}><strong>Edit Profile</strong></Button>
                 : null }
             </Card.Body>
         </Card>
     );
 
     const profileForm= (
-        <Card className="m-3" border="primary">
-            <Card.Header style={{ color: "white", backgroundColor: "#4c68a5" }} as="h5">User Profile</Card.Header>
+        <Card className="m-3" border="warning">
+            <Card.Header style={{ color: "white", backgroundColor: "#d0c311" }} as="h5">User Profile</Card.Header>
             <Form style={{ backgroundColor: "#fafafa" }} className="p-3">
                     <Form.Group>
                         <Form.Label>Name:</Form.Label>
@@ -147,7 +147,7 @@ function User() {
                         <Form.Label>LinkedIn Link:</Form.Label>
                         <Form.Control onChange={handleInputChange} name="linkedInLink" placeholder="Link to your LinkedIn profile to let other users get to know you!" defaultValue={user.linkedInLink} />
                     </Form.Group>
-                <Button variant="danger" style={{ float: "right", backgroundColor: "#d05d11" }} onClick={handleSubmit}>Save Changes</Button>
+                <Button variant="warning" style={{ float: "right", backgroundColor: "#d0c311" }} onClick={handleSubmit}>Save Changes</Button>
             </Form>
         </Card>
     );
@@ -160,9 +160,9 @@ function User() {
                     <Row className="justify-content-center">
                         <Col lg="8">
                             {editMode ? profileForm : profileCard}
-                            <Card className="m-3" border="warning">
-                                <Card.Header style={{ backgroundColor: "#d0c311", color: "white" }} variant="secondary" as="h5">User Posts</Card.Header>
-                                <Card.Body style={{ backgroundColor: "#fafafa" }}>
+                            <Card className="m-3" border="primary">
+                                <Card.Header style={{ backgroundColor: "#4c68a5", color: "white" }} variant="secondary" as="h5">User Posts</Card.Header>
+                                <Card.Body style={{ backgroundColor: "#cad5eb" }}>
                                     {posts.length ? null : (
                                         "No posts to display"
                                     )}
