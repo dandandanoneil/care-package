@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 import "./filter.css";
 
-const Filter = () => {
+const Filter = (props) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -14,13 +14,12 @@ const Filter = () => {
   return (
 
     <div >
-      <Button style={{ 
-      color: "white",
-      backgroundColor: "#d0c311",
-     fontWeight: 'bold',
-     width: "12rem",
-     marginTop: "8px"
-
+      <Button style={{
+        color: "white",
+        backgroundColor: "#d0c311",
+        fontWeight: 'bold',
+        width: "12rem",
+        marginTop: "8px"
       }} variant="custom" onClick={handleShow}>
         Filter
       </Button>
@@ -36,9 +35,9 @@ const Filter = () => {
 
               <br></br>
               <h6 style={{ display: 'inline', fontWeight: 'bold' }} className="mr-5">Type: </h6>
-              <Form.Check inline label="Goods" style={{ display: 'inline' }} />
-              <Form.Check inline label="Services" style={{ display: 'inline' }} />
-              <Form.Check inline label="$$$" style={{ display: 'inline' }} />
+              <Form.Check inline label="Goods" style={{ display: 'inline' }} onChange={props.myFilter("goods")} />
+              <Form.Check inline label="Goods" style={{ display: 'inline' }} onChange={props.myFilter("services")} />
+              <Form.Check inline label="Goods" style={{ display: 'inline' }} onChange={props.myFilter("events")} />
 
               <br></br>  <br></br>
 
