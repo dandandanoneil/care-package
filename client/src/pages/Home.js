@@ -62,9 +62,11 @@ const Home = () => {
         setSearchTerm(event.target.value);
     };
     React.useEffect(() => {
-        const results = items.filter(item =>
-            item["title"].toLowerCase().includes(searchTerm.trim())
-        );
+        const results = items.filter(item => {
+            if (item["title"].toLowerCase().includes(searchTerm.trim())) return true;
+            if (item["description"].toLowerCase().includes(searchTerm.trim())) return true;
+            if (item["category"].toLowerCase().includes(searchTerm.trim())) return true;
+        });
         setSearchResults(results);
     }, [searchTerm]);
 
@@ -84,8 +86,10 @@ const Home = () => {
             <HeroCarousel />
             <Buttons />
             <br></br>
-            <Banner change={handleChange} searchTerm={searchTerm}
-                myFilter={quickFilter} />
+            <Banner change={handleChange} searchTerm={searchTerm} myFilter={quickFilter}/>
+            <Form.Check className="d-flex justify-content-center" inline label="Goods" style={{ display: 'inline' }} onChange={quickFilter("goods")} />
+            <Form.Check className="d-flex justify-content-center" inline label="Services" style={{ display: 'inline' }} onChange={quickFilter("services")} />
+            <Form.Check className="d-flex justify-content-center" inline label="Events" style={{ display: 'inline' }} onChange={quickFilter("events")} />
             <CardDeck className="mb-5">
                 {searchResults.map(item => (
                     <Cards item={item} />
