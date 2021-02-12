@@ -39,7 +39,21 @@ const items = [
         text: "Free gardening help and flowers",
         type: "services",
         update: "Last updated 3 mins ago"
-    }
+    },
+    {
+        image: "https://www.delta.edu/_resources/images/universal-1920x1282/used-projector.jpg",
+        title: "720p Projector",
+        text: "Functional projector with built in speakers",
+        type: "goods",
+        update: "Last updated 3 mins ago"
+    },
+    {
+        image: "",
+        title: "Giveaway on x place",
+        text: "There is an event this weekend on x y z",
+        type: "events",
+        update: "Last updated 3 mins ago"
+    },
 ];
 const Home = () => {
     const [searchTerm, setSearchTerm] = React.useState("");
@@ -71,8 +85,9 @@ const Home = () => {
             <Buttons />
             <br></br>
             <Banner change={handleChange} searchTerm={searchTerm} />
-            <Form.Check inline label="Goods" style={{ display: 'inline' }} onChange={quickFilter("goods")} />
-            <Form.Check inline label="Services" style={{ display: 'inline' }} onChange={quickFilter("services")} />
+            <Form.Check className="d-flex justify-content-center" inline label="Goods" style={{ display: 'inline' }} onChange={quickFilter("goods")} />
+            <Form.Check className="d-flex justify-content-center" inline label="Services" style={{ display: 'inline' }} onChange={quickFilter("services")} />
+            <Form.Check className="d-flex justify-content-center" inline label="Services" style={{ display: 'inline' }} onChange={quickFilter("events")} />
             <CardDeck className="mb-5">
                 {searchResults.map(item => (
                     <Cards item={item} />
