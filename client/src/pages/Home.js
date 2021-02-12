@@ -84,10 +84,8 @@ const Home = () => {
             <HeroCarousel />
             <Buttons />
             <br></br>
-            <Banner change={handleChange} searchTerm={searchTerm} />
-            <Form.Check className="d-flex justify-content-center" inline label="Goods" style={{ display: 'inline' }} onChange={quickFilter("goods")} />
-            <Form.Check className="d-flex justify-content-center" inline label="Services" style={{ display: 'inline' }} onChange={quickFilter("services")} />
-            <Form.Check className="d-flex justify-content-center" inline label="Services" style={{ display: 'inline' }} onChange={quickFilter("events")} />
+            <Banner change={handleChange} searchTerm={searchTerm}
+                myFilter={quickFilter} />
             <CardDeck className="mb-5">
                 {searchResults.map(item => (
                     <Cards item={item} />
