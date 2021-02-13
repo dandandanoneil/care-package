@@ -25,9 +25,7 @@ function PostDetail() {
         const pathArray = location.pathname.split('/');
 
         API.getPost(pathArray[2])
-        .then(res => {
-            setPost(res.data);
-        })
+        .then(res => setPost(res.data))
         .catch(err => console.log(err));
     }
 
