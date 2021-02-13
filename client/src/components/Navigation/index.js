@@ -1,13 +1,16 @@
 import React, { useContext, useState } from "react";
 import UserContext from "../../utils/UserContext";
-import axios from "axios";
 import iconImage from "./icon192.ico";
+import axios from "axios";
+import "./style.css";
+
+import SignupForm from "../SignupForm";
+
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import "./style.css";
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 function Navigation(props) {
@@ -71,10 +74,17 @@ function Navigation(props) {
             </Button>
           </Form>
         </NavDropdown>
-        <Nav.Link href="/signup">Sign Up</Nav.Link>
       </>
     );
 
+    const signupDropdown = (
+      <>
+        <NavDropdown title="Sign Up" id="nav-dropdown" drop="down">
+          <SignupForm />
+        </NavDropdown>
+      </>
+    );
+    
     // This is the logout link that will appear in the Navbar if the user isn't authenticated
     const logoutLink = (
       <Nav.Link onClick={onLogOut}>Logout</Nav.Link>
@@ -109,26 +119,13 @@ function Navigation(props) {
             {/* Login dropdown form  OR logout link */}
             {loggedIn ? logoutLink : loginDropdown }
 
+            {/* Signup dropdown form  */}
+            {loggedIn ? null : signupDropdown }
+
             {/* Navigation Links */}
             <Nav.Link href="/create-post">Create a Post</Nav.Link>
 
             <Nav.Link href="/home/#see-posts">See Posts</Nav.Link>
-
-            {/* <NavDropdown title="Community Exchange" id="community-exchange-dropdown">
-              <NavDropdown.Item href="#search-filter">Goods</NavDropdown.Item>
-              <NavDropdown.Item href="#search-filter">Services</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#">Requests</NavDropdown.Item>
-              <NavDropdown.Item href="/create-post">Offer/Ask for Something</NavDropdown.Item>
-            </NavDropdown> */}
-
-            {/* <NavDropdown style={{color: "white"}} title="Resource Distribution" id="resource-distribution-dropdown">
-              <NavDropdown.Item href="#">$ requests</NavDropdown.Item>
-              <NavDropdown.Item href="#">Ask for $</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#">Mutual Aid Fridges</NavDropdown.Item>
-              <NavDropdown.Item href="#">Community Events</NavDropdown.Item>
-            </NavDropdown> */}
 
             {/* Profile link */}
             {loggedIn ? profileLink : <></> }

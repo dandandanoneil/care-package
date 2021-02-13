@@ -18,8 +18,8 @@ import Footer from "./components/Footer";
 
 
 function App() {
-  if (localStorage.getItem("user") === null) localStorage.setItem("user", "{}");
-  if (localStorage.getItem("status") === null) localStorage.setItem("status", "false");
+  if (localStorage.getItem("user") === null || localStorage.getItem("user") === "") localStorage.setItem("user", "{}");
+  if (localStorage.getItem("status") === null || localStorage.getItem("status") === "") localStorage.setItem("status", "false");
 
   const [userState, setUserState] = useState({
     currentUser: JSON.parse(localStorage.getItem("user")),
