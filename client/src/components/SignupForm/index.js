@@ -62,38 +62,19 @@ class SignupForm extends React.Component {
     render() {
         return (
             <Form onSubmit={this.onSubmit} className="p-3" style={{ width: "300px"}}>
-                <Form.Label>Email</Form.Label>
-                <Form.Control 
-                    type="email" 
-                    name="email"
-                    placeholder="Enter your email" 
-                    onChange={this.onChange}
+                <Form.Control className="mb-3" type="email" name="email" placeholder="Your Email" onChange={this.onChange}
                 />
-
-                <Form.Label>Password</Form.Label>
-                <Form.Control 
-                    type="password" 
-                    name="password"
-                    placeholder="Choose a password" 
-                    onChange={this.onChange}
+                <Form.Control className="mb-3" type="password" name="password" placeholder="Create a Password" onChange={this.onChange}
                 />
-
-                <Form.Label>Display Name</Form.Label>
-                <Form.Control 
-                    type="text" 
-                    name="name"
-                    placeholder="Enter your name" 
-                    onChange={this.onChange}
+                <Form.Control className="mb-3" type="text" name="name" placeholder="Display Name" onChange={this.onChange}
                 />
-
-                <Button style={{ color: "white", backgroundColor: "#4c68a5" }} type="submit" className="mt-2 mb-2">
+                <Button style={{ color: "white", backgroundColor: "#4c68a5" }} type="submit">
                     Create Account
                 </Button>
 
                 <Alert variant="danger" show={this.state.showError} onClose={() => this.setState({ showError: false })} dismissible>
                     {this.state.error}
                 </Alert>
-
             </Form>
         )
     }

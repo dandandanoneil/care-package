@@ -34,9 +34,8 @@ function CreatePost() {
     
     const offerTypeCard = (
         <Card border="warning" id="offer-type-card" className="m-1">
-            <Card.Header style={{ color: "white", backgroundColor: "#d0c311", fontWeight: "bold"}}>Offer Type</Card.Header>
-            <Form id="offer-type" className="text-center">
-                <Form.Text><em>Are you offering a good or a service?</em></Form.Text>
+            <Card.Header style={{ color: "white", backgroundColor: "#d0c311", fontWeight: "bold"}}>Are you offering a good or a service?</Card.Header>
+            <Form id="offer-type" className="text-center p-3">
                 <Form.Check inline name="post-type" label="Good" type="radio" id="good" onChange={handleChange} />
                 <Form.Check inline name="post-type" label="Service" type="radio" id="service" onChange={handleChange} />
             </Form>
@@ -45,9 +44,8 @@ function CreatePost() {
 
     const requestTypeCard = (
         <Card border="warning" id="request-type-card" className="m-1">
-            <Card.Header style={{ color: "white", backgroundColor: "#d0c311", fontWeight: "bold"}}>Request Type</Card.Header>
-            <Form id="request-type" className="text-center">
-                <Form.Text><em>Are you requesting a good, a service, or monetary assistance?</em></Form.Text>
+            <Card.Header style={{ color: "white", backgroundColor: "#d0c311", fontWeight: "bold"}}>Are you requesting a good, a service, or monetary assistance?</Card.Header>
+            <Form id="request-type" className="text-center p-3">
                 <Form.Check inline name="post-type" label="Good" type="radio" id="good" onChange={handleChange} />
                 <Form.Check inline name="post-type" label="Service" type="radio" id="service" onChange={handleChange} />
                 <Form.Check inline name="post-type" label="$$$" type="radio" id="$$$" onChange={handleChange} />
@@ -65,9 +63,8 @@ function CreatePost() {
                     <Col xl="7" lg="9" md="11">
                         {/* What kind of post: Offer, request or event? */}
                         <Card className="m-1" border="danger">
-                            <Card.Header style={{ color: "white", backgroundColor: "#d05d11", fontWeight: "bold"}} >Offer, Request, or Event</Card.Header>
-                            <Form className="text-center">
-                                <Form.Text><em>Are you posting an offer, a request, or a event?</em></Form.Text>
+                            <Card.Header style={{ color: "white", backgroundColor: "#d05d11", fontWeight: "bold"}} >Are you posting an offer, a request, or a event?</Card.Header>
+                            <Form className="text-center p-3">
                                 <Form.Check inline name="post-label" label="Offer" type="radio" id="offer" onChange={handleChange} />
                                 <Form.Check inline name="post-label" label="Request" type="radio" id="request" onChange={handleChange} />
                                 <Form.Check inline name="post-label" label="Event" type="radio" id="event" onChange={handleChange} />
