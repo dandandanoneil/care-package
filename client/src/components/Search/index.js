@@ -5,6 +5,7 @@ import "./search.css";
 function Search(props) {
     return (
         <FormControl
+            size="lg" 
             width="100%"
             className="mb-2"
             type="text"
