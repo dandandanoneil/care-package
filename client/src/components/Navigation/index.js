@@ -113,7 +113,7 @@ function Navigation(props) {
             {/* Navigation Links */}
             <Nav.Link href="/create-post">Create a Post</Nav.Link>
 
-            <Nav.Link href="/">See Posts</Nav.Link>
+            <Nav.Link href="/home/#see-posts">See Posts</Nav.Link>
 
             {/* <NavDropdown title="Community Exchange" id="community-exchange-dropdown">
               <NavDropdown.Item href="#search-filter">Goods</NavDropdown.Item>

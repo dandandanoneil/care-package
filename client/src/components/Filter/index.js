@@ -1,114 +1,137 @@
 import React, { useState } from 'react';
-import Form from 'react-bootstrap/Form';
-import Dropdown from 'react-bootstrap/Dropdown';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
 import "./filter.css";
 
-const Filter = (props) => {
+import Form from 'react-bootstrap/Form';
+import Card from 'react-bootstrap/Card';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
+function Filter(props) {
   const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  function toggleShow() {
+    if(!show) return setShow(true);
+    setShow(false);
+    props.clearFilters();
+  }
 
   return (
-
-    <div >
-      <Button style={{
-        color: "white",
-        backgroundColor: "#d0c311",
-        fontWeight: 'bold',
-        width: "12rem",
-        marginTop: "8px"
-      }} variant="custom" onClick={handleShow}>
-        Filter
-      </Button>
-      <Modal show={show} onHide={handleClose} >
-        <Modal.Header style={{ textAlign: "center", margin: 'auto' }}>
-          <Modal.Title className="d-flex justify-content-center">Filter</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
+    <Card style={{ color: "black" }}>
+      <Card.Header
+        onClick={toggleShow}
+        className=""
+        style={{
+          color: "white",
+          backgroundColor: "#d0b313",
+          cursor: "pointer"
+        }}
+      >
+        {show ? (
           <div>
-            <Form>
-              <h5 className="d-flex justify-content-center" >   <Form.Check inline label="Offers" />
-                <Form.Check inline label="Requests" /></h5>
-
-              <br></br>
-              <h6 style={{ display: 'inline', fontWeight: 'bold' }} className="mr-5">Type: </h6>
-              <Form.Check inline label="Goods" style={{ display: 'inline' }} onChange={props.myFilter("goods")} />
-              <Form.Check inline label="Goods" style={{ display: 'inline' }} onChange={props.myFilter("services")} />
-              <Form.Check inline label="Goods" style={{ display: 'inline' }} onChange={props.myFilter("events")} />
-
-              <br></br>  <br></br>
-
-              <h6 style={{ display: 'inline', fontWeight: 'bold' }} className="mr-4" >Close to:</h6>
-              <input style={{ display: 'inline' }} placeholder='Zipcode' />
-
-            </Form>
-
-            <br></br>
-
-            <div className="d-flex justify-content-center">
-              <Dropdown style={{ display: 'inline' }}>
-                <Dropdown.Toggle variant="dark" id="dropdown-basic">
-                  Goods Category
-   </Dropdown.Toggle>
-
-
-                <Dropdown.Menu>
-                  <Form>
-                    <Form.Check inline label="" />
-                    <Form.Check inline label="Kitchen" />
-                    <Form.Check inline label="Electronics" />
-                    <Form.Check inline label="Essentials" />
-                    <Form.Check inline label="Clothes" />
-                  </Form>
-                </Dropdown.Menu>
-              </Dropdown> &nbsp;&nbsp;
-
- <Dropdown style={{ display: 'inline' }}>
-                <Dropdown.Toggle variant="dark" id="dropdown-basic">
-                  Services Category
-   </Dropdown.Toggle>
-
-
-                <Dropdown.Menu>
-                  <Form>
-                    <Form.Check inline label="Legal" />
-                    <Form.Check inline label="Taxes" />
-                    <Form.Check inline label="Consulting" />
-                    <Form.Check inline label="Mental Health" />
-                    <Form.Check inline label="Financial guidance" />
-                  </Form>
-                </Dropdown.Menu>
-              </Dropdown>
-
-              <br></br> <br></br>
-
-
-            </div>
-            <br></br>
-            <Form>
-              <h6 style={{ display: 'inline', fontWeight: 'bold' }} className="mr-1">Preferences:</h6>
-              <Form.Check inline label="Has Image" />
-              <Form.Check inline label="Available Now" />
-              <Form.Check inline label="Still Available" />
-              <Form.Check inline label="Urgent Need" />
-
-            </Form>
+            <span style={{ float: "left"}}>↑</span>
+              Close to Clear Filters
+            <span style={{ float: "right"}}>↑</span>
           </div>
-        </Modal.Body >
-        <Modal.Footer className="d-flex justify-content-center">
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
-      </Modal>
-    </div>
+        ) : (
+          <div>
+            <span style={{ float: "left"}}>↓</span>
+              Click to Add Filters
+            <span style={{ float: "right"}}>↓</span>
+          </div>
+        )}
+      </Card.Header>
+      {show ? (
+        <Form className="p-3">
+          <Form.Group>
+            <Form.Check inline defaultChecked type="radio" label="All" name="offerRequestEvent" onChange={props.handleRadio} value="" />
+            <Form.Check inline type="radio" label="Offers" value="offer" name="offerRequestEvent" onChange={props.handleRadio} />
+            <Form.Check inline type="radio" label="Requests" value="request" name="offerRequestEvent" onChange={props.handleRadio} />
+            <Form.Check inline type="radio" label="Events" value="event" name="offerRequestEvent" onChange={props.handleRadio} />
+          </Form.Group>
+          <Form.Group>
+            <Form.Check inline defaultChecked type="radio" label="All" name="type" onChange={props.handleRadio} value="" />
+            <Form.Check inline type="radio" label="Goods" name="type" onChange={props.handleRadio} value="good" />
+            <Form.Check inline type="radio" label="Services" name="type" onChange={props.handleRadio} value="service" />
+          </Form.Group>
+          <Form.Group>
+            <Row>
+              <Col sm="6">
+                <Form.Control as="select" name="category" onChange={props.handleSelect}>
+                  <option defaultValue>All Categories</option>
+                  <option>Kitchen</option>
+                  <option>Tools</option>
+                  <option>Garden</option>
+                  <option>Clothing</option>
+                  <option>Furniture</option>
+                  <option>Automotive</option>
+                  <option>Entertainment</option>
+                  <option>Household Supplies</option>
+                  <option>Toiletries</option>
+                  <option>Baby & Child</option>
+                  <option>Electronic</option>
+                  <option>Appliances</option>
+                  <option>Legal</option>
+                  <option>Physical Labor</option>
+                  <option>Financial Advice</option>
+                  <option>Educational</option>
+                  <option>Transportation</option>
+                  <option>Beauty & Wellness</option>
+                  <option>Household</option>
+                  <option>Lessons</option>
+                  <option>Pet</option>
+                  <option>Real Estate</option>
+                  <option>Housing</option>
+                  <option>Educational</option>
+                  <option>Medical</option>
+                  <option>Reparations</option>
+                  <option>Skill Building</option>
+                  <option>Child Support</option>
+                  <option>Wellness Support</option>
+                  <option>Other</option>
+                </Form.Control>
+              </Col>
+              <Col sm="6">
+                <Form.Control as="select" name="location" onChange={props.handleSelect}>
+                  <option defaultValue>All Locations</option>
+                  <option>Bridesburg-Kensington-Port Richmond</option>
+                  <option>Bucks County</option>
+                  <option>Center City</option>
+                  <option>Chester County</option>
+                  <option>Delaware County</option>
+                  <option>Far Northeast Philadelphia</option>
+                  <option>Germantown-Chestnut Hill</option>
+                  <option>Lower North Philadelphia</option>
+                  <option>Montgomery County</option>
+                  <option>Near Northeast Philadelphia</option>
+                  <option>Olney-Oak Lane</option>
+                  <option>Roxborough-Manayunk</option>
+                  <option>South Philadelphia</option>
+                  <option>Southwest Philadelphia</option>
+                  <option>Upper North Philadelphia</option>
+                  <option>West Philadelphia</option>
+                </Form.Control>
+              </Col>
+            </Row>
+          </Form.Group>
+          <Form.Group>
+            <small>
+              <Form.Check inline type="checkbox" label="Time Sensitive" name="timeSensitive" onChange={props.handleCheck} />
+              <Form.Check inline type="checkbox" label="Online/Remote" name="onlineRemote" onChange={props.handleCheck} />
+              <Form.Check inline type="checkbox" label="Pick Up Only" name="pickUpOnly" onChange={props.handleCheck} />
+              <Form.Check inline type="checkbox" label="At Curb Now" name="atCurbNow" onChange={props.handleCheck} />
+              <Form.Check inline type="checkbox" label="Drop Off Needed" name="dropOffNeeded" onChange={props.handleCheck} />
+              <Form.Check inline type="checkbox" label="Lack Access to Consistent Communication Methods" name="lackConsistentCommunication" onChange={props.handleCheck} />
+              <Form.Check inline type="checkbox" label="Limited Capacity" name="limitedCapacity" onChange={props.handleCheck} />
+              <Form.Check inline type="checkbox" label="Group Request" name="groupRequest" onChange={props.handleCheck} />
+            </small>
+          </Form.Group>
+        </Form>
+      ) : (
+        null
+      )}
+    </Card>
+
   );
 }
 
-export default Filter
+export default Filter;

@@ -12,7 +12,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost/deep-thoughts',
+  process.env.MONGODB_URI || 'mongodb://localhost/care-package',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
