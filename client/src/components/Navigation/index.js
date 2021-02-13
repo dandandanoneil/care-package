@@ -51,7 +51,7 @@ function Navigation(props) {
     // This is the login form & signup link that will appear in the Navbar if the user isn't authenticated
     const loginDropdown = (
       <>
-        <NavDropdown title="Login" id="nav-dropdown" drop="down">
+        <NavDropdown title="Login" id="nav-dropdown" drop="left">
           <Form className="p-3" style={{ width: "300px"}} onSubmit={onSubmit}>
             <Form.Group>
               <Form.Control 
@@ -79,7 +79,7 @@ function Navigation(props) {
 
     const signupDropdown = (
       <>
-        <NavDropdown title="Sign Up" id="nav-dropdown" drop="down">
+        <NavDropdown title="Sign Up" id="nav-dropdown" drop="left">
           <SignupForm />
         </NavDropdown>
       </>
@@ -123,8 +123,7 @@ function Navigation(props) {
             {loggedIn ? null : signupDropdown }
 
             {/* Navigation Links */}
-            <Nav.Link href="/create-post">Create a Post</Nav.Link>
-
+            {loggedIn ? <Nav.Link href="/create-post">Create a Post</Nav.Link> : null }
             <Nav.Link href="/home/#see-posts">See Posts</Nav.Link>
 
             {/* Profile link */}

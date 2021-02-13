@@ -12,13 +12,13 @@ function ModalSignUp() {
     const handleShow = () => setShow(true);
   
     return (
-      <div className= "d-flex justify-content-center">
+      <div className="d-flex justify-content-center">
         <button onClick={handleShow} style={{ background: "none",  border: "none" }}>
           <img className= "img-button" src={buttonImage} alt="Sign Up" />
         </button>
   
-        <Modal show={show} onHide={handleClose}>
-          <Modal.Body> <SignupForm /> </Modal.Body>
+        <Modal show={show} onHide={handleClose} className="d-flex">
+          <SignupForm />
         </Modal>
       </div>
     );
