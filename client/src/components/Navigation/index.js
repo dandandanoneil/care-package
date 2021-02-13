@@ -80,22 +80,21 @@ function Navigation(props) {
       <Nav.Link onClick={onLogOut}>Logout</Nav.Link>
     );
 
-    const profileLink = (
-      <Nav.Link href={`/user/${currentUser._id}`}>{currentUser.name}</Nav.Link>
-    );
+    // const profileLink = (
+    //   <Nav.Link href={`/user/${currentUser._id}`}>{currentUser.name}</Nav.Link>
+    // );
 
     return (
-      <Navbar expand="md" sticky="top" bg="dark" variant="dark">
+      <Navbar expand="md" sticky="top" bg="dark" variant="dark" >
         {/* Page name/logo, links to home page */}
         <Navbar.Brand bg="light" href="/">
           <img src={iconImage}
-          width="75"
-          height="75"
+          width="80"
+          height="80"
           className="d-inline-block align-top" 
           style={{marginRight: "15px", marginLeft: "20px"}}
           />
-          <h1 style={{color: "#d0c311", marginTop: "15px", textShadow: "2px 2px 4px #000000"}}>Care Package</h1>
-          <p style={{color: "#ebe8c1", marginTop: "25px", marginLeft: "30px"}}>Joining neighbors in mutual aid</p>
+          <h1 style={{color: "#d0c311", marginTop: "10px", textShadow: "2px 2px 4px #000000", fontWeight: "bold"}}>CARE PACKAGE<small>Passing Gifts to Neighbors with Heart</small></h1>
         </Navbar.Brand>
 
         {/* Toggler */}
@@ -130,7 +129,7 @@ function Navigation(props) {
             </NavDropdown> */}
 
             {/* Profile link */}
-            {loggedIn ? profileLink : <></> }
+            {/* {loggedIn ? profileLink : <></> } */}
           </Nav>
         </Navbar.Collapse>
       </Navbar>

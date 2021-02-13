@@ -18,20 +18,20 @@ import "./HeroCarousel.css";
 function HeroCarousel() {
   return (
     <Carousel>
-        <Carousel.Item interval={3500} style={{ backgroundImage: `url(${clarkParkPhoto})`, backgroundSize: "100%", minHeight: "400px", width: "100%" }}>
+        <Carousel.Item interval={3500} style={{ backgroundImage: `url(${clarkParkPhoto})`, backgroundSize: "100%", minHeight: "500px", width: "100%" }}>
             <Carousel.Caption>
                 <ModalSignUp />
                 <br/><br/>
                 <div 
                     className="p-3 rcorners" 
-                    style={{ backgroundColor: "#d05d11" }}
+                    style={{ backgroundColor: "#d05d11", cursor: "auto" }}
                 >
                     <strong>Join our community to start sharing, receiving, and connecting to the people in your community!</strong>
                 </div>
             </Carousel.Caption>
         </Carousel.Item>
         
-        <Carousel.Item interval={3500} style={{ backgroundImage: `url(${northPhiladelphiaPhoto})`, backgroundSize: "100%", minHeight: "400px", width: "100%" }}>
+        <Carousel.Item interval={3500} style={{ backgroundImage: `url(${northPhiladelphiaPhoto})`, backgroundSize: "100%", minHeight: "500px", width: "100%" }}>
             <Carousel.Caption>
                 <div className= "d-flex justify-content-center">
                     <a href="/mission" >
@@ -48,7 +48,7 @@ function HeroCarousel() {
             </Carousel.Caption>
         </Carousel.Item>
 
-        <Carousel.Item interval={3500} style={{ backgroundImage: `url(${schuykillBanksPhoto})`, backgroundSize: "100%", minHeight: "400px", width: "100%" }}>
+        <Carousel.Item interval={3500} style={{ backgroundImage: `url(${schuykillBanksPhoto})`, backgroundSize: "100%", minHeight: "500px", width: "100%" }}>
             <Carousel.Caption>
                 <div className= "d-flex justify-content-center">
                     <a href="/community-agreements" >
@@ -65,7 +65,7 @@ function HeroCarousel() {
             </Carousel.Caption>
         </Carousel.Item>
 
-        <Carousel.Item interval={3500} style={{ backgroundImage: `url(${westPhillyPhoto})`, backgroundSize: "100%", minHeight: "400px", width: "100%" }}>
+        <Carousel.Item interval={3500} style={{ backgroundImage: `url(${westPhillyPhoto})`, backgroundSize: "100%", minHeight: "500px", width: "100%" }}>
             <Carousel.Caption>
                 <div className= "d-flex justify-content-center">
                     <a href="/user-stories" >

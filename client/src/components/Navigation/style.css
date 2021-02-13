@@ -16,6 +16,11 @@
   display: flex;
   align-items: left;
 }
-/* .navbar-brand>img {
-  padding: 7px 14px;
-} */
+
+.navbar-brand small {
+  display: block;
+  font-size: 14px;
+  color: #ebe8c1;
+  text-align: center;
+  margin-top: 5px;
+}

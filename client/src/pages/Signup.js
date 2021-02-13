@@ -12,6 +12,7 @@ function Signup() {
                     <SignupForm />
                 </div>
             </div>
+            <br />
         </Wrapper>
     );
 }

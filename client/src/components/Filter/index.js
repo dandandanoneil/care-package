@@ -15,7 +15,7 @@ const Filter = (props) => {
 
     <div >
       <Button style={{
-        color: "white",
+        color: "#4c68a5",
         backgroundColor: "#d0c311",
         fontWeight: 'bold',
         width: "12rem",

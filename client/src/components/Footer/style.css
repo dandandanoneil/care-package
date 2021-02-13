@@ -4,13 +4,18 @@ html {
 }
 
 .footer {
-  position: relative;
+  position: fixed;
   bottom: 0;
   width: 100%;
   min-height: 120px;
   /* background-color: #aac9e0; */
   text-align: center;
   padding: 20px;
+  margin-top: 75px;
   font-family: 'Open Sans', sans-serif;
   background-image: linear-gradient(to right, #4c68a5, #021247);
+}
+
+.push {
+  height: 120px;
 }
