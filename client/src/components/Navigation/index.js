@@ -103,7 +103,7 @@ function Navigation(props) {
             alt="Care Package Logo"
             width="80"
             height="80"
-            className="d-inline-block align-top" 
+            className="d-inline-block align-top responsive" 
             style={{marginRight: "15px", marginLeft: "20px"}}
           />
           <h1 style={{color: "#d0c311", marginTop: "10px", textShadow: "2px 2px 4px #000000", fontWeight: "bold"}}>CARE PACKAGE<small>Passing Gifts to Neighbors with Heart</small></h1>
