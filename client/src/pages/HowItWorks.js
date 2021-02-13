@@ -1,20 +1,76 @@
 import React from "react";
-import Wrapper from "../components/Wrapper";
-import PageTitle from "../components/PageTitle"
+import { Container, Row, Col } from 'react-bootstrap'
+import "./HowItWorks.css";
 
 function PrivacyPolicy() {
     return (
-        <Wrapper>
-            <div className="row justify-content-md-center">
-                <div className="col-lg-8">
-                    <PageTitle>How it Works</PageTitle>
-                    <p style={{color: "#5a5a5a"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et turpis sapien. Phasellus non ipsum ut augue tempus congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin urna justo, mattis et porttitor rutrum, volutpat a sem. Duis sit amet malesuada dui, sit amet lacinia ligula. Quisque non iaculis lectus. Integer rhoncus tempus enim, in rutrum velit. Donec ut mi vitae lacus lacinia convallis. Quisque semper viverra nunc non vehicula. Curabitur gravida, massa non maximus laoreet, magna augue tempus lacus, pulvinar feugiat eros nunc vel tortor. Pellentesque porttitor eros at ex rutrum, nec pulvinar lacus eleifend. Nullam dictum efficitur erat vitae condimentum. Mauris sollicitudin sed ante facilisis sodales.</p>
-                    <p style={{color: "#5a5a5a"}}>Phasellus at velit ut lorem sollicitudin commodo. Morbi sagittis ut urna a ultrices. Pellentesque semper sapien non elit tristique porta quis et diam. Curabitur odio neque, laoreet id nulla et, tristique cursus sapien. Sed ac eleifend velit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec suscipit nulla sagittis nibh consectetur efficitur. Maecenas pellentesque nisi metus. Aenean at quam risus. Pellentesque faucibus efficitur enim quis pretium. Quisque dictum efficitur semper. Integer malesuada neque in pharetra vehicula.</p>
-                    <p style={{color: "#5a5a5a"}}>Fusce id eleifend orci. Quisque eget nisl rhoncus, iaculis eros non, porttitor dolor. Integer lacinia tellus sit amet libero aliquam, et semper metus semper. Donec lobortis lacus cursus purus fermentum, at porta dolor pellentesque. Morbi quis consectetur risus. Fusce ac volutpat nunc. Aliquam fermentum dui nibh, sit amet pretium tortor elementum at. Maecenas egestas non enim non pharetra. Vestibulum auctor scelerisque diam, sit amet porta ante gravida eget. Proin vehicula nunc euismod nulla bibendum dignissim. Sed non mauris nec nibh blandit suscipit ut nec nisi. Ut eget ante ante. Etiam auctor sit amet urna eget auctor.</p>
+
+        <Container className="mb-5" >
+
+            <section className="projects" id="projects">
+                <div className="max-width">
+                    <h2 className="title " className="d-flex justify-content-center" style={{ color: '#d05d11', padding: '40px', textShadow: "1px 1px 2px #000000" }} > <bold> How it Works </bold> </h2>
+
+                    <div className="carousel owl-carousel">
+                        <div className="card">
+                            <div className="box">
+                                <img src="https://mast2.org/wp-content/uploads/2019/10/sign-up-masters-in-cash-300x300.png" alt="" />
+                                <div className="text">
+                                    <a className="project-img" href="" target="_blank" rel="noopener noreferrer" style={{ color: 'white' }}> Sign Up to get started </a></div>
+
+
+                                <p style={{ color: 'white' }}>Lalalalalalalaalala !!</p>
+                            </div>
+                        </div>
+                        <br></br>
+                        <div className="card">
+                            <div className="box">
+                                <img src="https://cdn1.iconfinder.com/data/icons/birthday-10/24/giving_present_birthday_gift_box-512.png" alt="Note-Taker" />
+                                <div className="text">
+                                    <a className="project-img" href="" target="_blank" rel="noopener noreferrer" style={{ color: 'white' }}>Give or request</a></div>
+                                <p style={{ color: 'white' }}>
+                                    More LALALALALA alc dal da ijsdaiofaodfasm ofa</p>
+                            </div>
+                        </div>
+                        <br></br>
+                        <div className="card">
+                            <div className="box">
+                                <img src="" alt="" />
+                                <div className="text">
+                                    <a className="project-img" href="" target="_blank" rel="noopener noreferrer" style={{ color: 'white' }}>Something else</a>
+                                </div>
+                                <p style={{ color: 'white' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    </p>
+                            </div>
+                        </div>
+                        <br></br>
+                        <div className="card">
+                            <div className="box">
+                                <img src="" alt="" />
+                                <div className="text">
+                                    <a className="project-img"
+                                        href="" target="_blank" rel="noopener noreferrer" style={{ color: 'white' }}>One More thing
+                                Engine</a></div>
+                                <p style={{ color: 'white' }}>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                        </div>
+                        <br></br>
+                        <div className="card">
+                            <div className="box">
+                                <img src="" alt="" />
+                                <div className="text">
+                                    <a className="project-img" href="" target="_blank" rel="noopener noreferrer" style={{ color: 'white' }}>More more
+                                Dashboard</a></div>
+                                <p style={{ color: 'white' }}>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </Wrapper>
-    );
-  }
+            </section>
+        </Container>
+    )
+}
 
 export default PrivacyPolicy;
