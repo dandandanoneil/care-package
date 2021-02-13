@@ -61,7 +61,7 @@ class SignupForm extends React.Component {
   
     render() {
         return (
-            <Form onSubmit={this.onSubmit}>
+            <Form onSubmit={this.onSubmit} className="p-3" style={{ width: "300px"}}>
                 <Form.Label>Email</Form.Label>
                 <Form.Control 
                     type="email" 
