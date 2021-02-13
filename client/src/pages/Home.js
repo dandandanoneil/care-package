@@ -4,8 +4,6 @@ import API from "../utils/API";
 import Wrapper from "../components/Wrapper";
 import HeroCarousel from "../components/HeroCarousel";
 import Buttons from "../components/Buttons";
-import Banner from "../components/Banner";
-import PageTitle from "../components/PageTitle";
 import ActivePostsCard from "../components/ActivePostsCard";
 import Search from '../components/Search';
 import Filter from '../components/Filter';
