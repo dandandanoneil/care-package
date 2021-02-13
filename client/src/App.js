@@ -17,6 +17,9 @@ import Footer from "./components/Footer";
 
 
 function App() {
+  if (!JSON.parse(window.localStorage.getItem("user"))) window.localStorage.setItem("user", {});
+  if (!JSON.parse(window.localStorage.getItem("status"))) window.localStorage.setItem("status", "");
+
   const [userState, setUserState] = useState({
     currentUser: JSON.parse(window.localStorage.getItem("user")),
     loggedIn: JSON.parse(window.localStorage.getItem("status"))
