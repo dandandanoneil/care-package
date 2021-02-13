@@ -19,8 +19,17 @@
 
 .navbar-brand small {
   display: block;
-  font-size: 14px;
+  font-size: 1.35vw;
   color: #ebe8c1;
   text-align: center;
   margin-top: 5px;
+}
+
+.navbar-brand h1 {
+  font-size: 3.75vw;
+}
+
+.responsive {
+  width: 20%;
+  height: auto;
 }
