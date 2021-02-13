@@ -19,11 +19,8 @@ module.exports = {
   create: function (req, res) {
     db.Comment
       .create(req.body)
-      .then(dbModel => {
-        return db.Post.findByIdAndUpdate(dbModel.post, { $push: { comments: dbModel._id } });
-        // db.Post.findByIdAndUpdate(dbModel.post, { $push: { comments: dbModel._id } });
-        // db.User.findByIdAndUpdate(dbModel.created_by, { $push: { comments: dbModel._id } });
-      })
+      .then(dbComment => db.Post.findByIdAndUpdate(dbComment.post, { $push: { comments: dbComment._id }, ref_user: dbComment.created_by, ref_comment: dbComment._id }, { new: true }))
+      .then(dbPost => db.User.findByIdAndUpdate(dbPost.ref_user, { $push: { comments: dbPost.ref_comment } }))
       .then(data => res.json(data))
       .catch(err => {
         console.log(err);
@@ -39,11 +36,8 @@ module.exports = {
   remove: function (req, res) {
     db.Comment
       .findOneAndRemove({ _id: req.params.id })
-      .then(dbModel => {
-        return db.Post.findByIdAndUpdate(dbModel.post, { $pull: { comments: dbModel._id } });
-        // db.Post.findByIdAndUpdate(dbModel.post, { $pull: { comments: dbModel._id } });
-        // db.User.findByIdAndUpdate(dbModel.created_by, { $pull: { comments: dbModel._id } });
-      })
+      .then(dbComment => db.Post.findByIdAndUpdate(dbComment.post, { $pull: { comments: dbComment._id }, ref_user: dbComment.created_by, ref_comment: dbComment._id }, { new: true }))
+      .then(dbPost => db.User.findByIdAndUpdate(dbPost.ref_user, { $pull: { comments: dbPost.ref_comment } }))
       .then(data => res.json(data))
       .catch(err => res.status(422).json(err));
   }

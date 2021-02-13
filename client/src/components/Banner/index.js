@@ -1,8 +1,5 @@
 import React from 'react';
 
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-
 function Banner(props) {
     return (
         <div className="mb-3 p-4"
