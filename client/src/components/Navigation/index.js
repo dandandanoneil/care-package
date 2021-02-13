@@ -88,11 +88,13 @@ function Navigation(props) {
       <Navbar expand="md" sticky="top" bg="dark" variant="dark" >
         {/* Page name/logo, links to home page */}
         <Navbar.Brand bg="light" href="/">
-          <img src={iconImage}
-          width="80"
-          height="80"
-          className="d-inline-block align-top" 
-          style={{marginRight: "15px", marginLeft: "20px"}}
+          <img
+            src={iconImage}
+            alt="Care Package Logo"
+            width="80"
+            height="80"
+            className="d-inline-block align-top" 
+            style={{marginRight: "15px", marginLeft: "20px"}}
           />
           <h1 style={{color: "#d0c311", marginTop: "10px", textShadow: "2px 2px 4px #000000", fontWeight: "bold"}}>CARE PACKAGE<small>Passing Gifts to Neighbors with Heart</small></h1>
         </Navbar.Brand>
@@ -110,7 +112,7 @@ function Navigation(props) {
             {/* Navigation Links */}
             <Nav.Link href="/create-post">Create a Post</Nav.Link>
 
-            <Nav.Link href="/">See Posts</Nav.Link>
+            <Nav.Link href="/home/#see-posts">See Posts</Nav.Link>
 
             {/* <NavDropdown title="Community Exchange" id="community-exchange-dropdown">
               <NavDropdown.Item href="#search-filter">Goods</NavDropdown.Item>

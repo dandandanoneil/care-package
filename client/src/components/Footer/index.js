@@ -16,7 +16,6 @@ function Footer() {
               style={{ color: "#ebe8c1" }}
             >How it Works</a></h6>
           </div>
-
           <div className="col-sm-4">
             <h4 style={{ color: "#d0c311", textShadow: "2px 2px 4px #000000" }} >Resources</h4>
             <h6><a href="https://www.thecitypulse.com/post/community-refrigerators"
@@ -28,7 +27,6 @@ function Footer() {
               style={{ color: "#ebe8c1" }}
             >Philadelphia Reparations</a></h6>
           </div>
-
           <div className="col-sm-4">
             <h4 style={{ color: "#d0c311", textShadow: "2px 2px 4px #000000" }} >Legal</h4>
             <h6><a href="/terms-of-use"

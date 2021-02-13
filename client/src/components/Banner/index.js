@@ -1,28 +1,23 @@
-import React from 'react'
-import { Jumbotron, Container } from 'react-bootstrap'
-import Search from '../Search'
+import React from 'react';
 
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
-
-const Banner = (props) => {
-
-
+function Banner(props) {
     return (
-        <div className="mb-5" style={{ color: 'white' }}>
-            <Jumbotron style={{
-
+        <div className="mb-3 p-4"
+            style={{
                 backgroundImage: 'linear-gradient(to right, #4c68a5, #021247)',
                 color: 'white',
-                textAlign: "center",
-                margin: 'auto',
-                borderColor: "#d0c311",
-                border: "30px"
-            }} >
-                <h1 className="d-flex justify-content-center" style={{ color: '#d0c311', textShadow: "2px 2px 4px #000000", fontSize: "70px" }}>Our Marketplace</h1>
-                <Search change={props.change} searchTerm={props.searchTerm} myFilter={props.myFilter} />
-
-            </Jumbotron>
-
+                textAlign: "center"
+            }}
+        >
+            <h1 className="d-flex justify-content-center" style={{ color: '#d0c311', textShadow: "2px 2px 4px #000000", fontSize: "70px" }}>Free Marketplace</h1>
+            <Row className="justify-content-center">
+                <Col lg="4" md="6" sm="8">
+                    {props.children}
+                </Col>
+            </Row>
         </div>
     )
 }

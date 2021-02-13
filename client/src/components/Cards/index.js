@@ -1,6 +1,6 @@
-import React from 'react'
-import { Card, CardDeck, Row, Col } from 'react-bootstrap'
-import Button from 'react-bootstrap/Button'
+import React from 'react';
+import Card from 'react-bootstrap/Card';
+
 import "./Cards.css";
 
 const Cards = (props) => {

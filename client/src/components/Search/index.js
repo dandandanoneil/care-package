@@ -1,38 +1,18 @@
-import React from 'react'
-import Button from 'react-bootstrap/Button'
-import Dropdown from 'react-bootstrap/Dropdown'
-import Filter from '../Filter'
+import React from 'react';
+import FormControl from "react-bootstrap/FormControl";
 import "./search.css";
 
-
-const Search = (props) => {
-
+function Search(props) {
     return (
-
-        <div>
-            <div id="search-filter" className="d-flex justify-content-center">
-                <input
-                    type="text"
-                    placeholder="Search"
-                    value={props.searchTerm}
-                    onChange={props.change}
-                    style={{ width: "20rem" }}
-                ></input> &nbsp;&nbsp;
-
-            {/* <Button style={{
-                    color: "white",
-                    backgroundColor: "#d05d11",
-                    fontWeight: 'bold'
-                }} variant="custom">Search</Button>&nbsp; */}
-            </div>
-            <div>
-                <Filter myFilter={props.myFilter} />
-
-            </div>
-
-
-        </div>
-    )
+        <FormControl
+            width="100%"
+            className="mb-2"
+            type="text"
+            placeholder="Search"
+            value={props.searchTerm}
+            onChange={props.handleChange}
+        />
+    );
 }
 
-export default Search
+export default Search;
