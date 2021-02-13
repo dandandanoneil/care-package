@@ -4,7 +4,7 @@ html {
 }
 
 .footer {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 100%;
   min-height: 120px;
@@ -18,4 +18,8 @@ html {
 
 .push {
   height: 120px;
+}
+
+body {
+  margin-bottom: 60px; /* Margin bottom by footer height */
 }
