@@ -10,6 +10,7 @@ import ActivePostsCard from "../components/ActivePostsCard";
 import Search from '../components/Search';
 import Filter from '../components/Filter';
 
+import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
@@ -219,31 +220,46 @@ function Home() {
             <HeroCarousel />
             <div id="see-posts"></div>
             <Buttons />
-            <Banner>
-                <Search
-                    searchTerm={searchTerm}
-                    handleChange={handleChange}
-                />
-                <Filter
-                    filterObject={filterObject}
-                    handleCheck={handleCheck}
-                    handleRadio={handleRadio}
-                    handleSelect={handleSelect}
-                    clearFilters= {clearFilters}
-                />
-            </Banner>
             <Wrapper>
-                {searchResults.length === 0 ? (
-                    <PageTitle>No posts to display</PageTitle>
-                ) : (
-                    <Row className="mb-5">
-                        {searchResults.map(post => (
-                            <Col xl="2" md="3" xs="6" key={post._id} >
-                                <ActivePostsCard post={post}/>
+                <Card border="primary">
+                    <Card.Header style={{ backgroundColor: "#4c68a5", color: "white" }} variant="secondary" className="text-center">
+                        <br/>
+                        <h1>Free Marketplace</h1>
+                        <br/>
+                        <Row className="justify-content-center">
+                            <Col sm="10">
+                                <Search
+                                    searchTerm={searchTerm}
+                                    handleChange={handleChange}
+                                />
+                                <Filter
+                                    filterObject={filterObject}
+                                    handleCheck={handleCheck}
+                                    handleRadio={handleRadio}
+                                    handleSelect={handleSelect}
+                                    clearFilters= {clearFilters}
+                                />
                             </Col>
-                        ))}
-                    </Row>
-                )} 
+                        </Row>
+                    </Card.Header>
+                    <Card.Body className="p-3" style={{ backgroundColor: "#cad5eb" }}>
+                        {searchResults.length === 0 ? (
+                            <div className="text-center" style={{ color: "#4c68a5" }}>
+                                <br/>
+                                <h3 ><em>No posts to display</em></h3>
+                                <br/><br/><br/><br/><br/><br/><br/><br/>
+                            </div>
+                            ) : (
+                                <Row className="mb-5">
+                                {searchResults.map(post => (
+                                    <Col xl="2" md="3" xs="6" key={post._id} >
+                                        <ActivePostsCard post={post}/>
+                                    </Col>
+                                ))}
+                            </Row>
+                        )} 
+                    </Card.Body>
+                </Card>
             </Wrapper>
         </>
     );

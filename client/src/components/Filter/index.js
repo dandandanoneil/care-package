@@ -22,22 +22,20 @@ function Filter(props) {
         className=""
         style={{
           color: "white",
-          fontWeight: 'bold',
+          fontSize: "1.25rem",
           backgroundColor: "#d0c311",
           cursor: "pointer"
         }}
       >
         {show ? (
           <div>
-            <span style={{ float: "left"}}>↑</span>
-              Close to Clear Filters
-            <span style={{ float: "right"}}>↑</span>
+            <span style={{ float: "left"}}>Clear Filters</span>
+            <span style={{ float: "right"}}>▲</span>
           </div>
         ) : (
           <div>
-            <span style={{ float: "left"}}>↓</span>
-              Click to Add Filters
-            <span style={{ float: "right"}}>↓</span>
+            <span style={{ float: "left"}}>Add Filters</span>
+            <span style={{ float: "right"}}>▼</span>
           </div>
         )}
       </Card.Header>
