@@ -19,11 +19,11 @@ function Footer() {
           <div className="col-sm-4">
             <h4 style={{ color: "#d0c311", textShadow: "2px 2px 4px #000000" }} >Resources</h4>
             <h6><a href="https://www.thecitypulse.com/post/community-refrigerators"
-              target="_blank"
+              target="blank"
               style={{ color: "#ebe8c1" }}
             >Mutual Aid Fridge Map</a></h6>
             <h6><a href="https://phillywerise.com/mutual-aid-resources/"
-              target="_blank"
+              target="blank"
               style={{ color: "#ebe8c1" }}
             >Philadelphia Reparations</a></h6>
           </div>
