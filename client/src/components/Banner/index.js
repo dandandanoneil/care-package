@@ -12,7 +12,7 @@ function Banner(props) {
                 textAlign: "center"
             }}
         >
-            <h1 className="d-flex justify-content-center" style={{ color: '#d0b313', textShadow: "2px 2px 4px #000000" }}>Free Marketplace</h1>
+            <h1 className="d-flex justify-content-center" style={{ color: '#d0c311', textShadow: "2px 2px 4px #000000", fontSize: "70px" }}>Free Marketplace</h1>
             <Row className="justify-content-center">
                 <Col lg="4" md="6" sm="8">
                     {props.children}

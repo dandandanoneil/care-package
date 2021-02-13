@@ -22,7 +22,8 @@ function Filter(props) {
         className=""
         style={{
           color: "white",
-          backgroundColor: "#d0b313",
+          fontWeight: 'bold',
+          backgroundColor: "#d0c311",
           cursor: "pointer"
         }}
       >

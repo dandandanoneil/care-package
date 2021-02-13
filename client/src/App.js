@@ -11,6 +11,7 @@ import MeetTeam from "./pages/MeetTeam";
 import CommunityAgreements from "./pages/CommunityAgreements.js";
 import TermsOfUse from "./pages/TermsOfUse";
 import HowItWorks from "./pages/HowItWorks";
+import UserStories from "./pages/UserStories";
 import NotFound from "./pages/NotFound";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
@@ -47,6 +48,7 @@ function App() {
   return (
     <Router>
       <UserContext.Provider value={userState}>
+        <div className="wrapper">
         <Navigation stateLogIn={stateLogIn} stateLogOut={stateLogOut} />
         <Switch>
             <Route exact path="/" component={Home} />
@@ -60,9 +62,11 @@ function App() {
             <Route exact path="/community-agreements" component={CommunityAgreements} />
             <Route exact path="/terms-of-use" component={TermsOfUse} />
             <Route exact path="/how-it-works" component={HowItWorks } />
+            <Route exact path="/user-stories" component={UserStories} />
             <Route path="*" component={NotFound} />
         </Switch>
         <Footer />
+        </div>
       </UserContext.Provider>
     </Router>
   );
