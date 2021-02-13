@@ -18,12 +18,12 @@ import Footer from "./components/Footer";
 
 
 function App() {
-  if (!JSON.parse(window.localStorage.getItem("user"))) window.localStorage.setItem("user", {});
-  if (!JSON.parse(window.localStorage.getItem("status"))) window.localStorage.setItem("status", "");
+  if (localStorage.getItem("user") === null) localStorage.setItem("user", "{}");
+  if (localStorage.getItem("status") === null) localStorage.setItem("status", "false");
 
   const [userState, setUserState] = useState({
-    currentUser: JSON.parse(window.localStorage.getItem("user")),
-    loggedIn: JSON.parse(window.localStorage.getItem("status"))
+    currentUser: JSON.parse(localStorage.getItem("user")),
+    loggedIn: JSON.parse(localStorage.getItem("status"))
   });
 
   function stateLogIn(user) {
@@ -41,8 +41,8 @@ function App() {
   }
 
   useEffect(() => {
-    window.localStorage.setItem("user", JSON.stringify(userState.currentUser));
-    window.localStorage.setItem("status", JSON.stringify(userState.loggedIn));
+    localStorage.setItem("user", JSON.stringify(userState.currentUser));
+    localStorage.setItem("status", JSON.stringify(userState.loggedIn));
   }, [userState.currentUser, userState.loggedIn]);
 
   return (
