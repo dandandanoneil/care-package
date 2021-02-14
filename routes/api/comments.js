@@ -3,14 +3,14 @@ const commentController = require("../../controllers/commentController");
 
 // Matches with "/api/comments"
 router.route("/")
+  .post(commentController.create)
   .get(commentController.findAll)
-  .post(commentController.create);
+  .put(commentController.update);
 
 // Matches with "/api/comments/:id"
 router
   .route("/:id")
   .get(commentController.findByPostId)
-  .put(commentController.update)
   .delete(commentController.remove);
 
 module.exports = router;

@@ -19,6 +19,13 @@ function CommentCard(props) {
     comment: "",
     created_by: ""
   });
+  const [editId, setEditId] = useState("")
+  const [editObject, setEditObject] = useState({
+    _id: "",
+    post: "",
+    comment: "",
+    created_by: ""
+  });
   
   const postId = useLocation().pathname.split('/')[2];
   const { currentUser, loggedIn } = useContext(UserContext);
@@ -37,7 +44,7 @@ function CommentCard(props) {
       .catch(err => console.log(err));
   }
 
-  // Handles updating component state when the user types into the input field
+  // Handles updating component state when the user types into the create comment input field
   function handleInputChange(event) {
     const { name, value } = event.target;
     setFormObject({
@@ -47,25 +54,63 @@ function CommentCard(props) {
     })
   };
 
-  // When the form is submitted, use the API.createComment method to save the comment data
+  // When the create comment form is submitted, use the API.createComment method to save the comment data
   // Then reload comments from the database
   function handleFormSubmit(event) {
     event.preventDefault();
     if (formObject.comment) {
       API.createComment(formObject)
-        .then(() => setFormObject({
-          comment: "",
-        }))
+        .then(() => setFormObject({ comment: "" }))
         .then(() => loadComments())
         .catch(err => console.log(err));
     }
   };
 
+  // Handles updating component state when the user types into the create comment input field
+  function handleEditChange(event) {
+    setEditObject({
+      ...editObject,
+      comment: event.target.value
+    })
+  };
+
+  // When the edit comment form is submitted, use the API.updateComment method to save the comment data
+  // Then reload comments from the database
+  function handleEditSubmit(event) {
+    event.preventDefault();
+    if (editObject.comment) {
+      API.updateComment(editObject)
+        .then(() => setEditId(""))
+        .then(() => loadComments())
+        .catch(err => console.log(err));
+    }
+  };
+
+  function handleDiscardChanges(event) {
+    event.preventDefault();
+    setEditId("");
+    setEditObject({
+      _id: "",
+      post: "",
+      comment: "",
+      created_by: ""  
+    })
+  };
+
+  function editComment(comment) {
+    setEditId(comment._id);
+    setEditObject({
+      _id: comment._id,
+      post: comment.post,
+      comment: comment.comment,
+      created_by: comment.created_by._id
+    });
+  }
+
   function formatDate(dateString) {
     const options = { year: "numeric", month: "long", day: "numeric" };
     return new Date(dateString).toLocaleDateString(undefined, options);
   }
-
 
     return (
       <Card className="mt-3 mb-3">
@@ -80,14 +125,38 @@ function CommentCard(props) {
                         <strong>
                           <a href={`/user/${comment.created_by._id}`}>{comment.created_by.name}</a>
                         </strong> on {formatDate(comment.created_at)}:
-                      {currentUser._id === comment.created_by._id ?
-                        <DeleteBtn onClick={() => deleteComment(comment._id)}>x</DeleteBtn>
-                        : null
-                      }
+                      {comment._id === editId ? (
+                        null
+                        ) :  (
+                        <button 
+                          onClick={() => editComment(comment)} 
+                          data={comment}
+                          style={{
+                            float: "right",
+                            color: "#4c68a5",
+                            background: "none",
+                            border: "none"
+                          }}
+                        ><small>Edit</small></button>
+                      )}
                     </div>
-                    <p>
-                      {comment.comment} 
-                    </p>
+                    {comment._id === editId ? (
+                      <Form>
+                        <Form.Control
+                          as="textarea"
+                          name="comment"
+                          defaultValue={editObject.comment}
+                          onChange={handleEditChange}
+                        ></Form.Control>
+                        <Button size="sm" className="m-3" variant="warning" style={{ float: "right", backgroundColor: "#d0c311" }} onClick={handleEditSubmit}>Update</Button>
+                        <Button size="sm" className="m-3" variant="primary" style={{ float: "right", backgroundColor: "#4c68a5" }} onClick={handleDiscardChanges}>Discard Changes</Button>
+                        <Button size="sm" className="m-3" variant="danger" style={{ float: "right", backgroundColor: "#d05d11" }} onClick={handleDiscardChanges}>Delete</Button>                        
+                      </Form>
+                    ) : (
+                      <p>
+                        {comment.comment} 
+                      </p>
+                    )}
                   </ListGroupItem>
                 );
               })}
@@ -95,7 +164,7 @@ function CommentCard(props) {
           ) : (
             <p className="text-center">No Comments Yet</p>
           )}
-          {loggedIn ? (
+          {loggedIn && editId === "" ? (
             <Form className="text-center">
               <Form.Control 
                 as="textarea"
@@ -116,7 +185,7 @@ function CommentCard(props) {
               </Button>
             </Form>
           ) : (
-            <p className="text-center">Log In To Add A Comment</p>
+            null
           )}
         </Card.Body>
       </Card>
