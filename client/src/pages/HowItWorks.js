@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 import "./HowItWorks.css";
 import exchange from './images/exchange.svg';
 import contract from './images/contract.svg'
