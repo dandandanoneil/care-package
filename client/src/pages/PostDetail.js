@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import React, { useEffect, useState, useContext } from "react";
+import { useLocation, useHistory } from "react-router-dom";
 import API from "../utils/API";
+import UserContext from "../utils/UserContext";
 
 import Image from 'react-bootstrap/Image';
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Alert from 'react-bootstrap/Alert';
@@ -15,7 +17,9 @@ import PageTitle from "../components/PageTitle";
 function PostDetail() {
     const [post, setPost] = useState(undefined)
     const location = useLocation();
+    const history = useHistory();
     const postId = location.pathname.split('/')[2];
+    const { currentUser } = useContext(UserContext);
 
     useEffect(() => {
         loadPost()
@@ -36,7 +40,7 @@ function PostDetail() {
         <Wrapper>
             {post ? (
             <Card border="warning" className="mt-3 mb-3">
-                <Card.Header style={{ backgroundColor: "#d0b313", color: "#FFFFFF" }}>
+                <Card.Header style={{ backgroundColor: "#d0c311", color: "#FFFFFF" }}>
                     <div className="text-center">
                         <h1>
                             <em>
@@ -49,6 +53,9 @@ function PostDetail() {
                             {post.title}
                         </h1>
                     </div>
+                    {post.created_by._id === currentUser._id ?
+                        <Button size="sm" variant="primary" style={{ float: "right", backgroundColor: "#4c68a5", color: "#FFFFFF" }} onClick={() => history.push(`/edit/${post._id}`)} ><strong>Edit My Post</strong></Button>
+                    : null }
                 </Card.Header>
                 <Card.Body className="p-3" style={{ backgroundColor: "#fafafa" }}>
                     <Row>

@@ -50,7 +50,7 @@ function FormOfferGood() {
     const handleSubmit = event => {
         event.preventDefault();
         API.createPost(postContent)
-        .then(res => history.push(`/post/${res.data._id}`));
+        .then(res => history.push(`/post/${res.data.ref_post}`));
     };
 
   return (

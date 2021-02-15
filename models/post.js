@@ -13,11 +13,6 @@ const PostSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Comment'
     }],
-    // These two fields are to help the backend track what comments need to be pushed & pulled from the user array
-    ref_user: {
-        type: Schema.Types.ObjectId,
-        ref: 'User'
-    },
     ref_comment: {
         type: Schema.Types.ObjectId,
         ref: 'Comment'

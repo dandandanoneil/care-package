@@ -9,8 +9,6 @@ import ListGroup from "react-bootstrap/ListGroup";
 import ListGroupItem from "react-bootstrap/ListGroupItem";
 import Button from "react-bootstrap/Button";
 
-import DeleteBtn from "../../components/DeleteBtn";
-
 function CommentCard(props) {
   // Setting our component's initial state
   const [comments, setComments] = useState(props.comments);

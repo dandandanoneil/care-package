@@ -53,7 +53,7 @@ function FormRequestMoney() {
             setPostContent({ ...postContent, category: "Other"});
         }
         API.createPost(postContent)
-        .then(res => history.push(`/post/${res.data._id}`));
+        .then(res => history.push(`/post/${res.data.ref_post}`));
     };
 
   return (

@@ -100,7 +100,6 @@ function PostEdit() {
     }, [])
     
     function loadPost() {
-
         API.getPost(postId)
         .then(res => setPost(res.data))
         .catch(err => console.log(err));
@@ -147,7 +146,7 @@ function PostEdit() {
   return (
         <Wrapper>
             <Card border="warning" className="mt-3 mb-3">
-                <Card.Header className="text-center" style={{ backgroundColor: "#d0b313", color: "#FFFFFF" }}>
+                <Card.Header className="text-center" style={{ backgroundColor: "#d0c311", color: "#FFFFFF" }}>
                     <h1>Edit Post</h1>
                 </Card.Header>
                 <Form className="p-3" style={{ backgroundColor: "#fafafa" }}>
@@ -291,7 +290,7 @@ function PostEdit() {
             </Card>
             
             <Card border="warning" className="mt-3 mb-3">
-                <Card.Header className="text-center" style={{ backgroundColor: "#d0b313", color: "#FFFFFF" }}>
+                <Card.Header className="text-center" style={{ backgroundColor: "#d0c311", color: "#FFFFFF" }}>
                     <h1>Preview Changes</h1>
                 </Card.Header>
                 <div className="p-3" style={{ backgroundColor: "#fafafa" }}>
