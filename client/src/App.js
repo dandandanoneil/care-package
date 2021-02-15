@@ -49,8 +49,8 @@ function App() {
     <Router>
       <UserContext.Provider value={userState}>
         <div className="wrapper">
-        <Navigation stateLogIn={stateLogIn} stateLogOut={stateLogOut} />
-        <Switch>
+          <Navigation stateLogIn={stateLogIn} stateLogOut={stateLogOut} />
+          <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/home" component={Home} />
             <Route exact path="/create-post" component={CreatePost} />
@@ -61,11 +61,11 @@ function App() {
             <Route exact path="/meet-our-team" component={MeetTeam} />
             <Route exact path="/community-agreements" component={CommunityAgreements} />
             <Route exact path="/terms-of-use" component={TermsOfUse} />
-            <Route exact path="/how-it-works" component={HowItWorks } />
+            <Route exact path="/how-it-works" component={HowItWorks} />
             <Route exact path="/user-stories" component={UserStories} />
             <Route path="*" component={NotFound} />
-        </Switch>
-        <Footer />
+          </Switch>
+          <Footer />
         </div>
       </UserContext.Provider>
     </Router>

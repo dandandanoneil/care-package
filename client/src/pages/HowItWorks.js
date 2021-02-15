@@ -7,7 +7,7 @@ import wheelchair from './images/wheelchair.svg';
 import donation from './images/donation.svg';
 import united from './images/united.svg'
 
-function PrivacyPolicy() {
+function HowItWorks() {
     return (
 
         <Container className="mb-5" >
@@ -33,7 +33,7 @@ function PrivacyPolicy() {
                                 <img src={wheelchair} alt="" />
                                 <div className="text">
                                     <a className="project-img"
-                                        href="" target="_blank" rel="noopener noreferrer" style={{ color: 'white' }}>Accesible
+                                        href="" target="_blank" rel="noopener noreferrer" style={{ color: 'white' }}>Accessible
                                 </a></div>
                                 <p style={{ color: 'white' }}>
                                 Choose how and what you want to give or ask for by taking advantage of tags and filters
@@ -84,4 +84,4 @@ function PrivacyPolicy() {
     )
 }
 
-export default PrivacyPolicy;
+export default HowItWorks;
