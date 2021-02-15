@@ -6,6 +6,7 @@ import CreatePost from "./pages/CreatePost";
 import User from "./pages/User";
 import Signup from "./pages/Signup";
 import PostDetail from "./pages/PostDetail";
+import PostEdit from "./pages/PostEdit";
 import Mission from "./pages/Mission";
 import MeetTeam from "./pages/MeetTeam";
 import CommunityAgreements from "./pages/CommunityAgreements.js";
@@ -53,10 +54,11 @@ function App() {
         <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/home" component={Home} />
+            <Route exact path="/signup" component={Signup} />
             <Route exact path="/create-post" component={CreatePost} />
             <Route path="/user" component={User} />
-            <Route exact path="/signup" component={Signup} />
             <Route path="/post" component={PostDetail} />
+            <Route path="/edit" component={PostEdit} />
             <Route exact path="/mission" component={Mission} />
             <Route exact path="/meet-our-team" component={MeetTeam} />
             <Route exact path="/community-agreements" component={CommunityAgreements} />

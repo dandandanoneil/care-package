@@ -39,7 +39,6 @@ module.exports = {
     db.Post
       .findOneAndRemove({ _id: req.params.id })
       .then(dbModel => db.User.findByIdAndUpdate(dbModel.created_by, { $pull: { posts: dbModel._id } }))
-      .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   }

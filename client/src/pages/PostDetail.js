@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import API from "../utils/API";
 import { useLocation } from "react-router-dom";
+import API from "../utils/API";
 
 import Image from 'react-bootstrap/Image';
 import Card from 'react-bootstrap/Card';
@@ -8,23 +8,21 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Alert from 'react-bootstrap/Alert';
 
-// import PageTitle from "../components/PageTitle"
 import Wrapper from "../components/Wrapper";
 import CommentCard from "../components/CommentCard";
-// import BackButton from "../components/BackButton";
+import PageTitle from "../components/PageTitle";
 
 function PostDetail() {
     const [post, setPost] = useState(undefined)
     const location = useLocation();
+    const postId = location.pathname.split('/')[2];
 
     useEffect(() => {
         loadPost()
     }, [])
     
     function loadPost() {
-        const pathArray = location.pathname.split('/');
-
-        API.getPost(pathArray[2])
+        API.getPost(postId)
         .then(res => setPost(res.data))
         .catch(err => console.log(err));
     }
@@ -210,7 +208,9 @@ function PostDetail() {
                     </Row>
                 </Card.Body>
             </Card>
-            ) : (<div>Nothing here yet</div>)}
+            ) : ( 
+                <PageTitle>Post <code>{postId}</code> not found</PageTitle>
+             )}
         </Wrapper>
     );
 }
