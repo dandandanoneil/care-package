@@ -13,7 +13,7 @@ function ActivePostsCard(props) {
     }
 
     return (
-        <Card className="mb-3" border="danger">
+        <Card className="mb-3 card-shad" border="danger">
                 <a href={`/post/${props.post._id}`}>
                     <Card.Header style={{ color: "white", backgroundColor: "#d05d11"}}>
                         <em>
