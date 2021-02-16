@@ -3,14 +3,14 @@ const postController = require("../../controllers/postController");
 
 // Matches with "/api/posts"
 router.route("/")
+  .post(postController.create)
   .get(postController.findAll)
-  .post(postController.create);
+  .put(postController.update);
 
 // Matches with "/api/posts/:id"
 router
   .route("/:id")
   .get(postController.findById)
-  .put(postController.update)
   .delete(postController.remove);
 
 module.exports = router;

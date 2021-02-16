@@ -9,7 +9,6 @@
 }
 .row .col img:hover {
     opacity: .8;
-    transform: translateY(-15px);
+    transform: translateY(-8px);
 }
-
 

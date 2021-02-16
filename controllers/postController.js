@@ -25,13 +25,13 @@ module.exports = {
   create: function (req, res) {
     db.Post
       .create(req.body)
-      .then(dbModel => db.User.findByIdAndUpdate(dbModel.created_by, { $push: { posts: dbModel._id } }))
-      .then(data => res.json({ _id: data.posts[data.posts.length - 1] }))
+      .then(dbPost => db.User.findByIdAndUpdate(dbPost.created_by, { $push: { posts: dbPost._id }, ref_post: dbPost._id }))
+      .then(dbUser => res.json(dbUser))
       .catch(err => res.status(422).json(err));
   },
   update: function (req, res) {
     db.Post
-      .findOneAndUpdate({ _id: req.params.id }, req.body)
+      .findOneAndUpdate({ _id: req.body._id }, req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -39,7 +39,6 @@ module.exports = {
     db.Post
       .findOneAndRemove({ _id: req.params.id })
       .then(dbModel => db.User.findByIdAndUpdate(dbModel.created_by, { $pull: { posts: dbModel._id } }))
-      .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   }

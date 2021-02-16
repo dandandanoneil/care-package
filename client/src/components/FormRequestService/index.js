@@ -28,8 +28,9 @@ function FormRequestService() {
         requestOnBehalfOf: "",
         onlineOrRemote: false,
         timeSensitive: false,
-        groupRequest: false
-    });    
+        groupRequest: false,
+        lackConsistentCommunication: false
+    });
 
     const handleInputChange = event => {
         const { name, value } = event.target;
@@ -53,7 +54,7 @@ function FormRequestService() {
             setPostContent({ ...postContent, category: "Other"});
         }
         API.createPost(postContent)
-        .then(res => history.push(`/post/${res.data._id}`));
+        .then(res => history.push(`/post/${res.data.ref_post}`));
     };
 
     return (
@@ -121,7 +122,7 @@ function FormRequestService() {
                 </Form.Group>
                 <Form.Group as={Row}>
                     <Form.Label column sm="2" className="text-right">Search Tags:</Form.Label>
-                    <Col sm="7"><Form.Control type="text" placeholder="Enter relevant tags, seperated by spaces"  name="searchTags" onChange={handleInputChange}/></Col>
+                    <Col sm="7"><Form.Control type="text" placeholder="Enter relevant tags, separated by spaces"  name="searchTags" onChange={handleInputChange}/></Col>
                     <Form.Text as={Col}><em>(optional)</em></Form.Text>
                 </Form.Group>
                 <Form.Group as={Row}>
@@ -143,6 +144,7 @@ function FormRequestService() {
                     <Col><Form.Check type="checkbox" label="Online/Remote" name="onlineOrRemote" onChange={handleCheckboxChange} /></Col>
                     <Col><Form.Check type="checkbox" label="Time Sensitive" name="timeSensitive" onChange={handleCheckboxChange} /></Col>
                     <Col><Form.Check type="checkbox" label="Group Request" name="groupRequest" onChange={handleCheckboxChange} /></Col>
+                    <Col><Form.Check type="checkbox" label="Lack Access to Consistent Communication Methods" name="lackConsistentCommunication" onChange={handleCheckboxChange}/></Col>
                 </Row>
                 <Row className="justify-content-center mt-4">
                     <Button variant="primary" type="submit" onClick={handleSubmit}>
