@@ -11,11 +11,16 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Alert from "react-bootstrap/Alert";
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 function Navigation(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState({
+    message: "",
+    show: false
+  });
   const { currentUser, loggedIn } = useContext(UserContext);
 
   const onSubmit = (event) => {
@@ -25,8 +30,19 @@ function Navigation(props) {
 
     axios.post("/api/user/login", { email, password })
       .then((res) => props.stateLogIn(res.data))
-      .catch(err => console.log(err));
-  }
+      .catch(err => {
+        console.log(err);
+        setError({ 
+            message: err.name,
+            show: true
+        })
+        if (err.name === "Error") {
+            setError({ 
+                message: `There was an error logging you in. Check that your email and password are correct, or try again later.`
+            })    
+        }
+    });
+}
 
   const onLogOut = () => {
     axios.post("/api/user/logout", {})
@@ -72,6 +88,10 @@ function Navigation(props) {
             <Button style={{ color: "white", backgroundColor: "#4c68a5" }} className="btn-sm" type="submit">
               Log In
             </Button>
+
+            <Alert className="mt-3" variant="danger" show={error.show} onClose={() => setError({ message: "", show: false })} dismissible>
+            <small>{error.message}</small>
+            </Alert>
           </Form>
         </NavDropdown>
       </>
@@ -116,18 +136,25 @@ function Navigation(props) {
         <Navbar.Collapse id="navbar-nav">
           <Nav className="ml-auto">
             
-            {/* Login dropdown form  OR logout link */}
-            {loggedIn ? logoutLink : loginDropdown }
+            {/* Login dropdown form */}
+            {loggedIn ? null : loginDropdown }
 
             {/* Signup dropdown form  */}
             {loggedIn ? null : signupDropdown }
 
             {/* Navigation Links */}
-            {loggedIn ? <Nav.Link href="/create-post">Create a Post</Nav.Link> : null }
+            {loggedIn ? (
+              <Nav.Link href="/create-post">Create a Post</Nav.Link>
+            ) : null }
+
             <Nav.Link href="/home/#see-posts">See Posts</Nav.Link>
 
             {/* Profile link */}
-            {loggedIn ? profileLink : <></> }
+            {loggedIn ? profileLink : null }
+
+            {/* Logout link */}
+            {loggedIn ? logoutLink : null }
+
           </Nav>
         </Navbar.Collapse>
       </Navbar>
