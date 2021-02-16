@@ -26,9 +26,9 @@ function FormOfferGood() {
         neededBy: null,
         personsRequestingService: "",
         requestOnBehalfOf: "",
-        onlineOrRemote: false,
-        timeSensitive: false,
-        groupRequest: false
+        pickUpOnly: false,
+        atCurbNow: false,
+        timeSensitive: false
     });    
 
     const handleInputChange = event => {
@@ -50,7 +50,7 @@ function FormOfferGood() {
     const handleSubmit = event => {
         event.preventDefault();
         API.createPost(postContent)
-        .then(res => history.push(`/post/${res.data._id}`));
+        .then(res => history.push(`/post/${res.data.ref_post}`));
     };
 
   return (
@@ -120,7 +120,7 @@ function FormOfferGood() {
             </Form.Group>
             <Form.Group as={Row}>
                 <Form.Label column sm="2" className="text-right">Search Tags:</Form.Label>
-                <Col sm="7"><Form.Control type="text" placeholder="Enter relevant tags, seperated by spaces" name="searchTags" onChange={handleInputChange} /></Col>
+                <Col sm="7"><Form.Control type="text" placeholder="Enter relevant tags, separated by spaces" name="searchTags" onChange={handleInputChange} /></Col>
                 <Form.Text as={Col}><em>(optional)</em></Form.Text>
             </Form.Group>
             <Form.Group as={Row}>

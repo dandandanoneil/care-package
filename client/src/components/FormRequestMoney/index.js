@@ -53,7 +53,7 @@ function FormRequestMoney() {
             setPostContent({ ...postContent, category: "Other"});
         }
         API.createPost(postContent)
-        .then(res => history.push(`/post/${res.data._id}`));
+        .then(res => history.push(`/post/${res.data.ref_post}`));
     };
 
   return (
@@ -118,7 +118,7 @@ function FormRequestMoney() {
             </Form.Group>
             <Form.Group as={Row}>
                 <Form.Label column sm="2" className="text-right">Search Tags:</Form.Label>
-                <Col sm="7"><Form.Control type="text" placeholder="Enter relevant tags, seperated by spaces" name="searchTags" onChange={handleInputChange} /></Col>
+                <Col sm="7"><Form.Control type="text" placeholder="Enter relevant tags, separated by spaces" name="searchTags" onChange={handleInputChange} /></Col>
                 <Form.Text as={Col}><em>(optional)</em></Form.Text>
             </Form.Group>
             <Form.Group as={Row}>

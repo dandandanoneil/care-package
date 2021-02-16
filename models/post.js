@@ -13,11 +13,6 @@ const PostSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Comment'
     }],
-    // These two fields are to help the backend track what comments need to be pushed & pulled from the user array
-    ref_user: {
-        type: Schema.Types.ObjectId,
-        ref: 'User'
-    },
     ref_comment: {
         type: Schema.Types.ObjectId,
         ref: 'Comment'
@@ -53,7 +48,9 @@ const PostSchema = new Schema({
     // REQUEST
     neededBy: Date,
     requestOnBehalfOf: String,
-    // SERVICE
+    lackConsistentCommunication: { type: Boolean, default: false },
+    groupRequest: { type: Boolean, default: false },
+    // SERVICE, EVENT
     onlineOrRemote: { type: Boolean, default: false },
     // OFFER > GOODS
     pickUpBy: Date,
@@ -61,14 +58,12 @@ const PostSchema = new Schema({
     atCurbNow: { type: Boolean, default: false },
     // REQUEST > GOODS
     dropOffNeeded: { type: Boolean, default: false },
-    lackConsistentCommunication: { type: Boolean, default: false },
     // OFFER > SERVICE
     offeredUntil: Date,
     offerCapacity: String,
     limitedCapacity: { type: Boolean, default: false },
     // REQUEST > SERVICE
     personsRequestingService: String,
-    groupRequest: { type: Boolean, default: false },
     // EVENT DATA
     startDate: Date,
     endDate: Date,
