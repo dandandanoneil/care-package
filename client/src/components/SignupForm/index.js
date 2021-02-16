@@ -35,10 +35,16 @@ class SignupForm extends React.Component {
         })
         .then( res => this.props.history.push(`/user/${res.data._id}`) )
         .catch(err => {
+            console.log(err);
             this.setState({ 
                 error: err.name,
                 showError: true
             })
+            if (err.name === "Error") {
+                this.setState({ 
+                    error: `There was an error creating your account. There may already be an account associated with ${this.state.email}.`
+                })    
+            }
         });
     }
 
@@ -72,8 +78,8 @@ class SignupForm extends React.Component {
                     Create Account
                 </Button>
 
-                <Alert variant="danger" show={this.state.showError} onClose={() => this.setState({ showError: false })} dismissible>
-                    {this.state.error}
+                <Alert className="mt-3" variant="danger" show={this.state.showError} onClose={() => this.setState({ showError: false })} dismissible>
+                    <small>{this.state.error}</small>
                 </Alert>
             </Form>
         )
