@@ -1,5 +1,8 @@
 .projects .carousel .card{
-    background-image: linear-gradient(to right, #4c68a5, #021247);
+    /* background-image: linear-gradient( #0E2056, #4C68A5, #d0c311, #d05d11); */
+    /* border-color: #021247; */
+    /* background-color: rgb(76, 104, 165); */
+    background-image: linear-gradient( #4c68a5, #021247);
     border-radius: 6px;
     padding: 25px 35px;
     text-align: center;
@@ -7,7 +10,8 @@
     transition: all 0.3s ease;
 }
 .projects .carousel .card:hover{
-    background: #d05d11
+    background-image: linear-gradient(#d0c311, #d05d11);
+     /* background-image: linear-gradient( #0E2056, #4C68A5, #d0c311, #d05d11); */
 }
 .projects .carousel .card .box{
     display: flex;
