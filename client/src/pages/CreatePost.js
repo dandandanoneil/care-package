@@ -33,7 +33,7 @@ function CreatePost() {
     };
     
     const offerTypeCard = (
-        <Card border="warning" id="offer-type-card" className="m-1">
+        <Card border="warning" id="offer-type-card" className="m-1" style={{borderRadius: "10p", boxShadow: "5px 5px 10px rgba(0,0,0,0.5)"}}>
             <Card.Header style={{ color: "white", backgroundColor: "#d0c311", fontWeight: "bold"}}>Are you offering a good or a service?</Card.Header>
             <Form id="offer-type" className="text-center p-3">
                 <Form.Check inline name="post-type" label="Good" type="radio" id="good" onChange={handleChange} />
@@ -43,7 +43,7 @@ function CreatePost() {
     );
 
     const requestTypeCard = (
-        <Card border="warning" id="request-type-card" className="m-1">
+        <Card border="warning" id="request-type-card" className="m-1" style={{borderRadius: "10p", boxShadow: "5px 5px 10px rgba(0,0,0,0.5)"}}>
             <Card.Header style={{ color: "white", backgroundColor: "#d0c311", fontWeight: "bold"}}>Are you requesting a good, a service, or monetary assistance?</Card.Header>
             <Form id="request-type" className="text-center p-3">
                 <Form.Check inline name="post-type" label="Good" type="radio" id="good" onChange={handleChange} />
@@ -62,7 +62,7 @@ function CreatePost() {
                 <Row className="justify-content-center">
                     <Col xl="7" lg="9" md="11">
                         {/* What kind of post: Offer, request or event? */}
-                        <Card className="m-1" border="danger">
+                        <Card className="m-1" border="danger" style={{borderRadius: "10p", boxShadow: "5px 5px 10px rgba(0,0,0,0.5)"}}>
                             <Card.Header style={{ color: "white", backgroundColor: "#d05d11", fontWeight: "bold"}} >Are you posting an offer, a request, or a event?</Card.Header>
                             <Form className="text-center p-3">
                                 <Form.Check inline name="post-label" label="Offer" type="radio" id="offer" onChange={handleChange} />

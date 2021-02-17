@@ -83,8 +83,8 @@ function User() {
     }
 
     const profileCard= (
-        <Card className="m-3" border="warning">
-            <Card.Header style={{ color: "white", backgroundColor: "#d0c311" }} as="h5">Profile</Card.Header>
+        <Card className="m-3" border="warning" style={{borderRadius: "10p", boxShadow: "5px 5px 10px rgba(0,0,0,0.5)"}}>
+            <Card.Header style={{ color: "white", backgroundColor: "#d0c311" }} as="h5">User Profile</Card.Header>
             <Card.Body style={{ backgroundColor: "#fafafa" }}>
                 <p><strong>Name:</strong> {user.name}</p>
                 <p><strong>Email:</strong> {user.email}</p>
@@ -122,8 +122,8 @@ function User() {
     );
 
     const profileForm= (
-        <Card className="m-3" border="warning">
-            <Card.Header style={{ color: "white", backgroundColor: "#d0c311" }} as="h5">Profile</Card.Header>
+        <Card className="m-3" border="warning" style={{borderRadius: "10p", boxShadow: "5px 5px 10px rgba(0,0,0,0.5)"}}>
+            <Card.Header style={{ color: "white", backgroundColor: "#d0c311" }} as="h5">User Profile</Card.Header>
             <Form style={{ backgroundColor: "#fafafa" }} className="p-3">
                     <Form.Group>
                         <Form.Label>Name:</Form.Label>
@@ -153,7 +153,7 @@ function User() {
                         <Form.Label>LinkedIn Link:</Form.Label>
                         <Form.Control onChange={handleInputChange} name="linkedInLink" placeholder="Link to your LinkedIn profile to let other users get to know you!" defaultValue={user.linkedInLink} />
                     </Form.Group>
-                <Button variant="warning" style={{ float: "right", backgroundColor: "#d0c311" }} onClick={handleSubmit}>Save Changes</Button>
+                <Button variant="warning" style={{ float: "right", backgroundColor: "#d0c311", color: "white" }} onClick={handleSubmit}>Save Changes</Button>
             </Form>
         </Card>
     );
@@ -166,8 +166,8 @@ function User() {
                     <Row className="justify-content-center">
                         <Col lg="8">
                             {editMode ? profileForm : profileCard}
-                            <Card className="m-3" border="primary">
-                                <Card.Header style={{ backgroundColor: "#4c68a5", color: "white" }} variant="secondary" as="h5">Posts</Card.Header>
+                            <Card className="m-3" border="primary" style={{borderRadius: "10p", boxShadow: "5px 5px 10px rgba(0,0,0,0.5)"}}>
+                                <Card.Header style={{ backgroundColor: "#4c68a5", color: "white" }} variant="secondary" as="h5">User Posts</Card.Header>
                                 <Card.Body style={{ backgroundColor: "#cad5eb" }}>
                                     {posts.length ? null : (
                                         "No posts to display"
