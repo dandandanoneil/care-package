@@ -59,16 +59,20 @@ function ActivePostsCard(props) {
                         <Image fluid src={props.post.imageURL} />
                     </a>
                     : null}
-                <Card.Text>
-                    {props.post.description}
-                    <span><small><strong>Posted On: </strong>{formatDate(props.post.created_at)}</small></span>
-                    {props.post.location ? (
-                        <span><small><strong>Location: </strong>{props.post.location}</small></span>
-                    ) : (null)}
-                    {props.post.searchTags ? (
-                        <span><small><strong>Tags: </strong>{props.post.searchTags}</small></span>
-                    ) : (null)}
-                </Card.Text>
+                <p>{props.post.description}</p>
+                <div>
+                    <small><strong>Posted On: </strong>{formatDate(props.post.created_at)}</small>
+                </div>
+                {props.post.location ? (
+                    <div>
+                        <small><strong>Location: </strong>{props.post.location}</small>
+                    </div>
+                ) : (null)}
+                {props.post.searchTags ? (
+                    <div>
+                        <small><strong>Tags: </strong>{props.post.searchTags}</small>
+                    </div>
+                ) : (null)}
             </Card.Body>
         </Card>
     );

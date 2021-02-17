@@ -9,8 +9,8 @@ import linkedin from './images/linkedin_icon.PNG'
 const Socialmedia = () => {
     return (
         <section id="social-media">
-            <div class="container text-center">
-                <div class="social-icons">
+            <div className="container text-center">
+                <div className="social-icons">
                     <a href="https://www.facebook.com" target="blank" rel="noopener noreferrer">  <img src={facebook} alt="facebook icon" /> </a>
                     <a href="https://www.instagram.com" target="blank" rel="noopener noreferrer"><img src={instagram} alt="instagram icon" /></a>
                     <a href="https://twitter.com" target="blank" rel="noopener noreferrer"><img src={twitter} alt="twitter icon" /></a>
