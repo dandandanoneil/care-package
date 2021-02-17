@@ -1,12 +1,8 @@
-.btn-custom {
-    background-color: #d0c311;
-}
 .img-button{
     border-radius: 10px;
-
     box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
-
 }
+
 .row .col img:hover {
     opacity: .8;
     transform: translateY(-15px);

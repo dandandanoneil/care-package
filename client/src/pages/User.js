@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import UserContext from "../utils/UserContext";
 import API from "../utils/API";
 import { useLocation } from "react-router-dom";
-import "./user.css";
 
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";

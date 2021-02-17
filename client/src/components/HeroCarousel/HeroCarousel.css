@@ -1,19 +1,10 @@
 .img-button{
     border-radius: 10px;
     box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
-
 }
 
 .rcorners {
     border-radius: 25px;
     box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
     opacity: .8;
-    /* background: rgba(175, 124, 76, 0.3) */
-
-  }
-
-  /* .carousel.item a img {
-
-    margin: auto;
-    
-    } */
+}

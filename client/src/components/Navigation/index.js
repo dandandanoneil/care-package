@@ -13,7 +13,6 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Alert from "react-bootstrap/Alert";
 
-// Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 function Navigation(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -64,9 +63,7 @@ function Navigation(props) {
     }
   }
   
-    // This is the login form & signup link that will appear in the Navbar if the user isn't authenticated
     const loginDropdown = (
-      <>
         <NavDropdown title="Login" id="nav-dropdown" drop="left">
           <Form className="p-3" style={{ width: "300px"}} onSubmit={onSubmit}>
             <Form.Group>
@@ -94,18 +91,14 @@ function Navigation(props) {
             </Alert>
           </Form>
         </NavDropdown>
-      </>
     );
 
     const signupDropdown = (
-      <>
         <NavDropdown title="Sign Up" id="nav-dropdown" drop="left">
           <SignupForm />
         </NavDropdown>
-      </>
     );
     
-    // This is the logout link that will appear in the Navbar if the user isn't authenticated
     const logoutLink = (
       <Nav.Link onClick={onLogOut}>Logout</Nav.Link>
     );
@@ -128,8 +121,6 @@ function Navigation(props) {
           />
           <h1 style={{color: "#d0c311", marginTop: "10px", textShadow: "2px 2px 4px #000000", fontWeight: "bold"}}>CARE PACKAGE<small>Passing Gifts to Neighbors with Heart</small></h1>
         </Navbar.Brand>
-
-        {/* Toggler */}
         <Navbar.Toggle aria-controls="navbar-nav" />
 
         {/* Navbar content - displayed as hamburger on sizes <= medium, hamburger on sizes > medium */}

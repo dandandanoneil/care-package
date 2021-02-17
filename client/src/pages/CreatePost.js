@@ -19,9 +19,9 @@ import FormEvent from '../components/FormEvent';
 function CreatePost() {
     // Label = "offer", "request", "event", or ""
     const [postLabel, setPostLabel] = useState();
-    // Type = "good", "service", "$$$", ""
+    // Type = "good", "service", "$$$", or ""
     const [postType, setPostType] = useState();
-  const { loggedIn } = useContext(UserContext);
+    const { loggedIn } = useContext(UserContext);
 
     const handleChange = (event) => {
         const { name, id } = event.target;
