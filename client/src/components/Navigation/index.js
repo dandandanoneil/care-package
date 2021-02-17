@@ -121,8 +121,8 @@ function Navigation(props) {
           <img
             src={iconImage}
             alt="Care Package Logo"
-            width="80"
-            height="80"
+            width="50"
+            height="50"
             className="d-inline-block align-top responsive" 
             style={{marginRight: "15px", marginLeft: "20px"}}
           />

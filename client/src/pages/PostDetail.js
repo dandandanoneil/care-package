@@ -39,7 +39,7 @@ function PostDetail() {
     return (
         <Wrapper>
             {post ? (
-            <Card border="warning" className="mt-3 mb-3">
+            <Card border="warning" className="mt-3 mb-3" style={{borderRadius: "10p", boxShadow: "5px 5px 10px rgba(0,0,0,0.5)"}}>
                 <Card.Header style={{ backgroundColor: "#d0c311", color: "#FFFFFF" }}>
                     <div className="text-center">
                         <h1>
