@@ -147,7 +147,7 @@ function Navigation(props) {
               <Nav.Link href="/create-post">Create a Post</Nav.Link>
             ) : null }
 
-            <Nav.Link href="/home/#see-posts">See Posts</Nav.Link>
+            <Nav.Link href="/posts">See Posts</Nav.Link>
 
             {/* Profile link */}
             {loggedIn ? profileLink : null }

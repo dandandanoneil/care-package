@@ -13,31 +13,63 @@ function ActivePostsCard(props) {
     }
 
     return (
-        <Card className="mb-3 card-shad" border="danger">
+        <Card className="mb-3 card-shad" style={{ height: "375px" }}>
                 <a href={`/post/${props.post._id}`}>
-                    <Card.Header style={{ color: "white", backgroundColor: "#d05d11"}}>
-                        <em>
-                            {props.post.offerRequestEvent === "offer" ? "offer→ " : null}
-                            {props.post.offerRequestEvent === "request" ? "request→ " : null}
-                            {props.post.offerRequestEvent === "event" ? "event→ " : null}
-                        </em>
-                        {props.post.title}
-                        {props.post.comments ?
-                        <Badge pill variant="light" style={{ float: "right", color: "#4c68a5" }}>
-                            {props.post.comments.length}
-                        </Badge>
-                        : null }
-                    </Card.Header>
+                    {/* Offer Card Header */}
+                    {props.post.offerRequestEvent === "offer" ? (
+                        <Card.Header style={{ color: "white", backgroundColor: "#d0c311" }}>
+                            {/* <em>offer→</em> */}
+                            {props.post.title}
+                            {props.post.comments ?
+                            <Badge pill variant="light" style={{ float: "right", color: "#4c68a5" }}>{props.post.comments.length}</Badge>
+                            : null }
+                        </Card.Header>
+                    ) : (
+                        null
+                    )}
+                    {/* Request Card Header */}
+                    {props.post.offerRequestEvent === "request" ? (
+                        <Card.Header style={{ color: "white", backgroundColor: "#d05d11" }}>
+                            {/* <em>request→</em> */}
+                            {props.post.title}
+                            {props.post.comments ?
+                            <Badge pill variant="light" style={{ float: "right", color: "#4c68a5" }}>{props.post.comments.length}</Badge>
+                            : null }
+                        </Card.Header>
+                    ) : (
+                        null
+                    )}
+                    {/* Event Card Header */}
+                    {props.post.offerRequestEvent === "event" ? (
+                        <Card.Header style={{ color: "white", backgroundColor: "#4c69a5" }}>
+                            <em>event→</em>
+                            {/* {props.post.title} */}
+                            {props.post.comments ?
+                            <Badge pill variant="light" style={{ float: "right", color: "#4c68a5" }}>{props.post.comments.length}</Badge>
+                            : null }
+                        </Card.Header>
+                    ) : (
+                        null
+                    )}
                 </a>
-                <Card.Body style={{ backgroundColor: "#fcfcfc"}}>
+                <Card.Body style={{ backgroundColor: "#fcfcfc", overflowY: "scroll" }}>
+                    <h6><em><strong>
+                        {props.post.offerRequestEvent}→ {props.post.category}
+                    </strong></em></h6>
                     {props.post.imageURL ?
-                        <a href={`/post/${props.post._id}`}>
+                        <a href={`/post/${props.post._id}`} className="mb-2">
                             <Image fluid src={props.post.imageURL} />
                         </a>
                     : null }
-                    <p><small><strong>Posted On: </strong>{formatDate(props.post.created_at)}</small></p>
                     <Card.Text>
                         {props.post.description}
+                        <div><small><strong>Posted On: </strong>{formatDate(props.post.created_at)}</small></div>
+                        {props.post.location ? (
+                            <div><small><strong>Location: </strong>{props.post.location}</small></div>
+                        ) : (null)}
+                        {props.post.searchTags ? (
+                            <div><small><strong>Tags: </strong>{props.post.searchTags}</small></div>
+                        ) : (null)}
                     </Card.Text>
                 </Card.Body>
             </Card>
