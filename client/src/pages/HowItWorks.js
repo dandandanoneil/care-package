@@ -9,14 +9,10 @@ import united from './images/united.svg'
 
 function HowItWorks() {
     return (
-
         <Container className="mb-5" >
-          
-
             <section className="projects" id="projects">
                 <div className="max-width">
                     <h1 className="d-flex justify-content-center title" style={{ color: '#d05d11', padding: '40px', textShadow: "1px 1px 2px #000000" }} > <strong> How it Works </strong> </h1>
-
                     <div className="carousel owl-carousel">
                         <div className="card">
                             <div className="box">
@@ -27,8 +23,6 @@ function HowItWorks() {
                                           float: "right",
                                           background: "none",
                                           border: "none" }}> Sign Up to get started </button></div>
-
-
                                 <p style={{ color: 'white' }}>Our platform allows for communities in Philadelphia to connect and redistribute goods, services and weatlh completely free</p>
                             </div>
                         </div>
@@ -60,8 +54,7 @@ function HowItWorks() {
                                           background: "none",
                                           border: "none" }}>Communicate</button></div>
                                 <p style={{ color: 'white' }}>
-                                    Once you have found a gift that suits your needs, comment on the post to let the owner know about your interest.
-                              
+                                    Once you have found a gift that suits your needs, comment on the post to let the owner know about your interest.                       
                                 </p>
                             </div>
                         </div>
@@ -84,8 +77,6 @@ function HowItWorks() {
                         <br></br>
                         <div className="card">
                             <div className="box">
-
-                            
                                 <img src={united} alt="united-icon" />
                                 <div className="text">
                                     <button className="project-img"   style={{

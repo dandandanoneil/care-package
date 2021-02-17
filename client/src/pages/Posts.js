@@ -161,7 +161,7 @@ function Posts() {
 
     return (
         <Wrapper>
-            <Card border="primary" className="mt-3">
+            <Card border="primary" className="mt-3" style={{ borderRadius: "10px", boxShadow: "5px 5px 10px rgba(0,0,0,0.5)" }}>
                 <Card.Header style={{ backgroundColor: "#4c68a5", color: "white" }} variant="secondary" className="text-center">
                     <br/>
                     <h1>Free Marketplace</h1>
@@ -192,8 +192,8 @@ function Posts() {
                         ) : (
                             <Row className="mb-5">
                             {searchResults.map(post => (
-                                <Col xl="2" md="3" xs="6" key={post._id} >
-                                    <ActivePostsCard post={post}/>
+                                <Col lg="3" md="4" sm="6" xs="12" key={post._id} >
+                                <ActivePostsCard post={post}/>
                                 </Col>
                             ))}
                         </Row>

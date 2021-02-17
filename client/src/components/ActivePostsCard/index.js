@@ -18,7 +18,6 @@ function ActivePostsCard(props) {
                 {/* Offer Card Header */}
                 {props.post.offerRequestEvent === "offer" ? (
                     <Card.Header style={{ color: "white", backgroundColor: "#d0c311" }}>
-                        {/* <em>offer→</em> */}
                         {props.post.title}
                         {props.post.comments ?
                             <Badge pill variant="light" style={{ float: "right", color: "#4c68a5" }}>{props.post.comments.length}</Badge>
@@ -30,7 +29,6 @@ function ActivePostsCard(props) {
                 {/* Request Card Header */}
                 {props.post.offerRequestEvent === "request" ? (
                     <Card.Header className='card-header' style={{ color: "white", backgroundColor: "#d05d11" }}>
-                        {/* <em>request→</em> */}
                         {props.post.title}
                         {props.post.comments ?
                             <Badge pill variant="light" style={{ float: "right", color: "#4c68a5" }}>{props.post.comments.length}</Badge>
@@ -43,7 +41,7 @@ function ActivePostsCard(props) {
                 {props.post.offerRequestEvent === "event" ? (
                     <Card.Header style={{ color: "white", backgroundColor: "#4c69a5" }}>
                         <em>event→</em>
-                        {/* {props.post.title} */}
+                        {props.post.title}
                         {props.post.comments ?
                             <Badge pill variant="light" style={{ float: "right", color: "#4c68a5" }}>{props.post.comments.length}</Badge>
                             : null}

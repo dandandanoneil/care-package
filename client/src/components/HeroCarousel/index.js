@@ -1,8 +1,6 @@
 import React from "react";
 import Carousel from 'react-bootstrap/Carousel';
 import ModalSignUp from "../ModalSignUp";
-// import ModalMission from "../ModalMission";
-// import ModalAgreement from "../ModalAgreement";
 
 import clarkParkPhoto from "./images/clark-park.jpg";
 import northPhiladelphiaPhoto from "./images/north-philadelphia.jpg";
