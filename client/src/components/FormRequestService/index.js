@@ -51,15 +51,15 @@ function FormRequestService() {
     const handleSubmit = event => {
         event.preventDefault();
         if (postContent.category === "Select a category:") {
-            setPostContent({ ...postContent, category: "Other"});
+            setPostContent({ ...postContent, category: "Other" });
         }
         API.createPost(postContent)
-        .then(res => history.push(`/post/${res.data.ref_post}`));
+            .then(res => history.push(`/post/${res.data.ref_post}`));
     };
 
     return (
-        <Card border="primary" className="m-1" style={{borderRadius: "10p", boxShadow: "5px 5px 10px rgba(0,0,0,0.5)"}}>
-            <Card.Header style={{ color: "white", backgroundColor: "#4c68a5", fontWeight: "bold"}}>
+        <Card border="primary" className="m-1" style={{ borderRadius: "10p", boxShadow: "5px 5px 10px rgba(0,0,0,0.5)" }}>
+            <Card.Header style={{ color: "white", backgroundColor: "#4c68a5", fontWeight: "bold" }}>
                 <em>request→ service→</em>
             </Card.Header>
             <Form className="p-3">
@@ -88,7 +88,7 @@ function FormRequestService() {
                 </Form.Group>
                 <Form.Group as={Row}>
                     <Col sm="2" className="text-right"><Form.Label>Description:</Form.Label></Col>
-                    <Col sm="10"><Form.Control as="textarea" rows={3}  name="description" onChange={handleInputChange}/></Col>
+                    <Col sm="10"><Form.Control as="textarea" rows={3} name="description" onChange={handleInputChange} /></Col>
                 </Form.Group>
                 <Form.Group as={Row}>
                     <Form.Label column sm="2" className="text-right">Image:</Form.Label>
@@ -122,17 +122,17 @@ function FormRequestService() {
                 </Form.Group>
                 <Form.Group as={Row}>
                     <Form.Label column sm="2" className="text-right">Search Tags:</Form.Label>
-                    <Col sm="7"><Form.Control type="text" placeholder="Enter relevant tags, separated by spaces"  name="searchTags" onChange={handleInputChange}/></Col>
+                    <Col sm="7"><Form.Control type="text" placeholder="Enter relevant tags, separated by spaces" name="searchTags" onChange={handleInputChange} /></Col>
                     <Form.Text as={Col}><em>(optional)</em></Form.Text>
                 </Form.Group>
                 <Form.Group as={Row}>
                     <Form.Label column sm="2" className="text-right">Needed By:</Form.Label>
-                    <Col sm="7"><Form.Control type="date"  name="neededBy" onChange={handleInputChange}/></Col>
+                    <Col sm="7"><Form.Control type="date" name="neededBy" onChange={handleInputChange} /></Col>
                     <Form.Text as={Col}><em>(optional)</em></Form.Text>
                 </Form.Group>
                 <Form.Group as={Row}>
                     <Form.Label column sm="2" className="text-right">Total Persons Requesting Service:</Form.Label>
-                    <Col sm="7"><Form.Control type="text"  name="personsRequestingService" onChange={handleInputChange}/></Col>
+                    <Col sm="7"><Form.Control type="text" name="personsRequestingService" onChange={handleInputChange} /></Col>
                     <Form.Text as={Col}><em>(optional)</em></Form.Text>
                 </Form.Group>
                 <Form.Group as={Row}>
@@ -144,10 +144,10 @@ function FormRequestService() {
                     <Col><Form.Check type="checkbox" label="Online/Remote" name="onlineOrRemote" onChange={handleCheckboxChange} /></Col>
                     <Col><Form.Check type="checkbox" label="Time Sensitive" name="timeSensitive" onChange={handleCheckboxChange} /></Col>
                     <Col><Form.Check type="checkbox" label="Group Request" name="groupRequest" onChange={handleCheckboxChange} /></Col>
-                    <Col><Form.Check type="checkbox" label="Lack Access to Consistent Communication Methods" name="lackConsistentCommunication" onChange={handleCheckboxChange}/></Col>
+                    <Col><Form.Check type="checkbox" label="Lack Access to Consistent Communication Methods" name="lackConsistentCommunication" onChange={handleCheckboxChange} /></Col>
                 </Row>
                 <Row className="justify-content-center mt-4">
-                    <Button variant="primary" type="submit" onClick={handleSubmit} style={{ color: "white", backgroundColor: "#4c68a5"}}>
+                    <Button className='form-submit-btn' variant="primary" type="submit" onClick={handleSubmit} style={{ color: "white", backgroundColor: "#4c68a5" }}>
                         Post Request
                     </Button>
                 </Row>

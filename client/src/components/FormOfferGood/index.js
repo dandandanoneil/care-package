@@ -29,7 +29,7 @@ function FormOfferGood() {
         pickUpOnly: false,
         atCurbNow: false,
         timeSensitive: false
-    });    
+    });
 
     const handleInputChange = event => {
         const { name, value } = event.target;
@@ -50,97 +50,97 @@ function FormOfferGood() {
     const handleSubmit = event => {
         event.preventDefault();
         API.createPost(postContent)
-        .then(res => history.push(`/post/${res.data.ref_post}`));
+            .then(res => history.push(`/post/${res.data.ref_post}`));
     };
 
-  return (
-    <Card border="primary" className="m-1" style={{borderRadius: "10p", boxShadow: "5px 5px 10px rgba(0,0,0,0.5)"}}>
-        <Card.Header style={{ color: "white", backgroundColor: "#4c68a5", fontWeight: "bold"}}>
-            <em>offer→ good→</em>
-        </Card.Header>
-        <Form className="p-3">
-            <Form.Group as={Row}>
-                <Form.Label column sm="2" className="text-right">Item Title:</Form.Label>
-                <Col sm="10"><Form.Control type="text" name="title" onChange={handleInputChange} /></Col>
-            </Form.Group>
-            <Form.Group as={Row}>
-                <Form.Label column sm="2" className="text-right">Category:</Form.Label>
-                <Col sm="10">
-                    <Form.Control as="select" name="category" onChange={handleInputChange}>
-                        <option defaultValue disabled>Select a category</option>
-                        <option>Kitchen</option>
-                        <option>Tools</option>
-                        <option>Garden</option>
-                        <option>Clothing</option>
-                        <option>Furniture</option>
-                        <option>Automotive</option>
-                        <option>Entertainment</option>
-                        <option>Household Supplies</option>
-                        <option>Toiletries</option>
-                        <option>Baby & Child</option>
-                        <option>Electronic</option>
-                        <option>Appliances</option>
-                        <option>Other</option>
-                    </Form.Control>
-                </Col>
-            </Form.Group>
-            <Form.Group as={Row}>
-                <Col sm="2" className="text-right"><Form.Label>Description:</Form.Label></Col>
-                <Col sm="10"><Form.Control as="textarea" rows={3} name="description" onChange={handleInputChange} /></Col>
-            </Form.Group>
-            <Form.Group as={Row}>
-                <Form.Label column sm="2" className="text-right">Image:</Form.Label>
-                <Col sm="7"><Form.Control type="text" placeholder="Paste an image URL from the internet here" name="imageURL" onChange={handleInputChange} /></Col>
-                <Form.Text as={Col}><em>(optional)</em></Form.Text>
-            </Form.Group>
-            <Form.Group as={Row}>
-                <Form.Label column sm="2" className="text-right">Location:</Form.Label>
-                <Col sm="7">
-                    <Form.Control as="select" name="location" onChange={handleInputChange}>
-                        <option defaultValue disabled>Select a location</option>
-                        <option>Bridesburg-Kensington-Port Richmond</option>
-                        <option>Bucks County</option>
-                        <option>Center City</option>
-                        <option>Chester County</option>
-                        <option>Delaware County</option>
-                        <option>Far Northeast Philadelphia</option>
-                        <option>Germantown-Chestnut Hill</option>
-                        <option>Lower North Philadelphia</option>
-                        <option>Montgomery County</option>
-                        <option>Near Northeast Philadelphia</option>
-                        <option>Olney-Oak Lane</option>
-                        <option>Roxborough-Manayunk</option>
-                        <option>South Philadelphia</option>
-                        <option>Southwest Philadelphia</option>
-                        <option>Upper North Philadelphia</option>
-                        <option>West Philadelphia</option>
-                    </Form.Control>
-                </Col>
-                <Form.Text as={Col}><em>(optional)</em></Form.Text>
-            </Form.Group>
-            <Form.Group as={Row}>
-                <Form.Label column sm="2" className="text-right">Search Tags:</Form.Label>
-                <Col sm="7"><Form.Control type="text" placeholder="Enter relevant tags, separated by spaces" name="searchTags" onChange={handleInputChange} /></Col>
-                <Form.Text as={Col}><em>(optional)</em></Form.Text>
-            </Form.Group>
-            <Form.Group as={Row}>
-                <Form.Label column sm="2" className="text-right">Pick Up By:</Form.Label>
-                <Col sm="7"><Form.Control type="date" name="pickUpBy" onChange={handleInputChange} /></Col>
-                <Form.Text as={Col}><em>(optional)</em></Form.Text>
-            </Form.Group>
-            <Row className="text-center">
-                <Col><Form.Check type="checkbox" label="Pick Up Only" name="pickUpOnly" onChange={handleCheckboxChange} /></Col>
-                <Col><Form.Check type="checkbox" label="Time Sensitive" name="timeSensitive" onChange={handleCheckboxChange} /></Col>
-                <Col><Form.Check type="checkbox" label="At Curb Now" name="atCurbNow" onChange={handleCheckboxChange} /></Col>
-            </Row>
-            <Row className="justify-content-center mt-4">
-                <Button variant="primary" type="submit" onClick={handleSubmit} style={{ color: "white", backgroundColor: "#4c68a5"}}>
-                    Post Offer
+    return (
+        <Card border="primary" className="m-1" style={{ borderRadius: "10p", boxShadow: "5px 5px 10px rgba(0,0,0,0.5)" }}>
+            <Card.Header style={{ color: "white", backgroundColor: "#4c68a5", fontWeight: "bold" }}>
+                <em>offer→ good→</em>
+            </Card.Header>
+            <Form className="p-3">
+                <Form.Group as={Row}>
+                    <Form.Label column sm="2" className="text-right">Item Title:</Form.Label>
+                    <Col sm="10"><Form.Control type="text" name="title" onChange={handleInputChange} /></Col>
+                </Form.Group>
+                <Form.Group as={Row}>
+                    <Form.Label column sm="2" className="text-right">Category:</Form.Label>
+                    <Col sm="10">
+                        <Form.Control as="select" name="category" onChange={handleInputChange}>
+                            <option defaultValue disabled>Select a category</option>
+                            <option>Kitchen</option>
+                            <option>Tools</option>
+                            <option>Garden</option>
+                            <option>Clothing</option>
+                            <option>Furniture</option>
+                            <option>Automotive</option>
+                            <option>Entertainment</option>
+                            <option>Household Supplies</option>
+                            <option>Toiletries</option>
+                            <option>Baby & Child</option>
+                            <option>Electronic</option>
+                            <option>Appliances</option>
+                            <option>Other</option>
+                        </Form.Control>
+                    </Col>
+                </Form.Group>
+                <Form.Group as={Row}>
+                    <Col sm="2" className="text-right"><Form.Label>Description:</Form.Label></Col>
+                    <Col sm="10"><Form.Control as="textarea" rows={3} name="description" onChange={handleInputChange} /></Col>
+                </Form.Group>
+                <Form.Group as={Row}>
+                    <Form.Label column sm="2" className="text-right">Image:</Form.Label>
+                    <Col sm="7"><Form.Control type="text" placeholder="Paste an image URL from the internet here" name="imageURL" onChange={handleInputChange} /></Col>
+                    <Form.Text as={Col}><em>(optional)</em></Form.Text>
+                </Form.Group>
+                <Form.Group as={Row}>
+                    <Form.Label column sm="2" className="text-right">Location:</Form.Label>
+                    <Col sm="7">
+                        <Form.Control as="select" name="location" onChange={handleInputChange}>
+                            <option defaultValue disabled>Select a location</option>
+                            <option>Bridesburg-Kensington-Port Richmond</option>
+                            <option>Bucks County</option>
+                            <option>Center City</option>
+                            <option>Chester County</option>
+                            <option>Delaware County</option>
+                            <option>Far Northeast Philadelphia</option>
+                            <option>Germantown-Chestnut Hill</option>
+                            <option>Lower North Philadelphia</option>
+                            <option>Montgomery County</option>
+                            <option>Near Northeast Philadelphia</option>
+                            <option>Olney-Oak Lane</option>
+                            <option>Roxborough-Manayunk</option>
+                            <option>South Philadelphia</option>
+                            <option>Southwest Philadelphia</option>
+                            <option>Upper North Philadelphia</option>
+                            <option>West Philadelphia</option>
+                        </Form.Control>
+                    </Col>
+                    <Form.Text as={Col}><em>(optional)</em></Form.Text>
+                </Form.Group>
+                <Form.Group as={Row}>
+                    <Form.Label column sm="2" className="text-right">Search Tags:</Form.Label>
+                    <Col sm="7"><Form.Control type="text" placeholder="Enter relevant tags, separated by spaces" name="searchTags" onChange={handleInputChange} /></Col>
+                    <Form.Text as={Col}><em>(optional)</em></Form.Text>
+                </Form.Group>
+                <Form.Group as={Row}>
+                    <Form.Label column sm="2" className="text-right">Pick Up By:</Form.Label>
+                    <Col sm="7"><Form.Control type="date" name="pickUpBy" onChange={handleInputChange} /></Col>
+                    <Form.Text as={Col}><em>(optional)</em></Form.Text>
+                </Form.Group>
+                <Row className="text-center">
+                    <Col><Form.Check type="checkbox" label="Pick Up Only" name="pickUpOnly" onChange={handleCheckboxChange} /></Col>
+                    <Col><Form.Check type="checkbox" label="Time Sensitive" name="timeSensitive" onChange={handleCheckboxChange} /></Col>
+                    <Col><Form.Check type="checkbox" label="At Curb Now" name="atCurbNow" onChange={handleCheckboxChange} /></Col>
+                </Row>
+                <Row className="justify-content-center mt-4">
+                    <Button className='form-submit-btn' variant="primary" type="submit" onClick={handleSubmit} style={{ color: "white", backgroundColor: "#4c68a5" }}>
+                        Post Offer
                 </Button>
-            </Row>
-        </Form>
-    </Card>
-);
+                </Row>
+            </Form>
+        </Card>
+    );
 }
 
 export default FormOfferGood;

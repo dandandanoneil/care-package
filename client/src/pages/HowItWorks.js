@@ -21,7 +21,7 @@ function HowItWorks() {
                             <div className="box">
                                 <img src={contract} alt="" />
                                 <div className="text">
-                                    <a className="project-img" href="" target="_blank" rel="noopener noreferrer" style={{ color: 'white' }}> Sign Up to get started </a></div>
+                                    <a className="project-img"   style={{ color: 'white' }}> Sign Up to get started </a></div>
 
 
                                 <p style={{ color: 'white' }}>Our platform allows for communities in Philadelphia to connect and redistribute goods, services and weatlh completely free</p>
@@ -33,7 +33,7 @@ function HowItWorks() {
                                 <img src={wheelchair} alt="" />
                                 <div className="text">
                                     <a className="project-img"
-                                        href="" target="_blank" rel="noopener noreferrer" style={{ color: 'white' }}>Accessible
+                                          style={{ color: 'white' }}>Accessible
                                 </a></div>
                                 <p style={{ color: 'white' }}>
                                 Choose how and what you want to give or ask for by taking advantage of tags and filters
@@ -45,7 +45,7 @@ function HowItWorks() {
                             <div className="box">
                                 <img src={exchange} alt="" />
                                 <div className="text">
-                                    <a className="project-img" href="" target="_blank" rel="noopener noreferrer" style={{ color: 'white' }}>Communicate</a></div>
+                                    <a className="project-img"   style={{ color: 'white' }}>Communicate</a></div>
                                 <p style={{ color: 'white' }}>
                                     Once you have found a gift that suits your needs, comment on the post to let the owner know about your interest.
                               
@@ -57,7 +57,7 @@ function HowItWorks() {
                             <div className="box">
                                 <img src={donation} alt="" />
                                 <div className="text">
-                                    <a className="project-img" href="" target="_blank" rel="noopener noreferrer" style={{ color: 'white' }}>Delivery</a>
+                                    <a className="project-img"   style={{ color: 'white' }}>Delivery</a>
                                 </div>
                                 <p style={{ color: 'white' }}>Delivery details will be located in the post details but are up to the discretion of the owner and the member expressing their interest to workout.                                    </p>
                             </div>
@@ -71,7 +71,7 @@ function HowItWorks() {
                             
                                 <img src={united} alt="" />
                                 <div className="text">
-                                    <a className="project-img" href="" target="_blank" rel="noopener noreferrer" style={{ color: 'white' }}>Make a difference
+                                    <a className="project-img"   style={{ color: 'white' }}>Make a difference
                                 </a></div>
                                 <p style={{ color: 'white' }}>
                                 We believe in the strength of communities that have neighbors that look out for neighbors</p>

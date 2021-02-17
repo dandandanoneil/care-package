@@ -11,6 +11,8 @@ import Filter from '../components/Filter';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import HowItWorks from './HowItWorks'
+import Socialmedia from '../components/Socialmedia'
 
 // const items = [
 //     {
@@ -66,7 +68,7 @@ import Col from 'react-bootstrap/Col';
 
 function Home() {
     const [allPosts, setAllPosts] = useState([]);
-    let [searchResults, setSearchResults]= useState([]);
+    let [searchResults, setSearchResults] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
     const [filterObject, setFilterObject] = useState({
         offerRequestEvent: "",
@@ -86,10 +88,10 @@ function Home() {
     // This code runs on page load only
     useEffect(() => {
         API.getPosts()
-        .then(dbPosts => setAllPosts(dbPosts.data))
-        .catch(err => console.log(err));
+            .then(dbPosts => setAllPosts(dbPosts.data))
+            .catch(err => console.log(err));
     }, []);
-    
+
     // This code runs every time the search input changes
     useEffect(() => {
         searchPosts(searchTerm)
@@ -131,12 +133,12 @@ function Home() {
         // Searches the allPosts array and includes the post if the search term appears in any of the fields
         const term = searchTerm.toLowerCase().trim();
         const results = allPosts.filter(item => {
-                // All posts have these fields
+            // All posts have these fields
             if (item.offerRequestEvent.toLowerCase().includes(term)) return true;
             if (item.title.toLowerCase().includes(term)) return true;
             if (item.description.toLowerCase().includes(term)) return true;
             if (item.category.toLowerCase().includes(term)) return true;
-                // Only some posts have these fields, so we have to check that they exist first
+            // Only some posts have these fields, so we have to check that they exist first
             if (item.searchTags && item.searchTags.toLowerCase().includes(term)) return true;
             if (item.searchTags && item.location.toLowerCase().includes(term)) return true;
             if (item.requestOnBehalfOf && item.requestOnBehalfOf.toLowerCase().includes(term)) return true;
@@ -153,7 +155,7 @@ function Home() {
         });
         setSearchResults(results);
     };
-    
+
     function handleChange(event) {
         setSearchTerm(event.target.value);
     };
@@ -182,7 +184,7 @@ function Home() {
     };
 
     function handleSelect(event) {
-        if ((event.target.value === "All Categories") || 
+        if ((event.target.value === "All Categories") ||
             (event.target.value === "All Locations")) {
             setFilterObject({
                 ...filterObject,
@@ -221,9 +223,9 @@ function Home() {
             <Wrapper>
                 <Card border="primary">
                     <Card.Header style={{ backgroundColor: "#4c68a5", color: "white" }} variant="secondary" className="text-center">
-                        <br/>
+                        <br />
                         <h1>Free Marketplace</h1>
-                        <br/>
+                        <br />
                         <Row className="justify-content-center">
                             <Col sm="10">
                                 <Search
@@ -235,7 +237,7 @@ function Home() {
                                     handleCheck={handleCheck}
                                     handleRadio={handleRadio}
                                     handleSelect={handleSelect}
-                                    clearFilters= {clearFilters}
+                                    clearFilters={clearFilters}
                                 />
                             </Col>
                         </Row>
@@ -243,22 +245,24 @@ function Home() {
                     <Card.Body className="p-3" style={{ backgroundColor: "#cad5eb" }}>
                         {searchResults.length === 0 ? (
                             <div className="text-center" style={{ color: "#4c68a5" }}>
-                                <br/>
+                                <br />
                                 <h3 ><em>No posts to display</em></h3>
-                                <br/><br/><br/><br/><br/><br/><br/><br/>
+                                <br /><br /><br /><br /><br /><br /><br /><br />
                             </div>
-                            ) : (
+                        ) : (
                                 <Row className="mb-5">
-                                {searchResults.map(post => (
-                                    <Col xl="2" md="3" xs="6" key={post._id} >
-                                        <ActivePostsCard post={post}/>
-                                    </Col>
-                                ))}
-                            </Row>
-                        )} 
+                                    {searchResults.map(post => (
+                                        <Col xl="2" md="3" xs="6" key={post._id} >
+                                            <ActivePostsCard post={post} />
+                                        </Col>
+                                    ))}
+                                </Row>
+                            )}
                     </Card.Body>
                 </Card>
             </Wrapper>
+            <HowItWorks />
+            <Socialmedia />
         </>
     );
 }

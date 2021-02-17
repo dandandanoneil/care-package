@@ -33,3 +33,7 @@
   width: 17%;
   height: auto;
 }
+
+.login-btn:hover {
+  opacity: .8
+}
