@@ -3,23 +3,18 @@ This app uses React to allow the user to make a post to a mutual aid marketplace
 
 [Care Package Github Repo](https://github.com/dandandanoneil/care-package)
 
-
 [Care Package Deployed](https://care-package.herokuapp.com/)
 
 
-<!-- [Care Package Deployed](Dan Add Link)
+![Demo](public/assets/images/home.png)
 
-![Demo](public/assets/img/home.png)
+![Demo](./public/assets/images/posts.png) 
 
-![Demo](./public/assets/img/posts.png) 
+![Demo](public/assets/images/postdetail.png)
 
-![Demo](public/assets/img/postdetail.png)
+![Demo](./public/assets/images/user.png) 
 
-![Demo](./public/assets/img/user.png) 
-
-![Demo](public/assets/img/meetteam.png)
-
-![Demo](./public/assets/img/mission.png) 
+![Demo](public/assets/images/market.png)
 
 
 #### Table of Contents
@@ -39,7 +34,7 @@ This app uses React to allow the user to make a post to a mutual aid marketplace
 
 #### User Story
 
-* As a user, I want to be able to offer or request goods or services in my local community to redistribute or access wealth in a easy to access online gift economy.
+* As a user, I want to be able to offer or request goods or services in my local community to redistribute or access wealth in an easy to access online gift economy.
 
 #### Installation Instructions
 
