@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import UserContext from "../utils/UserContext";
 import API from "../utils/API";
 import { useLocation } from "react-router-dom";
-import "./user.css";
 
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -116,7 +115,7 @@ function User() {
                         : null}
                 </Row>
                 {user._id === currentUser._id ?
-                    <Button className='user-btn' size="sm" variant="warning" style={{ float: "right", backgroundColor: "#d0c311", color: "#FFFFFF" }} onClick={handleEditSubmit}><strong>Edit Profile</strong></Button>
+                    <Button size="sm" variant="warning" style={{ float: "right", backgroundColor: "#d0c311", color: "#FFFFFF" }} onClick={handleEditSubmit}><strong>Edit My Profile</strong></Button>
                     : null}
             </Card.Body>
         </Card>
@@ -175,7 +174,7 @@ function User() {
                                     )}
                                     <Row>
                                         {posts.map(post => (
-                                            <Col md="6" key={post._id} >
+                                            <Col md="4" sm="6" key={post._id} >
                                                 <ActivePostsCard post={post} />
                                             </Col>
                                         ))}

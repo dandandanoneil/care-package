@@ -1,16 +1,18 @@
-.btn-custom {
+.big-button {
     background-color: #d0c311;
-}
-.img-button{
+    color: white;
+    height: 150px;
+    font-size: 26px;
+    font-weight: bold;
     border-radius: 10px;
-
     box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
-
 }
 
-.row .col img:hover {
+.big-button:hover {
     opacity: .8;
     transform: translateY(-4px);
+    background-color: #d0c310;
+    color: white;
 }
 
 

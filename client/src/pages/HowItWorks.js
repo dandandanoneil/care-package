@@ -9,22 +9,19 @@ import united from './images/united.svg'
 
 function HowItWorks() {
     return (
-
         <Container className="mb-5" >
-
             <section className="projects" id="projects">
                 <div className="max-width">
-                    <h1 className="title " className="d-flex justify-content-center" style={{ color: '#d05d11', padding: '40px', textShadow: "1px 1px 2px #000000" }} > <bold> How it Works </bold> </h1>
-
+                    <h1 className="title d-flex justify-content-center" style={{ color: '#d05d11', padding: '40px', textShadow: "1px 1px 2px #000000" }} >
+                        <bold> How it Works </bold>
+                    </h1>
                     <div className="carousel owl-carousel">
                         <div className="card">
                             <div className="box">
                                 <img src={contract} alt="" />
                                 <div className="text">
-                                    <a className="project-img"   style={{ color: 'white' }}> Sign Up to get started </a></div>
-
-
-                                <p style={{ color: 'white' }}>Our platform allows for communities in Philadelphia to connect and redistribute goods, services and weatlh completely free</p>
+                                    <a className="project-img" style={{ color: 'white' }}> Sign Up to get started </a></div>
+                                    <p style={{ color: 'white' }}>Our platform allows for communities in Philadelphia to connect and redistribute goods, services and weatlh completely free</p>
                             </div>
                         </div>
                         <br></br>

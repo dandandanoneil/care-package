@@ -29,10 +29,6 @@ export default {
   getComments: function(postId) {
     return axios.get("/api/comments/" + postId);
   },
-  // Gets the comment with the given id
-  getComment: function(id) {
-    return axios.get("/api/comments/" + id);
-  },
   // Updates a comment info in the database
   updateComment: function(commentData) {
     return axios.put("/api/comments", commentData);
