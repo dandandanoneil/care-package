@@ -1,6 +1,5 @@
 import React from 'react';
 import FormControl from "react-bootstrap/FormControl";
-import "./search.css";
 
 function Search(props) {
     return (

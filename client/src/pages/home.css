@@ -1,26 +1,20 @@
 .carousel {
-    margin-top:50px;
-    height: 700px;
-    width: 100%;
-    
-  
-  }
-  
-  .carousel-item,
-  .carousel-inner,
-  .carousel-inner img {
-    height: 100%;
-    width: auto;
-  }
-  
-  .carousel-item {
-    text-align: center;
-  }
+  margin-top:50px;
+  height: 700px;
+  width: 100%;
+}
 
-  /* .carousel p {
-    background-color:black; ;
-  } */
- 
-  .carousel span {
-    background-color:black; ;
-  }
+.carousel-item,
+.carousel-inner,
+.carousel-inner img {
+  height: 100%;
+  width: auto;
+}
+
+.carousel-item {
+  text-align: center;
+}
+
+.carousel span {
+  background-color:black; ;
+}

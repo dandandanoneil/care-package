@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import UserContext from "./utils/UserContext";
+
+import Navigation from "./components/Navigation";
+import Footer from "./components/Footer";
+
 import Home from "./pages/Home";
 import Posts from "./pages/Posts";
 import CreatePost from "./pages/CreatePost";
@@ -15,8 +19,6 @@ import TermsOfUse from "./pages/TermsOfUse";
 import HowItWorks from "./pages/HowItWorks";
 import UserStories from "./pages/UserStories";
 import NotFound from "./pages/NotFound";
-import Navigation from "./components/Navigation";
-import Footer from "./components/Footer";
 
 
 function App() {
