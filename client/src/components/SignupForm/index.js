@@ -68,7 +68,7 @@ class SignupForm extends React.Component {
 
     render() {
         return (
-            <Form className="signup-form" onSubmit={this.onSubmit} className="p-3" style={{ width: "300px" }}>
+            <Form onSubmit={this.onSubmit} className="p-3 signup-form" style={{ width: "300px" }}>
                 <Form.Control className="mb-3" type="email" name="email" placeholder="Your Email" onChange={this.onChange}
                 />
                 <Form.Control className="mb-3" type="password" name="password" placeholder="Create a Password" onChange={this.onChange}

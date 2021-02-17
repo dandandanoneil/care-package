@@ -10,14 +10,14 @@ import linkedin from './images/linkedin_icon.PNG'
 const Socialmedia = () => {
     return (
         <section id="social-media">
-            <div class="container text-center">
+            <div className="container text-center">
 
-                <div class="social-icons">
-                    <a href="https://www.facebook.com" target="blank" rel="noopener noreferrer">  <img src={facebook} /> </a>
-                    <a href="https://www.instagram.com" target="blank" rel="noopener noreferrer"><img src={instagram} /></a>
-                    <a href="https://twitter.com" target="blank" rel="noopener noreferrer"><img src={twitter} /></a>
+                <div className="social-icons">
+                    <a href="https://www.facebook.com" target="blank" rel="noopener noreferrer">  <img src={facebook} alt='facebook-icon' /> </a>
+                    <a href="https://www.instagram.com" target="blank" rel="noopener noreferrer"><img src={instagram} alt='instagram-icon' /></a>
+                    <a href="https://twitter.com" target="blank" rel="noopener noreferrer"><img src={twitter} alt='twitter-icon' /></a>
                     {/* <a href="https://www.whatsapp.com/?lang=en"><img src={whatsapp} /></a> */}
-                    <a href="https://www.linkedin.com" target="blank" rel="noopener noreferrer"><img src={linkedin} /></a>
+                    <a href="https://www.linkedin.com" target="blank" rel="noopener noreferrer"><img src={linkedin} alt='linkedin-icon' /></a>
                     {/* <a href="https://www.snapchat.com/"><img src={snapchat} /></a> */}
 
 
