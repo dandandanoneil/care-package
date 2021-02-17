@@ -9,8 +9,6 @@ import ListGroup from "react-bootstrap/ListGroup";
 import ListGroupItem from "react-bootstrap/ListGroupItem";
 import Button from "react-bootstrap/Button";
 
-import DeleteBtn from "../../components/DeleteBtn";
-
 function CommentCard(props) {
   // Setting our component's initial state
   const [comments, setComments] = useState(props.comments);
@@ -148,9 +146,9 @@ function CommentCard(props) {
                           defaultValue={editObject.comment}
                           onChange={handleEditChange}
                         ></Form.Control>
-                        <Button size="sm" className="m-3" variant="warning" style={{ float: "right", backgroundColor: "#d0c311" }} onClick={handleEditSubmit}>Update</Button>
-                        <Button size="sm" className="m-3" variant="primary" style={{ float: "right", backgroundColor: "#4c68a5" }} onClick={handleDiscardChanges}>Discard Changes</Button>
-                        <Button size="sm" className="m-3" variant="danger" style={{ float: "right", backgroundColor: "#d05d11" }} onClick={handleDiscardChanges}>Delete</Button>                        
+                        <Button size="sm" className="mt-1 ml-1" variant="warning" style={{ float: "right", backgroundColor: "#d0c311" }} onClick={handleEditSubmit}>Update</Button>
+                        <Button size="sm" className="mt-1 ml-1" variant="primary" style={{ float: "right", backgroundColor: "#4c68a5" }} onClick={handleDiscardChanges}>Discard Changes</Button>
+                        <Button size="sm" className="mt-1 ml-1" variant="danger" style={{ float: "right", backgroundColor: "#d05d11" }} onClick={deleteComment}>Delete</Button>
                       </Form>
                     ) : (
                       <p>

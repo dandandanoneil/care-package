@@ -35,7 +35,12 @@ const UserSchema = new Schema({
     facebookLink: String,
     instagramLink: String,
     twitterLink: String,
-    linkedInLink: String
+    linkedInLink: String,
+    // This field is to help the backend track redirect the user to the post when created & pushed to comments[]
+    ref_post: {
+        type: Schema.Types.ObjectId,
+        ref: 'Post'
+    },
 });
 
 UserSchema.methods.validPassword = function(enteredPassword) {
