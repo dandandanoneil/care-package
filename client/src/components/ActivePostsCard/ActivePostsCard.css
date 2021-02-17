@@ -8,3 +8,13 @@
     box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
 
 }
+
+.card-shad:hover {
+    
+    transform: scale(1.02)
+}
+
+.card-shad .card-header:hover {
+    
+    opacity: 0.9
+}

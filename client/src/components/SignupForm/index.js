@@ -4,6 +4,7 @@ import API from "../../utils/API";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Alert from "react-bootstrap/Alert";
+import "./style.css";
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -11,7 +12,7 @@ class SignupForm extends React.Component {
         this.state = {
             email: "",
             password: "",
-            name: "", 
+            name: "",
             error: "",
             showError: false
         };
@@ -33,19 +34,19 @@ class SignupForm extends React.Component {
             password: this.state.password,
             name: this.state.name
         })
-        .then( res => this.props.history.push(`/user/${res.data._id}`) )
-        .catch(err => {
-            console.log(err);
-            this.setState({ 
-                error: err.name,
-                showError: true
-            })
-            if (err.name === "Error") {
-                this.setState({ 
-                    error: `There was an error creating your account. There may already be an account associated with ${this.state.email}.`
-                })    
-            }
-        });
+            .then(res => this.props.history.push(`/user/${res.data._id}`))
+            .catch(err => {
+                console.log(err);
+                this.setState({
+                    error: err.name,
+                    showError: true
+                })
+                if (err.name === "Error") {
+                    this.setState({
+                        error: `There was an error creating your account. There may already be an account associated with ${this.state.email}.`
+                    })
+                }
+            });
     }
 
     onChange = (event) => {
@@ -64,17 +65,17 @@ class SignupForm extends React.Component {
                 break;
         }
     }
-  
+
     render() {
         return (
-            <Form onSubmit={this.onSubmit} className="p-3" style={{ width: "300px"}}>
+            <Form className="signup-form" onSubmit={this.onSubmit} className="p-3" style={{ width: "300px" }}>
                 <Form.Control className="mb-3" type="email" name="email" placeholder="Your Email" onChange={this.onChange}
                 />
                 <Form.Control className="mb-3" type="password" name="password" placeholder="Create a Password" onChange={this.onChange}
                 />
                 <Form.Control className="mb-3" type="text" name="name" placeholder="Display Name" onChange={this.onChange}
                 />
-                <Button style={{ color: "white", backgroundColor: "#4c68a5" }} type="submit">
+                <Button className="submit-btn" style={{ color: "white", backgroundColor: "#4c68a5" }} type="submit">
                     Create Account
                 </Button>
 

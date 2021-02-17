@@ -48,11 +48,11 @@ function User() {
 
     function loadUser() {
         API.getUser(userId)
-        .then(res => {
-            setUser(res.data);
-            setPosts(res.data.posts);
-        })
-        .catch(err => console.log(err));
+            .then(res => {
+                setUser(res.data);
+                setPosts(res.data.posts);
+            })
+            .catch(err => console.log(err));
     }
 
     function formatDate(dateString) {
@@ -60,7 +60,7 @@ function User() {
         return new Date(dateString).toLocaleDateString(undefined, options);
     }
 
-    function handleInputChange (event) {
+    function handleInputChange(event) {
         const { name, value } = event.target;
         setFormObject({
             ...formObject,
@@ -76,85 +76,85 @@ function User() {
     function handleSubmit(event) {
         event.preventDefault();
         API.updateUser(userId, formObject)
-        .then(res => {
-            loadUser();
-            setEditMode(false);
-        })
-        .catch(err => console.log(err));
+            .then(res => {
+                loadUser();
+                setEditMode(false);
+            })
+            .catch(err => console.log(err));
     }
 
-    const profileCard= (
-        <Card className="m-3" border="warning" style={{borderRadius: "10p", boxShadow: "5px 5px 10px rgba(0,0,0,0.5)"}}>
+    const profileCard = (
+        <Card className="m-3" border="warning" style={{ borderRadius: "10p", boxShadow: "5px 5px 10px rgba(0,0,0,0.5)" }}>
             <Card.Header style={{ color: "white", backgroundColor: "#d0c311" }} as="h5">User Profile</Card.Header>
             <Card.Body style={{ backgroundColor: "#fafafa" }}>
                 <p><strong>Name:</strong> {user.name}</p>
                 <p><strong>Email:</strong> {user.email}</p>
                 <p><strong>Member Since:</strong> {formatDate(user.memberSince)}</p>
                 {user.bio ?
-                <p><strong>Bio:</strong> {user.bio}</p>
-                : null}
+                    <p><strong>Bio:</strong> {user.bio}</p>
+                    : null}
                 <Row>
                     {user.facebookLink ?
                         <Col xs="3" md="2">
-                            <a href={user.facebookLink} target="blank"><Image fluid src="https://cdn1.iconfinder.com/data/icons/social-media-2285/512/Colored_Facebook3_svg-128.png" alt="Facebook"/></a>
+                            <a href={user.facebookLink} target="blank"><Image fluid src="https://cdn1.iconfinder.com/data/icons/social-media-2285/512/Colored_Facebook3_svg-128.png" alt="Facebook" /></a>
                         </Col>
-                    : null}
+                        : null}
                     {user.instagramLink ?
                         <Col xs="3" md="2">
-                            <a href={user.instagramLink}target="blank"><Image fluid src="https://cdn2.iconfinder.com/data/icons/social-media-applications/64/social_media_applications_3-instagram-128.png" alt="Instagram"/></a>
+                            <a href={user.instagramLink} target="blank"><Image fluid src="https://cdn2.iconfinder.com/data/icons/social-media-applications/64/social_media_applications_3-instagram-128.png" alt="Instagram" /></a>
                         </Col>
-                    : null}
+                        : null}
                     {user.twitterLink ?
                         <Col xs="3" md="2">
-                            <a href={user.twitterLink} target="blank"><Image fluid src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Twitter3_colored_svg-128.png" alt="Twitter"/></a>
+                            <a href={user.twitterLink} target="blank"><Image fluid src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Twitter3_colored_svg-128.png" alt="Twitter" /></a>
                         </Col>
-                    : null}
+                        : null}
                     {user.linkedInLink ?
                         <Col xs="3" md="2">
-                            <a href={user.linkedInLink} target="blank"><Image fluid src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Linkedin_unofficial_colored_svg-128.png" alt="LinkedIn"/></a>
+                            <a href={user.linkedInLink} target="blank"><Image fluid src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Linkedin_unofficial_colored_svg-128.png" alt="LinkedIn" /></a>
                         </Col>
-                    : null}
+                        : null}
                 </Row>
                 {user._id === currentUser._id ?
-                    <Button size="sm" variant="warning" style={{ float: "right", backgroundColor: "#d0c311", color: "#FFFFFF" }} onClick={handleEditSubmit}><strong>Edit Profile</strong></Button>
-                : null }
+                    <Button className='user-btn' size="sm" variant="warning" style={{ float: "right", backgroundColor: "#d0c311", color: "#FFFFFF" }} onClick={handleEditSubmit}><strong>Edit Profile</strong></Button>
+                    : null}
             </Card.Body>
         </Card>
     );
 
-    const profileForm= (
-        <Card className="m-3" border="warning" style={{borderRadius: "10p", boxShadow: "5px 5px 10px rgba(0,0,0,0.5)"}}>
+    const profileForm = (
+        <Card className="m-3" border="warning" style={{ borderRadius: "10p", boxShadow: "5px 5px 10px rgba(0,0,0,0.5)" }}>
             <Card.Header style={{ color: "white", backgroundColor: "#d0c311" }} as="h5">User Profile</Card.Header>
             <Form style={{ backgroundColor: "#fafafa" }} className="p-3">
-                    <Form.Group>
-                        <Form.Label>Name:</Form.Label>
-                        <Form.Control onChange={handleInputChange} name="name" placeholder="Your Display Name" defaultValue={user.name} />
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>Email:</Form.Label>
-                        <Form.Control onChange={handleInputChange} name="email" placeholder="Your Email" defaultValue={user.email} />
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>Bio:</Form.Label>
-                        <Form.Control onChange={handleInputChange} name="bio" placeholder="Write a short bio to let other users get to know you!" defaultValue={user.bio} as="textarea" />
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>Facebook Link:</Form.Label>
-                        <Form.Control onChange={handleInputChange} name="facebookLink" placeholder="Link to your Facebook profile to let other users get to know you!" defaultValue={user.facebookLink} />
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>Instagram Link:</Form.Label>
-                        <Form.Control onChange={handleInputChange} name="instagramLink" placeholder="Link to your Instagram profile to let other users get to know you!" defaultValue={user.instagramLink} />
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>Twitter Link:</Form.Label>
-                        <Form.Control onChange={handleInputChange} name="twitterLink" placeholder="Link to your Twitter profile to let other users get to know you!" defaultValue={user.twitterLink} />
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>LinkedIn Link:</Form.Label>
-                        <Form.Control onChange={handleInputChange} name="linkedInLink" placeholder="Link to your LinkedIn profile to let other users get to know you!" defaultValue={user.linkedInLink} />
-                    </Form.Group>
-                <Button variant="warning" style={{ float: "right", backgroundColor: "#d0c311", color: "white" }} onClick={handleSubmit}>Save Changes</Button>
+                <Form.Group>
+                    <Form.Label>Name:</Form.Label>
+                    <Form.Control onChange={handleInputChange} name="name" placeholder="Your Display Name" defaultValue={user.name} />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Email:</Form.Label>
+                    <Form.Control onChange={handleInputChange} name="email" placeholder="Your Email" defaultValue={user.email} />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Bio:</Form.Label>
+                    <Form.Control onChange={handleInputChange} name="bio" placeholder="Write a short bio to let other users get to know you!" defaultValue={user.bio} as="textarea" />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Facebook Link:</Form.Label>
+                    <Form.Control onChange={handleInputChange} name="facebookLink" placeholder="Link to your Facebook profile to let other users get to know you!" defaultValue={user.facebookLink} />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Instagram Link:</Form.Label>
+                    <Form.Control onChange={handleInputChange} name="instagramLink" placeholder="Link to your Instagram profile to let other users get to know you!" defaultValue={user.instagramLink} />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Twitter Link:</Form.Label>
+                    <Form.Control onChange={handleInputChange} name="twitterLink" placeholder="Link to your Twitter profile to let other users get to know you!" defaultValue={user.twitterLink} />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>LinkedIn Link:</Form.Label>
+                    <Form.Control onChange={handleInputChange} name="linkedInLink" placeholder="Link to your LinkedIn profile to let other users get to know you!" defaultValue={user.linkedInLink} />
+                </Form.Group>
+                <Button className='user-btn' variant="warning" style={{ float: "right", backgroundColor: "#d0c311", color: "white" }} onClick={handleSubmit}>Save Changes</Button>
             </Form>
         </Card>
     );
@@ -167,7 +167,7 @@ function User() {
                     <Row className="justify-content-center">
                         <Col lg="8">
                             {editMode ? profileForm : profileCard}
-                            <Card className="m-3" border="primary" style={{borderRadius: "10p", boxShadow: "5px 5px 10px rgba(0,0,0,0.5)"}}>
+                            <Card className="m-3" border="primary" style={{ borderRadius: "10p", boxShadow: "5px 5px 10px rgba(0,0,0,0.5)" }}>
                                 <Card.Header style={{ backgroundColor: "#4c68a5", color: "white" }} variant="secondary" as="h5">User Posts</Card.Header>
                                 <Card.Body style={{ backgroundColor: "#cad5eb" }}>
                                     {posts.length ? null : (
@@ -176,7 +176,7 @@ function User() {
                                     <Row>
                                         {posts.map(post => (
                                             <Col md="6" key={post._id} >
-                                                <ActivePostsCard post={post}/>
+                                                <ActivePostsCard post={post} />
                                             </Col>
                                         ))}
                                     </Row>
@@ -186,8 +186,8 @@ function User() {
                     </Row>
                 </>
             ) : (
-                <PageTitle>User <code>{userId}</code> not found</PageTitle>
-            )}
+                    <PageTitle>User <code>{userId}</code> not found</PageTitle>
+                )}
         </Wrapper>
     );
 }
