@@ -1,29 +1,23 @@
 import React from "react";
-import Image from "react-bootstrap/Image";
-import giveButton from "./give-button.png";
-import askButton from "./ask-button.png";
+import { useHistory } from "react-router-dom";
 import "./style.css";
 
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
+
 const Buttons = () => {
-    return (
-      <div className="row">
-        <div className="col text-center">
-          <a href="/create-post">
-            <Image 
-              src={giveButton} 
-              alt="Give Something" 
-              className="m-5 img-button"
-              fluid />
-          </a>
-          <a href="/create-post">
-            <Image 
-              src={askButton} 
-              alt="Ask for Something" 
-              className="m-5 img-button"
-              fluid />
-          </a>
-        </div>
-      </div>
+  const history = useHistory();
+
+  return (
+    <Row className="p-5 justify-content-center">
+      <Col md="4">
+        <Button block variant="none" className="mb-3 big-button" onClick={() => history.push("/create-post")} >Give Something</Button>
+      </Col>
+      <Col md="4">
+          <Button block variant="none" className="mb-3 big-button" onClick={() => history.push("/create-post")} >Ask for Something</Button>
+      </Col>
+    </Row>
   )
 }
 

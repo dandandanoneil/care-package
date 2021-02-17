@@ -84,7 +84,7 @@ function User() {
 
     const profileCard= (
         <Card className="m-3" border="warning">
-            <Card.Header style={{ color: "white", backgroundColor: "#d0c311" }} as="h5">User Profile</Card.Header>
+            <Card.Header style={{ color: "white", backgroundColor: "#d0c311" }} as="h5">Profile</Card.Header>
             <Card.Body style={{ backgroundColor: "#fafafa" }}>
                 <p><strong>Name:</strong> {user.name}</p>
                 <p><strong>Email:</strong> {user.email}</p>
@@ -115,7 +115,7 @@ function User() {
                     : null}
                 </Row>
                 {user._id === currentUser._id ?
-                    <Button size="sm" variant="warning" style={{ float: "right", backgroundColor: "#d0c311", color: "#FFFFFF" }} onClick={handleEditSubmit}><strong>Edit Profile</strong></Button>
+                    <Button size="sm" variant="warning" style={{ float: "right", backgroundColor: "#d0c311", color: "#FFFFFF" }} onClick={handleEditSubmit}><strong>Edit My Profile</strong></Button>
                 : null }
             </Card.Body>
         </Card>
@@ -123,7 +123,7 @@ function User() {
 
     const profileForm= (
         <Card className="m-3" border="warning">
-            <Card.Header style={{ color: "white", backgroundColor: "#d0c311" }} as="h5">User Profile</Card.Header>
+            <Card.Header style={{ color: "white", backgroundColor: "#d0c311" }} as="h5">Profile</Card.Header>
             <Form style={{ backgroundColor: "#fafafa" }} className="p-3">
                     <Form.Group>
                         <Form.Label>Name:</Form.Label>
@@ -167,14 +167,14 @@ function User() {
                         <Col lg="8">
                             {editMode ? profileForm : profileCard}
                             <Card className="m-3" border="primary">
-                                <Card.Header style={{ backgroundColor: "#4c68a5", color: "white" }} variant="secondary" as="h5">User Posts</Card.Header>
+                                <Card.Header style={{ backgroundColor: "#4c68a5", color: "white" }} variant="secondary" as="h5">Posts</Card.Header>
                                 <Card.Body style={{ backgroundColor: "#cad5eb" }}>
                                     {posts.length ? null : (
                                         "No posts to display"
                                     )}
                                     <Row>
                                         {posts.map(post => (
-                                            <Col md="6" key={post._id} >
+                                            <Col md="4" sm="6" key={post._id} >
                                                 <ActivePostsCard post={post}/>
                                             </Col>
                                         ))}
