@@ -61,12 +61,12 @@ function ActivePostsCard(props) {
                     : null}
                 <Card.Text>
                     {props.post.description}
-                    <div><small><strong>Posted On: </strong>{formatDate(props.post.created_at)}</small></div>
+                    <span><small><strong>Posted On: </strong>{formatDate(props.post.created_at)}</small></span>
                     {props.post.location ? (
-                        <div><small><strong>Location: </strong>{props.post.location}</small></div>
+                        <span><small><strong>Location: </strong>{props.post.location}</small></span>
                     ) : (null)}
                     {props.post.searchTags ? (
-                        <div><small><strong>Tags: </strong>{props.post.searchTags}</small></div>
+                        <span><small><strong>Tags: </strong>{props.post.searchTags}</small></span>
                     ) : (null)}
                 </Card.Text>
             </Card.Body>
