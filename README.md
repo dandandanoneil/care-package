@@ -6,15 +6,15 @@ This app uses React to allow the user to make a post to a mutual aid marketplace
 [Care Package Deployed](https://care-package.herokuapp.com/)
 
 
-![Demo](public/assets/images/home.png)
+![Demo](./client/public/assets/images/home.png)
 
-![Demo](./public/assets/images/posts.png) 
+![Demo](./client/public/assets/images/posts.png) 
 
-![Demo](public/assets/images/postdetail.png)
+![Demo](./client/public/assets/images/postdetail.png)
 
-![Demo](./public/assets/images/user.png) 
+![Demo](./client/public/assets/images/user.png) 
 
-![Demo](public/assets/images/market.png)
+![Demo](./client/public/assets/images/market.png)
 
 
 #### Table of Contents
