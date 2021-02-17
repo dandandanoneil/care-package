@@ -123,20 +123,20 @@ function CommentCard(props) {
                         <strong>
                           <a href={`/user/${comment.created_by._id}`}>{comment.created_by.name}</a>
                         </strong> on {formatDate(comment.created_at)}:
-                      {comment._id === editId ? (
-                        null
-                        ) :  (
+                      {comment.created_by._id === currentUser._id ? (
                         <button 
-                          onClick={() => editComment(comment)} 
-                          data={comment}
-                          style={{
-                            float: "right",
-                            color: "#4c68a5",
-                            background: "none",
-                            border: "none"
-                          }}
+                        onClick={() => editComment(comment)} 
+                        data={comment}
+                        style={{
+                          float: "right",
+                          color: "#4c68a5",
+                          background: "none",
+                          border: "none"
+                        }}
                         ><small>Edit</small></button>
-                      )}
+                        ) :  (
+                          null
+                        )}
                     </div>
                     {comment._id === editId ? (
                       <Form>
