@@ -54,7 +54,7 @@ function FormOfferGood() {
     };
 
   return (
-    <Card border="primary" className="m-1">
+    <Card border="primary" className="m-1" style={{borderRadius: "10p", boxShadow: "5px 5px 10px rgba(0,0,0,0.5)"}}>
         <Card.Header style={{ color: "white", backgroundColor: "#4c68a5", fontWeight: "bold"}}>
             <em>offer→ good→</em>
         </Card.Header>
@@ -134,7 +134,7 @@ function FormOfferGood() {
                 <Col><Form.Check type="checkbox" label="At Curb Now" name="atCurbNow" onChange={handleCheckboxChange} /></Col>
             </Row>
             <Row className="justify-content-center mt-4">
-                <Button variant="primary" type="submit" onClick={handleSubmit}>
+                <Button variant="primary" type="submit" onClick={handleSubmit} style={{ color: "white", backgroundColor: "#4c68a5"}}>
                     Post Offer
                 </Button>
             </Row>
