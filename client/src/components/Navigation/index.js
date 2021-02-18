@@ -94,7 +94,7 @@ function Navigation(props) {
   );
 
   const signupDropdown = (
-      <NavDropdown title="Sign Up" id="nav-dropdown" drop="left">
+      <NavDropdown title="Signup" id="nav-dropdown" drop="left">
         <SignupForm />
       </NavDropdown>
   );

@@ -17,23 +17,23 @@ function HowItWorksBanner() {
             <div className="mt-5 banner">
                 <h1 style={{ padding: '20px', textShadow: "1px 1px 2px #000000" }}>How it Works</h1>
                 <Row className="justify-content-center">
-                    <Col sm="4" lg="2">
+                    <Col className="text-center" sm="4" lg="2">
                         <Image fluid as={Row} src={contract} alt="contract-icon" />
-                        <Col className="text" style={{ color: 'white', float: "right", background: "none", border: "none" }}>Sign Up</Col>
+                        <Col className="text" style={{ color: 'white', float: "right", background: "none", border: "none" }}>Signup</Col>
                     </Col>
-                    <Col sm="4" lg="2">
+                    <Col className="text-center" sm="4" lg="2">
                         <Image fluid as={Row} src={wheelchair} alt="wheelchair-icon" />
-                        <Col className="text" style={{ color: 'white', float: "right", background: "none", border: "none" }}>Accessible</Col>
+                        <Col className="text" style={{ color: 'white', float: "right", background: "none", border: "none" }}>Access</Col>
                     </Col>
-                    <Col sm="4" lg="2">
+                    <Col className="text-center" sm="4" lg="2">
                         <Image fluid as={Row} src={exchange} alt="exchange-icon" />
-                        <Col className="text" style={{ color: 'white', float: "right", background: "none", border: "none" }}>Communicate</Col>
+                        <Col className="text" style={{ color: 'white', float: "right", background: "none", border: "none" }}>Connect</Col>
                     </Col>
-                    <Col sm="4" lg="2">
+                    <Col className="text-center" sm="4" lg="2">
                         <Image fluid as={Row} src={donation} alt="donation-icon" />
-                        <Col className="text" style={{ color: 'white', float: "right", background: "none", border: "none" }}>Delivery</Col>
+                        <Col className="text" style={{ color: 'white', float: "right", background: "none", border: "none" }}>Deliver</Col>
                     </Col>
-                    <Col sm="4" lg="2">
+                    <Col className="text-center" sm="4" lg="2">
                         <Image fluid as={Row} src={united} alt="united-icon" />
                         <Col className="text" style={{ color: 'white', float: "right", background: "none", border: "none" }}>Impact</Col>
                     </Col>

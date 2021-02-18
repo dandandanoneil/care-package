@@ -6,7 +6,7 @@ import facebook from './images/facebook_icon.PNG'
 import twitter from './images/twitter_icon.PNG'
 import linkedin from './images/linkedin_icon.PNG'
 
-const SocialMedia = () => {
+const SocialMediaLinks = () => {
     return (
         <section id="social-media">
             <div className="container text-center">
@@ -21,4 +21,4 @@ const SocialMedia = () => {
     );
 }
 
-export default SocialMedia;
+export default SocialMediaLinks;
