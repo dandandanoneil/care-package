@@ -8,7 +8,7 @@ import HeroCarousel from "../components/HeroCarousel";
 import Buttons from "../components/Buttons";
 import ActivePostsCard from "../components/ActivePostsCard";
 import HowItWorksBanner from "../components/HowItWorksBanner";
-import SocialMedia from "../components/SocialMedia"
+import SocialMediaLinks from "../components/SocialMediaLinks"
 
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
@@ -58,7 +58,7 @@ function Home() {
                 </Card>
             </Wrapper>
             <HowItWorksBanner />
-            <SocialMedia />
+            <SocialMediaLinks />
         </>
     );
 }
