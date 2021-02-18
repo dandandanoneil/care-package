@@ -1,20 +1,10 @@
-.carousel {
-  margin-top:50px;
-  height: 700px;
-  width: 100%;
+.more-button{
+  float: right;
+  background-color: #d05d11;
+  color: white;
 }
 
-.carousel-item,
-.carousel-inner,
-.carousel-inner img {
-  height: 100%;
-  width: auto;
-}
-
-.carousel-item {
-  text-align: center;
-}
-
-.carousel span {
-  background-color:black; ;
+.more-button:hover {
+  opacity: .8;
+  background-color: #d05d11;
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import API from "../utils/API";
+import "./home.css";
 
 import Wrapper from "../components/Wrapper";
 import HeroCarousel from "../components/HeroCarousel";
@@ -50,7 +51,7 @@ function Home() {
                                         </Col>
                                     ))}
                                 </Row>
-                                <Button size="lg" variant="danger" onClick={() => history.push("/posts")} style={{ float: "right", backgroundColor: "#d05d11", color: "white" }} className="mt-2"><em>See More Posts →</em></Button>
+                                <Button size="lg" variant="danger" onClick={() => history.push("/posts")} className="mt-2 more-button"><em>See More Posts →</em></Button>
                             </>
                             )}
                     </Card.Body>
