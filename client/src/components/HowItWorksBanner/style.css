@@ -1,0 +1,41 @@
+.hidden-link{
+    text-decoration: none!important;
+}
+
+.banner{
+    background-image: linear-gradient( #4c68a5, #021247);
+    color: white;
+    padding: 40px 10px;
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.banner:hover{
+    background-image: linear-gradient(#d0c311, #d05d11);
+    transform: scale(1.05);
+}
+
+.banner .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+}
+
+.banner img{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #d05d11;
+    transition: all 0.3s ease;
+}
+
+.banner img:hover{
+    border-color: #fff;
+}

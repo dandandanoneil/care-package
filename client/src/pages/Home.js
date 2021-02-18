@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import API from "../utils/API";
+import "./home.css";
 
 import Wrapper from "../components/Wrapper";
 import HeroCarousel from "../components/HeroCarousel";
 import Buttons from "../components/Buttons";
 import ActivePostsCard from "../components/ActivePostsCard";
-import HowItWorks from './HowItWorks'
-import Socialmedia from '../components/Socialmedia'
+import HowItWorksBanner from "../components/HowItWorksBanner";
+import SocialMedia from "../components/SocialMedia"
 
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
@@ -50,14 +51,14 @@ function Home() {
                                         </Col>
                                     ))}
                                 </Row>
-                                <Button size="lg" variant="danger" onClick={() => history.push("/posts")} style={{ float: "right", backgroundColor: "#d05d11", color: "white" }} className="mt-2"><em>See More Posts →</em></Button>
+                                <Button size="lg" variant="danger" onClick={() => history.push("/posts")} className="mt-2 more-button"><em>See More Posts →</em></Button>
                             </>
                             )}
                     </Card.Body>
                 </Card>
             </Wrapper>
-            <HowItWorks />
-            <Socialmedia />
+            <HowItWorksBanner />
+            <SocialMedia />
         </>
     );
 }
