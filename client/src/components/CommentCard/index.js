@@ -111,7 +111,7 @@ function CommentCard(props) {
   }
 
   return (
-    <Card className="mt-3 mb-3">
+    <Card className="mt-3 mb-3" style={{ borderRadius: "10p", boxShadow: "5px 5px 10px rgba(0,0,0,0.5)" }}>
       <Card.Header style={{ backgroundColor: "#4c68a5", color: "#FFFFFF" }}>Comments</Card.Header>
       <Card.Body className="p-3" style={{ backgroundColor: "#cad5eb" }}>
         {comments.length ? (
