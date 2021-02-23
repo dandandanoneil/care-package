@@ -9,7 +9,6 @@ import Home from "./pages/Home";
 import Posts from "./pages/Posts";
 import CreatePost from "./pages/CreatePost";
 import User from "./pages/User";
-import Signup from "./pages/Signup";
 import PostDetail from "./pages/PostDetail";
 import PostEdit from "./pages/PostEdit";
 import Mission from "./pages/Mission";
@@ -58,7 +57,6 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/home" component={Home} />
             <Route exact path="/posts" component={Posts} />
-            <Route exact path="/signup" component={Signup} />
             <Route exact path="/create-post" component={CreatePost} />
             <Route path="/user" component={User} />
             <Route path="/post" component={PostDetail} />

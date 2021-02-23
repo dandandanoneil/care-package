@@ -177,7 +177,7 @@ function TermsOfUse() {
 
                                 (5) you must comply with applicable third-party terms of agreement when using the mobile application, e.g., if you have a VoIP application, then you must not be in violation of their wireless data service agreement when using the mobile application;
 
-                                6) you acknowledge and agree that the App Distributors are third-party beneficiaries of the terms and conditions in this mobile application license contained in these Terms and Conditions, and that each App Distributor will have the right (and will be deemed to have accepted the right) to enforce the terms and conditions in this mobile application license contained in these Terms and Conditions against you as a third-party beneficiary thereof.</p>
+                                (6) you acknowledge and agree that the App Distributors are third-party beneficiaries of the terms and conditions in this mobile application license contained in these Terms and Conditions, and that each App Distributor will have the right (and will be deemed to have accepted the right) to enforce the terms and conditions in this mobile application license contained in these Terms and Conditions against you as a third-party beneficiary thereof.</p>
                                 <h6 style={{ color: "#5a5a5a", fontWeight: "bold", display: 'flex', justifyContent: 'center' }}> SOCIAL MEDIA</h6>
                                 <p style={{ color: "#5a5a5a", fontWeight: "bold" }}> As part of the functionality of the Site, you may link your account with online accounts you have with third-party service providers (each such account, a “Third-Party Account”) by either: (1) providing your Third-Party Account login information through the Site; or (2) allowing us to access your Third-Party Account, as is permitted under the applicable terms and conditions that govern your use of each Third-Party Account.
 
@@ -229,7 +229,7 @@ function TermsOfUse() {
 
                                 (5) otherwise manage the Site in a manner designed to protect our rights and property and to facilitate the proper functioning of the Site.</p>
                                 <h6 style={{ color: "#5a5a5a", fontWeight: "bold", display: 'flex', justifyContent: 'center' }}> PRIVACY POLICY</h6>
-                                <p style={{ color: "#5a5a5a", fontWeight: "bold" }}> We care about data privacy and security. Please review our Privacy Policy [CLICK HERE]/posted on the Site]. By using the Site, you agree to be bound by our Privacy Policy, which is incorporated into these Terms and Conditions. Please be advised the Site is hosted in the United States.
+                                <p style={{ color: "#5a5a5a", fontWeight: "bold" }}> We care about data privacy and security. By using the Site, you agree to be bound by our Privacy Policy, which is incorporated into these Terms and Conditions. Please be advised the Site is hosted in the United States.
 
                                 If you access the Site from the European Union, Asia, or any other region of the world with laws or other requirements governing personal data collection, use, or disclosure that differ from applicable laws in the United States, then through your continued use of the Site, you are transferring your data to the United States, and you expressly consent to have your data transferred to and processed in the United States.
 
@@ -257,7 +257,7 @@ function TermsOfUse() {
 
                                 Counter Notification
 
-                                If you believe your own copyrighted material has been removed from the Site as a result of a mistake or misidentification, you may submit a written counter notification to [us/our Designated Copyright Agent] using the contact information provided below (a “Counter Notification”).
+                                If you believe your own copyrighted material has been removed from the Site as a result of a mistake or misidentification, you may submit a written counter notification to us using the contact information provided below (a “Counter Notification”).
 
                                 To be an effective Counter Notification under the DMCA, your Counter Notification must include substantially the following:
 
@@ -275,23 +275,12 @@ function TermsOfUse() {
 
                                 If you send us a valid, written Counter Notification meeting the requirements described above, we will restore your removed or disabled material, unless we first receive notice from the party filing the Notification informing us that such party has filed a court action to restrain you from engaging in infringing activity related to the material in question.
 
-                                Please note that if you materially misrepresent that the disabled or removed content was removed by mistake or misidentification, you may be liable for damages, including costs and attorney’s fees. Filing a false Counter Notification constitutes perjury.
+                                Please note that if you materially misrepresent that the disabled or removed content was removed by mistake or misidentification, you may be liable for damages, including costs and attorney’s fees. Filing a false Counter Notification constitutes perjury.</p>
 
-                                Designated Copyright Agent
-
-                                [Name]
-
-                                Attn: Copyright Agent
-
-                                [Address]
-
-                                [City, State Zip]
-
-                                [email]</p>
                                 <h6 style={{ color: "#5a5a5a", fontWeight: "bold", display: 'flex', justifyContent: 'center' }}> COPYRIGHT INFRINGEMENTS</h6>
                                 <p style={{ color: "#5a5a5a", fontWeight: "bold" }}> We respect the intellectual property rights of others. If you believe that any material available on or through the Site infringes upon any copyright you own or control, please immediately notify us using the contact information provided below (a “Notification”). A copy of your Notification will be sent to the person who posted or stored the material addressed in the Notification.
 
-                                Please be advised that pursuant to federal law you may be held liable for damages if you make material misrepresentations in a Notification. Thus, if you are not sure that material located on or linked to by the Site infringes your copyright, you should consider first contacting an attorney.]</p>
+                                Please be advised that pursuant to federal law you may be held liable for damages if you make material misrepresentations in a Notification. Thus, if you are not sure that material located on or linked to by the Site infringes your copyright, you should consider first contacting an attorney.</p>
                                 <h6 style={{ color: "#5a5a5a", fontWeight: "bold", display: 'flex', justifyContent: 'center' }}> TERM AND TERMINATION</h6>
                                 <p style={{ color: "#5a5a5a", fontWeight: "bold" }}> These Terms and Conditions shall remain in full force and effect while you use the Site. WITHOUT LIMITING ANY OTHER PROVISION OF THESE TERMS AND CONDITIONS, WE RESERVE THE RIGHT TO, IN OUR SOLE DISCRETION AND WITHOUT NOTICE OR LIABILITY, DENY ACCESS TO AND USE OF THE SITE (INCLUDING BLOCKING CERTAIN IP ADDRESSES), TO ANY PERSON FOR ANY REASON OR FOR NO REASON, INCLUDING WITHOUT LIMITATION FOR BREACH OF ANY REPRESENTATION, WARRANTY, OR COVENANT CONTAINED IN THESE TERMS AND CONDITIONS OR OF ANY APPLICABLE LAW OR REGULATION. WE MAY TERMINATE YOUR USE OR PARTICIPATION IN THE SITE OR DELETE [YOUR ACCOUNT AND] ANY CONTENT OR INFORMATION THAT YOU POSTED AT ANY TIME, WITHOUT WARNING, IN OUR SOLE DISCRETION.
 
@@ -313,11 +302,11 @@ function TermsOfUse() {
                                 <h6 style={{ color: "#5a5a5a", fontWeight: "bold", display: 'flex', justifyContent: 'center' }}> DISPUTE RESOLUTION</h6>
                                 <p style={{ color: "#5a5a5a", fontWeight: "bold" }}> Option 1: Any legal action of whatever nature brought by either you or us (collectively, the “Parties” and individually, a “Party”) shall be commenced or prosecuted in the state and federal courts located in [name of county] County, [name of state], and the Parties hereby consent to, and waive all defenses of lack of personal jurisdiction and forum non conveniens with respect to venue and jurisdiction in such state and federal courts.
 
-                                Application of the United Nations Convention on Contracts for the International Sale of Goods and the Uniform Computer Information Transaction Act (UCITA) are excluded from these Terms and Conditions. In no event shall any claim, action, or proceeding brought by either Party related in any way to the Site be commenced more than ______ years after the cause of action arose.
+                                Application of the United Nations Convention on Contracts for the International Sale of Goods and the Uniform Computer Information Transaction Act (UCITA) are excluded from these Terms and Conditions. In no event shall any claim, action, or proceeding brought by either Party related in any way to the Site be commenced more than five years after the cause of action arose.
 
                                 Option 2: Informal Negotiations
 
-                                To expedite resolution and control the cost of any dispute, controversy, or claim related to these Terms and Conditions (each a “Dispute” and collectively, the “Disputes”) brought by either you or us (individually, a “Party” and collectively, the “Parties”), the Parties agree to first attempt to negotiate any Dispute (except those Disputes expressly provided below) informally for at least ______ days before initiating arbitration. Such informal negotiations commence upon written notice from one Party to the other Party.
+                                To expedite resolution and control the cost of any dispute, controversy, or claim related to these Terms and Conditions (each a “Dispute” and collectively, the “Disputes”) brought by either you or us (individually, a “Party” and collectively, the “Parties”), the Parties agree to first attempt to negotiate any Dispute (except those Disputes expressly provided below) informally for at least ninety days before initiating arbitration. Such informal negotiations commence upon written notice from one Party to the other Party.
 
                                 Binding Arbitration
 
@@ -375,7 +364,7 @@ function TermsOfUse() {
                                 <h6 style={{ color: "#5a5a5a", fontWeight: "bold", display: 'flex', justifyContent: 'center' }}> LIMITATIONS OF LIABILITY</h6>
                                 <p style={{ color: "#5a5a5a", fontWeight: "bold" }}> IN NO EVENT WILL WE OR OUR DIRECTORS, EMPLOYEES, OR AGENTS BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY DIRECT, INDIRECT, CONSEQUENTIAL, EXEMPLARY, INCIDENTAL, SPECIAL, OR PUNITIVE DAMAGES, INCLUDING LOST PROFIT, LOST REVENUE, LOSS OF DATA, OR OTHER DAMAGES ARISING FROM YOUR USE OF THE SITE, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
 
-                                [NOTWITHSTANDING ANYTHING TO THE CONTRARY CONTAINED HEREIN, OUR LIABILITY TO YOU FOR ANY CAUSE WHATSOEVER AND REGARDLESS OF THE FORM OF THE ACTION, WILL AT ALL TIMES BE LIMITED TO [THE LESSER OF] [THE AMOUNT PAID, IF ANY, BY YOU TO US DURING THE [_________] MONTH PERIOD PRIOR TO ANY CAUSE OF ACTION ARISING [OR] [$_________]. CERTAIN STATE LAWS DO NOT ALLOW LIMITATIONS ON IMPLIED WARRANTIES OR THE EXCLUSION OR LIMITATION OF CERTAIN DAMAGES.
+                                NOTWITHSTANDING ANYTHING TO THE CONTRARY CONTAINED HEREIN, OUR LIABILITY TO YOU FOR ANY CAUSE WHATSOEVER AND REGARDLESS OF THE FORM OF THE ACTION, WILL AT ALL TIMES BE LIMITED TO [THE LESSER OF] [THE AMOUNT PAID, IF ANY, BY YOU TO US DURING THE [_________] MONTH PERIOD PRIOR TO ANY CAUSE OF ACTION ARISING [OR] [$_________]. CERTAIN STATE LAWS DO NOT ALLOW LIMITATIONS ON IMPLIED WARRANTIES OR THE EXCLUSION OR LIMITATION OF CERTAIN DAMAGES.
 
                                 IF THESE LAWS APPLY TO YOU, SOME OR ALL OF THE ABOVE DISCLAIMERS OR LIMITATIONS MAY NOT APPLY TO YOU, AND YOU MAY HAVE ADDITIONAL RIGHTS.]</p>
                                 <h6 style={{ color: "#5a5a5a", fontWeight: "bold", display: 'flex', justifyContent: 'center' }}> INDEMNIFICATION</h6>
@@ -405,24 +394,12 @@ function TermsOfUse() {
 
                                 You hereby waive any and all defenses you may have based on the electronic form of these Terms and Conditions and the lack of signing by the parties hereto to execute these Terms and Conditions.</p>
                                 <h6 style={{ color: "#5a5a5a", fontWeight: "bold", display: 'flex', justifyContent: 'center' }}> CONTACT US</h6>
-                                <p style={{ color: "#5a5a5a", fontWeight: "bold" }}> In order to resolve a complaint regarding the Site or to receive further information regarding use of the Site, please contact us at:
-
-                                [Corporate Name]
-
-                                [Corporate Address]
-
-                                [Corporate Phone Number]
-
-                                [Corporate Fax Number]
-
-                                [Email Address]</p>
-
+                                <p style={{ color: "#5a5a5a", fontWeight: "bold" }}> In order to resolve a complaint regarding the Site or to receive further information regarding use of the Site, please contact us.</p>
                             </Card.Text>
                         </Card.Body>
                     </Card>
                 </div>
             </div>
-            <br />
         </Wrapper>
     );
 }

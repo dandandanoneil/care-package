@@ -31,7 +31,6 @@ function CommunityAgreements() {
                     </Card>
                 </div>
             </div>
-            <br />
         </Wrapper>
     );
 }

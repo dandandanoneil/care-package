@@ -23,7 +23,6 @@ function MeetTeam() {
                     <Image src={process.env.PUBLIC_URL + "/assets/images/circles.png"} fluid alt="Venn Diagram of Giving" />
                 </div>
             </div>
-            <br />
         </Wrapper>
     );
 }
