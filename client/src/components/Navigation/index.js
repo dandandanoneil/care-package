@@ -9,6 +9,7 @@ import SignupForm from "../SignupForm";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import Image from "react-bootstrap/Image";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Alert from "react-bootstrap/Alert";
@@ -110,20 +111,17 @@ function Navigation(props) {
   return (
     <Navbar expand="md" sticky="top" bg="dark" variant="dark" >
       {/* Page name/logo, links to home page */}
-      <Navbar.Brand bg="light" href="/">
-        <img
+      <Navbar.Brand bg="light" href="/" style={{ height:"100px" }}>
+        <Image
+          fluid
           src={iconImage}
           alt="Care Package Logo"
-          width="50"
-          height="50"
-          className="d-inline-block align-top responsive"
-          style={{ marginRight: "15px", marginLeft: "20px" }}
         />
-        <h1 style={{ color: "#d0c311", marginTop: "10px", textShadow: "2px 2px 4px #000000", fontWeight: "bold" }}>CARE PACKAGE<small>Passing Gifts to Neighbors with Heart</small></h1>
+        <h1 className="d-none d-sm-block m-1" style={{ color: "#d0c311", marginTop: "10px", textShadow: "2px 2px 4px #000000", fontWeight: "bold" }}>CARE PACKAGE<small>Passing Gifts to Neighbors with Heart</small></h1>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="navbar-nav" />
 
-      {/* Navbar content - displayed as hamburger on sizes <= medium, hamburger on sizes > medium */}
+      {/* Navbar content - displayed as hamburger on lg, xl; hamburger on md, sm & xs */}
       <Navbar.Collapse id="navbar-nav">
         <Nav className="ml-auto">
 

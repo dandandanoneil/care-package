@@ -19,19 +19,10 @@
 
 .navbar-brand small {
   display: block;
-  font-size: 1.15vw;
+  font-size: 11px;
   color: #ebe8c1;
   text-align: center;
   margin-top: 5px;
-}
-
-.navbar-brand h1 {
-  font-size: 3.25vw;
-}
-
-.responsive {
-  width: 17%;
-  height: auto;
 }
 
 .login-btn:hover {
