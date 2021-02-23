@@ -10,7 +10,6 @@ function UserStories() {
         <Wrapper>
             <PageTitle>User Stories</PageTitle>
                 <Users />
-            <br />
         </Wrapper>
     );
   }

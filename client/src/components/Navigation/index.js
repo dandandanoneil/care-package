@@ -121,7 +121,7 @@ function Navigation(props) {
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="navbar-nav" />
 
-      {/* Navbar content - displayed as hamburger on lg, xl; hamburger on md, sm & xs */}
+      {/* Navbar content - displayed as dropdowns/links on lg, xl; hamburger on md, sm & xs */}
       <Navbar.Collapse id="navbar-nav">
         <Nav className="ml-auto">
 
