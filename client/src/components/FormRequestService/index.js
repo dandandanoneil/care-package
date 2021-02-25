@@ -54,7 +54,7 @@ function FormRequestService() {
             setPostContent({ ...postContent, category: "Other" });
         }
         API.createPost(postContent)
-            .then(res => history.push(`/post/${res.data.ref_post}`));
+            .then(res => history.push(`/user/${res.data._id}`));;
     };
 
     return (

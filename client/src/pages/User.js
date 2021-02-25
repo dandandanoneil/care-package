@@ -49,9 +49,23 @@ function User() {
         API.getUser(userId)
             .then(res => {
                 setUser(res.data);
-                setPosts(res.data.posts);
+                setPosts(sortPosts(res.data.posts));
             })
             .catch(err => console.log(err));
+    }
+
+    function sortPosts(postsArray) {
+        return postsArray.sort(comparePosts);
+    }
+
+    function comparePosts(a, b) {
+        if ( a.created_at > b.created_at ){
+            return -1;
+          }
+          if ( a.created_at < b.created_at ){
+            return 1;
+          }
+          return 0;        
     }
 
     function formatDate(dateString) {
